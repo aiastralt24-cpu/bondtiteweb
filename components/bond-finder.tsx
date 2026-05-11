@@ -2,11 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { ProductPack } from "@/components/product-pack";
-import {
-  getHomepageCatalogProduct,
-  getHomepageProductPath
-} from "@/lib/homepage-product-routes";
-import type { BondFinderData, Product } from "@/lib/types";
+import { catalogProducts, getProductPath, type CatalogProduct } from "@/lib/products";
+import type { BondFinderData } from "@/lib/types";
 
 type Selection = {
   material: string;
@@ -15,41 +12,128 @@ type Selection = {
 };
 
 const materialDefaults: Record<string, string> = {
-  wood: "hydra-plus",
-  metal: "epoxy-rapid",
-  plastic: "ca-fast",
-  mixed: "multifix"
+  wood: "bondtite-hydra",
+  metal: "bondtite-rapid",
+  plastic: "bondtite-quick",
+  mixed: "bondtite-multifix"
 };
 
-function scoreProduct(product: Product, selection: Selection) {
+function includesAny(values: string[], terms: string[]) {
+  const haystack = values.join(" ").toLowerCase();
+  return terms.some((term) => haystack.includes(term));
+}
+
+function scoreProduct(product: CatalogProduct, selection: Selection) {
   let score = 0;
+  const name = product.name.toLowerCase();
+  const searchable = [
+    product.name,
+    product.category,
+    product.meta,
+    product.productSummary,
+    product.reason,
+    ...product.substrates,
+    ...product.applications,
+    ...product.bestFor
+  ];
 
-  if (materialDefaults[selection.material] === product.id) score += 10;
+  if (materialDefaults[selection.material] === product.id) score += 12;
 
-  if (selection.material === "wood" && product.id === "hydra-plus") score += 8;
-  if (selection.material === "metal" && product.id === "epoxy-rapid") score += 8;
-  if (selection.material === "plastic" && product.id === "ca-fast") score += 8;
-  if (selection.material === "mixed" && product.id === "multifix") score += 8;
+  if (selection.material === "wood") {
+    if (product.categorySlug === "woodworking") score += 8;
+    if (includesAny(searchable, ["wood", "plywood", "mdf", "board", "laminate", "wpc"])) {
+      score += 5;
+    }
+  }
 
-  if (selection.environment === "wet" && product.id === "hydra-plus") score += 4;
-  if (selection.environment === "heat" && product.id === "epoxy-rapid") score += 4;
-  if (selection.environment === "site" && product.id === "multifix") score += 4;
-  if (selection.environment === "indoor" && product.id !== "epoxy-rapid") score += 1;
+  if (selection.material === "metal") {
+    if (product.categorySlug === "epoxy-adhesives" || product.categorySlug === "stone-care") {
+      score += 8;
+    }
+    if (
+      includesAny(searchable, [
+        "metal",
+        "stone",
+        "marble",
+        "ceramic",
+        "concrete",
+        "glass",
+        "tile"
+      ])
+    ) {
+      score += 5;
+    }
+  }
 
-  if (selection.speed === "instant" && product.id === "ca-fast") score += 5;
-  if (selection.speed === "same-day" && product.id === "epoxy-rapid") score += 3;
-  if (selection.speed === "open-time" && product.id === "hydra-plus") score += 2;
-  if (selection.speed === "open-time" && product.id === "multifix") score += 1;
+  if (selection.material === "plastic") {
+    if (
+      product.categorySlug === "cyanoacrylates" ||
+      product.categorySlug === "sprayable-rubber-adhesives"
+    ) {
+      score += 8;
+    }
+    if (includesAny(searchable, ["plastic", "rubber", "pvc", "acrylic", "foam"])) score += 5;
+  }
+
+  if (selection.material === "mixed") {
+    if (
+      name.includes("multifix") ||
+      name.includes("multibond") ||
+      product.categorySlug === "epoxy-adhesives"
+    ) {
+      score += 9;
+    }
+    if (includesAny(searchable, ["multi", "mixed", "multiple", "construction", "site"])) score += 5;
+  }
+
+  if (selection.environment === "wet") {
+    if (includesAny(searchable, ["water", "waterproof", "moisture", "d3", "monsoon"])) score += 8;
+    if (name.includes("aqua") || name.includes("hydra") || name.includes("edge d3")) score += 5;
+  }
+
+  if (selection.environment === "heat") {
+    if (includesAny(searchable, ["heat", "temperature", "epoxy", "stone", "repair"])) score += 7;
+    if (name.includes("heatbond") || name.includes("rapid") || name.includes("super strength")) score += 5;
+  }
+
+  if (selection.environment === "site") {
+    if (includesAny(searchable, ["site", "construction", "exterior", "concrete", "wpc", "stone"])) score += 7;
+    if (name.includes("multifix") || name.includes("wpc") || name.includes("pro")) score += 5;
+  }
+
+  if (selection.environment === "indoor") {
+    if (product.categorySlug === "woodworking" || product.categorySlug === "cyanoacrylates") score += 3;
+  }
+
+  if (selection.speed === "instant") {
+    if (product.categorySlug === "cyanoacrylates") score += 9;
+    if (includesAny(searchable, ["instant", "quick", "spot", "fast"])) score += 5;
+  }
+
+  if (selection.speed === "same-day") {
+    if (includesAny(searchable, ["fast", "rapid", "same", "10 min", "30 min"])) score += 7;
+    if (name.includes("rapid") || name.includes("fast") || name.includes("quick")) score += 4;
+  }
+
+  if (selection.speed === "open-time") {
+    if (
+      product.categorySlug === "woodworking" ||
+      product.categorySlug === "sprayable-rubber-adhesives"
+    ) {
+      score += 5;
+    }
+    if (!includesAny(searchable, ["instant", "3-5 min", "10 min"])) score += 2;
+  }
+
+  score -= product.rank * 0.01;
 
   return score;
 }
 
 export function BondFinder({
-  finder,
-  products
+  finder
 }: {
   finder: BondFinderData;
-  products: Product[];
 }) {
   const initialSelection = {
     material: finder.groups[0]?.options[0]?.id ?? "",
@@ -58,28 +142,17 @@ export function BondFinder({
   };
   const [selection, setSelection] = useState<Selection>(initialSelection);
 
-  const product = useMemo(() => {
-    const exactRule = finder.rules.find(
-      (rule) =>
-        rule.material === selection.material &&
-        rule.environment === selection.environment &&
-        rule.speed === selection.speed
-    );
-    if (exactRule) {
-      return (
-        products.find((item) => item.id === exactRule.productId) ??
-        products.find((item) => item.id === finder.fallbackProductId) ??
-        products[0]
-      );
-    }
-
-    return [...products].sort(
-      (first, second) =>
-        scoreProduct(second, selection) - scoreProduct(first, selection)
-    )[0];
-  }, [finder.fallbackProductId, finder.rules, products, selection]);
-  const productPath = getHomepageProductPath(product);
-  const displayProduct = getHomepageCatalogProduct(product) ?? product;
+  const recommendations = useMemo(
+    () =>
+      [...catalogProducts].sort(
+        (first, second) =>
+          scoreProduct(second, selection) - scoreProduct(first, selection)
+      ),
+    [selection]
+  );
+  const product = recommendations[0];
+  const alternatives = recommendations.slice(1, 4);
+  const productPath = product ? getProductPath(product) : "/contact";
 
   return (
     <section className="finder" id="bond-finder">
@@ -119,7 +192,7 @@ export function BondFinder({
         <aside className="recommendation" aria-live="polite">
           <div className="recommendation__top">
             <div className="recommendation__image">
-              {displayProduct ? <ProductPack product={displayProduct} /> : null}
+              {product ? <ProductPack product={product} /> : null}
             </div>
             <div>
               <span className="mono">Recommended</span>
@@ -132,13 +205,28 @@ export function BondFinder({
           </p>
           {product ? (
             <div className="recommendation__tags" aria-label="Best for">
-              {product.bestFor.map((item) => (
+              {[product.category, ...product.bestFor].slice(0, 4).map((item) => (
                 <span key={item}>{item}</span>
               ))}
             </div>
           ) : null}
+          {alternatives.length ? (
+            <div className="recommendation__alternatives">
+              <span>Also fits</span>
+              <div>
+                {alternatives.map((item) => (
+                  <a href={getProductPath(item)} key={item.id}>
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : null}
           <a className="tertiary" href={product ? productPath : "/contact"}>
             {product ? "View product details" : "Contact trade desk"} →
+          </a>
+          <a className="tertiary recommendation__all" href="/products">
+            Browse all products →
           </a>
         </aside>
       </div>

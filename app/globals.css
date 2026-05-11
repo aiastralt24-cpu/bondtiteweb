@@ -1610,6 +1610,44 @@ button {
   padding: 7px 11px;
 }
 
+.recommendation__alternatives {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 12px;
+  margin: 0 0 24px;
+  padding-top: 18px;
+}
+
+.recommendation__alternatives > span {
+  color: var(--ink-quiet);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.recommendation__alternatives div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recommendation__alternatives a {
+  background: rgba(14, 79, 168, 0.08);
+  border: 1px solid rgba(14, 79, 168, 0.16);
+  border-radius: 999px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 11px;
+}
+
+.recommendation__all {
+  display: inline-flex;
+  margin-left: 22px;
+}
+
 .range-head {
   align-items: start;
   margin-bottom: 28px;
