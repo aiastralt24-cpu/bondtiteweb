@@ -1,0 +1,8 @@
+.next/
+.codex-screenshots/
+node_modules/
+out/
+playwright-report/
+test-results/
+*.tsbuildinfo
+.env*.local
