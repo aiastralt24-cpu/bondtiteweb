@@ -14,7 +14,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header navigation={data.navigation} cta={data.headerCta} />
+      <Header navigation={data.navigation} cta={data.headerCta} variant="heroOverlay" />
       <main>
         <Hero hero={data.hero} />
         <CampaignDvc />
