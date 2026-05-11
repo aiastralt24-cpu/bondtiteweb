@@ -5,6 +5,7 @@ import {
   type CatalogProduct,
   type ProductCategory
 } from "@/lib/products";
+import { formatPackSizes } from "@/lib/product-format";
 
 export function ProductDetailPage({
   category,
@@ -24,7 +25,7 @@ export function ProductDetailPage({
     ["Open time", product.openTime],
     ["Clamp time", product.clampTime],
     ["Water rating", product.waterRating],
-    ["Pack sizes", product.packTypes]
+    ["Pack sizes", formatPackSizes(product.packTypes)]
   ];
 
   return (

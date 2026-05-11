@@ -5,6 +5,7 @@ import {
   type CatalogProduct,
   type ProductCategory
 } from "@/lib/products";
+import { firstPackSize } from "@/lib/product-format";
 
 export function CategoryPage({
   category,
@@ -58,9 +59,8 @@ export function CategoryPage({
               </h2>
             </div>
             <p>
-              Category pages give search engines and trade users a focused landing
-              page for one adhesive chemistry while keeping each product page
-              one click away.
+              Compare the closest Bondtite options by chemistry, site condition
+              and pack fit. Open a product page for exact usage guidance.
             </p>
           </div>
           <div className="category-product-grid">
@@ -85,7 +85,7 @@ export function CategoryPage({
                   </div>
                   <div>
                     <dt>Pack</dt>
-                    <dd>{product.packTypes.split(",")[0]}</dd>
+                    <dd>{firstPackSize(product.packTypes)}</dd>
                   </div>
                 </dl>
                 <div className="catalog-card__actions">

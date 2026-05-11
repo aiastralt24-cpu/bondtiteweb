@@ -8,6 +8,7 @@ import {
   productCategories,
   type CatalogProduct
 } from "@/lib/products";
+import { formatPackSizes } from "@/lib/product-format";
 
 const chemistryFilters = ["All", ...productCategories.map((category) => category.shortLabel)];
 const substrateFilters = ["Wood", "Metal", "Plastic", "Foam", "Mixed"] as const;
@@ -19,7 +20,7 @@ const specRows = [
   ["Open time", "8-10 minutes"],
   ["Clamp time", "30-45 minutes"],
   ["Water rating", "D3 interior water resistance"],
-  ["Pack sizes", "1 kg, 5 kg, 20 kg"]
+  ["Pack sizes", formatPackSizes("1 kg, 5 kg, 20 kg")]
 ];
 
 export function ProductPage() {
@@ -304,7 +305,7 @@ export function ProductPage() {
                     <td>{product.substrates.join(", ")}</td>
                     <td>{product.cure} · {product.openTime}</td>
                     <td>{product.condition}</td>
-                    <td>{product.packTypes}</td>
+                    <td>{formatPackSizes(product.packTypes)}</td>
                   </tr>
                 ))}
               </tbody>

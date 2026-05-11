@@ -583,7 +583,12 @@ button {
 
 .section-head p {
   color: var(--ink-soft);
+  display: -webkit-box;
+  line-clamp: 2;
   margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .chemistry__grid {
@@ -1363,7 +1368,9 @@ button {
 }
 
 .application-card {
-  background: var(--ink);
+  background:
+    radial-gradient(circle at 78% 24%, rgba(14, 79, 168, 0.34), transparent 32%),
+    linear-gradient(135deg, #061424 0%, #0b1d32 58%, #07101d 100%);
   border-radius: 14px;
   grid-column: span 6;
   min-height: 360px;
@@ -1377,30 +1384,21 @@ button {
 }
 
 .application-card::before {
-  background-image: url("/assets/bondtite-home-assets.png");
-  background-size: 100% 300%;
+  background:
+    linear-gradient(90deg, rgba(244, 241, 236, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(244, 241, 236, 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
   content: "";
   inset: 0;
-  opacity: 0.74;
+  opacity: 0.16;
   position: absolute;
   transition: transform 500ms ease-out;
 }
 
-.application-card--1::before {
-  background-position: center top;
-}
-
-.application-card--2::before {
-  background-position: center center;
-}
-
-.application-card--3::before,
-.application-card--4::before {
-  background-position: center bottom;
-}
-
 .application-card::after {
-  background: linear-gradient(180deg, rgba(10, 22, 40, 0.05), rgba(10, 22, 40, 0.88));
+  background:
+    linear-gradient(180deg, rgba(10, 22, 40, 0.04), rgba(10, 22, 40, 0.92)),
+    linear-gradient(90deg, rgba(10, 22, 40, 0.92), rgba(10, 22, 40, 0.32) 62%, rgba(10, 22, 40, 0.72));
   content: "";
   inset: 0;
   position: absolute;
@@ -1408,6 +1406,38 @@ button {
 
 .application-card:hover::before {
   transform: scale(1.04);
+}
+
+.application-card__product {
+  align-items: center;
+  display: flex;
+  height: 58%;
+  justify-content: center;
+  opacity: 0.9;
+  position: absolute;
+  right: clamp(18px, 4vw, 56px);
+  top: clamp(24px, 4vw, 54px);
+  width: min(42%, 300px);
+  z-index: 0;
+}
+
+.application-card__product .product-image {
+  filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.35));
+  height: min(230px, 23vw);
+  min-height: 150px;
+  width: 100%;
+}
+
+.application-card--3 .application-card__product,
+.application-card--4 .application-card__product {
+  height: 54%;
+  opacity: 0.78;
+  top: 24px;
+}
+
+.application-card--2 .application-card__product .product-image,
+.application-card--4 .application-card__product .product-image {
+  height: min(250px, 24vw);
 }
 
 .application-card__content {
@@ -1442,8 +1472,13 @@ button {
 
 .application-card p {
   color: rgba(244, 241, 236, 0.78);
+  display: -webkit-box;
+  line-clamp: 2;
   margin: 0 0 18px;
   max-width: 520px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .application-card a {
@@ -2379,9 +2414,14 @@ button {
 
 .catalog-card p {
   color: var(--ink-soft);
+  display: -webkit-box;
   font-size: 14px;
+  line-clamp: 2;
   line-height: 1.5;
   margin: 0 0 18px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .spec-row {
@@ -2592,6 +2632,7 @@ button {
 .spec-table strong {
   font-size: 14px;
   font-weight: 500;
+  line-height: 1.45;
 }
 
 .comparison {
@@ -2678,8 +2719,14 @@ button {
 
 .fit-panel p {
   color: var(--ink-soft);
+  display: -webkit-box;
   font-size: 15px;
+  line-clamp: 3;
+  line-height: 1.55;
   margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .product-cta {
@@ -2757,10 +2804,15 @@ button {
 .category-hero p,
 .product-detail-hero p {
   color: var(--ink-soft);
+  display: -webkit-box;
   font-size: clamp(18px, 1.6vw, 22px);
+  line-clamp: 2;
   line-height: 1.5;
   margin: 24px 0 0;
   max-width: 720px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .category-tags {
@@ -2999,9 +3051,32 @@ button {
 
 .listing-card__media,
 .detail-media {
+  align-items: center;
+  background:
+    radial-gradient(circle at center, rgba(14, 79, 168, 0.12), transparent 58%),
+    var(--bone);
   border-radius: 10px;
+  display: flex;
   height: 230px;
+  justify-content: center;
   margin: 28px 0;
+  overflow: hidden;
+  padding: 28px;
+}
+
+.product-media .product-image {
+  filter: drop-shadow(0 24px 28px rgba(10, 22, 40, 0.16));
+  height: 178px;
+  width: min(260px, 100%);
+}
+
+.detail-media {
+  height: 360px;
+}
+
+.detail-media .product-image {
+  height: 280px;
+  width: min(360px, 100%);
 }
 
 .listing-card a,

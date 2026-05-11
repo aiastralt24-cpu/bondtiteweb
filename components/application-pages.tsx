@@ -1,3 +1,4 @@
+import { ProductPack } from "@/components/product-pack";
 import { catalogProducts, getProductPath, type CatalogProduct } from "@/lib/products";
 import { siteApplications, type SiteApplication } from "@/lib/site";
 
@@ -40,17 +41,23 @@ export function ApplicationsPage() {
 
       <section className="section listing-section">
         <div className="container listing-grid">
-          {siteApplications.map((application, index) => (
-            <article className="listing-card" key={application.slug}>
-              <span className="mono">0{index + 1}</span>
-              <h2 className="display">
-                {application.title} <span className="accent">{application.accent}</span>
-              </h2>
-              <p>{application.description}</p>
-              <div className={`listing-card__media asset asset--${application.imageTone}`} />
-              <a href={`/applications/${application.slug}`}>View application</a>
-            </article>
-          ))}
+          {siteApplications.map((application, index) => {
+            const featuredProduct = productLinks(application.products)[0];
+
+            return (
+              <article className="listing-card" key={application.slug}>
+                <span className="mono">0{index + 1}</span>
+                <h2 className="display">
+                  {application.title} <span className="accent">{application.accent}</span>
+                </h2>
+                <p>{application.description}</p>
+                <div className="listing-card__media product-media">
+                  {featuredProduct ? <ProductPack product={featuredProduct} /> : null}
+                </div>
+                <a href={`/applications/${application.slug}`}>View application</a>
+              </article>
+            );
+          })}
         </div>
       </section>
     </main>
@@ -74,7 +81,9 @@ export function ApplicationDetailPage({ application }: { application: SiteApplic
             </h1>
             <p>{application.description}</p>
           </div>
-          <div className={`detail-media asset asset--${application.imageTone}`} />
+          <div className="detail-media product-media">
+            {relatedProducts[0] ? <ProductPack product={relatedProducts[0]} priority /> : null}
+          </div>
         </div>
       </section>
 
@@ -115,6 +124,9 @@ export function ApplicationDetailPage({ application }: { application: SiteApplic
           <div className="application-fit__grid">
             {relatedProducts.map((product) => (
               <article className="fit-panel" key={product.id}>
+                <div className="fit-panel__thumb">
+                  <ProductPack product={product} />
+                </div>
                 <h3>{product.name}</h3>
                 <p>{product.reason}</p>
                 <a className="range-link" href={getProductPath(product)}>

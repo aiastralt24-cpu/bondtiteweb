@@ -1,4 +1,13 @@
+import { ProductPack } from "@/components/product-pack";
+import { catalogProducts } from "@/lib/products";
 import type { Application } from "@/lib/types";
+
+const applicationProductSlugs = [
+  "bondtite-hydra",
+  "bondtite-multifix",
+  "bondtite-aqua",
+  "bondtite-foambond"
+];
 
 export function Applications({ applications }: { applications: Application[] }) {
   return (
@@ -17,22 +26,33 @@ export function Applications({ applications }: { applications: Application[] }) 
           </p>
         </div>
         <div className="application-grid">
-          {applications.map((application, index) => (
-            <article
-              className={`application-card application-card--${index + 1}`}
-              key={application.titleAccent}
-            >
-              <div className="application-card__content">
-                <span className="mono">0{index + 1}</span>
-                <h3>
-                  {application.titleBefore}
-                  <span>{application.titleAccent}</span>
-                </h3>
-                <p>{application.body}</p>
-                <a href="#bond-finder">Match adhesive →</a>
-              </div>
-            </article>
-          ))}
+          {applications.map((application, index) => {
+            const product = catalogProducts.find(
+              (item) => item.slug === applicationProductSlugs[index]
+            );
+
+            return (
+              <article
+                className={`application-card application-card--${index + 1}`}
+                key={application.titleAccent}
+              >
+                {product ? (
+                  <div className="application-card__product" aria-hidden="true">
+                    <ProductPack product={product} />
+                  </div>
+                ) : null}
+                <div className="application-card__content">
+                  <span className="mono">0{index + 1}</span>
+                  <h3>
+                    {application.titleBefore}
+                    <span>{application.titleAccent}</span>
+                  </h3>
+                  <p>{application.body}</p>
+                  <a href="#bond-finder">Match adhesive →</a>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
