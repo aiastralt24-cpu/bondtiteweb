@@ -78,7 +78,7 @@ export function ContactPage() {
               <span>Product help</span>
               Browse products
             </a>
-            <a href="mailto:dealer@bondtite.in">
+            <a href="/become-a-dealer">
               <span>Dealer enquiry</span>
               Apply online
             </a>

@@ -14,7 +14,7 @@ export function Footer({ footer }: { footer: { columns: FooterColumn[] } }) {
             <span>Trade desk</span>
             +91-7311103331
           </a>
-          <a href="mailto:dealer@bondtite.in">
+          <a href="/become-a-dealer">
             <span>Become a dealer</span>
             Apply online
           </a>

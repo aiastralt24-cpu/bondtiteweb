@@ -3,7 +3,7 @@ import { catalogProducts, getProductPath, productCategories } from "@/lib/produc
 import { baseUrl, siteApplications, siteResources } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/products", "/applications", "/resources", "/about", "/contact"];
+  const staticRoutes = ["", "/products", "/applications", "/resources", "/about", "/contact", "/become-a-dealer"];
   const categoryRoutes = productCategories.map((category) => `/products/${category.slug}`);
   const productRoutes = catalogProducts.map((product) => getProductPath(product));
   const applicationRoutes = siteApplications.map((application) => `/applications/${application.slug}`);
