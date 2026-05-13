@@ -168,15 +168,6 @@ const sourceProducts: ProductSeed[] = [
     substrates: ["Wood", "Boards", "Edges"]
   },
   {
-    name: "BONDTITE PVC BOND",
-    categorySlug: "woodworking",
-    sourceUrl: "https://www.astraladhesives.com/zesta-wr.html",
-    image: "/assets/products/bondtite-pvc-bond.png",
-    imageTone: "square",
-    summary: "PVC Bond is listed under woodworking in the provided Bondtite product workbook.",
-    substrates: ["PVC", "Woodworking substrates"]
-  },
-  {
     name: "BONDTITE HEATBOND",
     categorySlug: "woodworking",
     sourceUrl: "https://www.astraladhesives.com/bondtite-heatbond.html",

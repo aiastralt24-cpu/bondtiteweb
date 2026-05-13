@@ -141,13 +141,5 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
     features: ["Excellent compatibility with WPC board", "Low VOC", "Waterproof", "Excellent heat resistance"],
     shelfLife: "Shelf Life: Up to 1 Years",
     storage: "Store dry in original, properly closed containers at 2-40°C."
-  },
-  "bondtite-pvc-bond": {
-    summary: "BONDTITE PVC BOND is the new-generation adhesive for bonding PVC sheet over plywood and wooden substrates such as MDF and HDHMR. It is suitable for pasting PVC edge banding tape to edges of plywood and MDF.",
-    packTypes: "1 kg 5 kg 10 kg",
-    steps: ["Surface to be bonded should be dry, clean and free from oil or grease.", "Apply glue uniformly on PVC laminate sheet and plywood/MDF/particleboard.", "Press substrates together, align properly and keep under pressure until adhesive dries completely."],
-    features: ["High strength", "Excellent heat resistance", "Superior spread ability", "Ideal for PVC surfaces"],
-    shelfLife: "Shelf Life: Up to 1 Years",
-    storage: "Store dry in original, properly closed containers at 2-40°C."
   }
 };
