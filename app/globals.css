@@ -1378,11 +1378,6 @@ button {
   position: relative;
 }
 
-.application-card--3,
-.application-card--4 {
-  min-height: 280px;
-}
-
 .application-card::before {
   background:
     linear-gradient(90deg, rgba(244, 241, 236, 0.08) 1px, transparent 1px),
@@ -1430,14 +1425,23 @@ button {
 
 .application-card--3 .application-card__product,
 .application-card--4 .application-card__product {
-  height: 54%;
+  height: 62%;
   opacity: 0.78;
-  top: 24px;
+  top: 38px;
 }
 
 .application-card--2 .application-card__product .product-image,
 .application-card--4 .application-card__product .product-image {
-  height: min(250px, 24vw);
+  height: min(230px, 22vw);
+}
+
+.application-card--3 .application-card__product {
+  right: clamp(42px, 8vw, 118px);
+  width: min(28%, 170px);
+}
+
+.application-card--3 .application-card__product .product-image {
+  height: min(245px, 24vw);
 }
 
 .application-card__content {
