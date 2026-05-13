@@ -34,7 +34,7 @@ export function ApplicationsPage() {
           <div className="index-hero__panel">
             <span className="mono">Application architecture</span>
             <strong>{siteApplications.length} focused pages</strong>
-            <p>Furniture, construction, wet areas and upholstery.</p>
+            <p>Furniture, construction, DIY and upholstery.</p>
           </div>
         </div>
       </section>

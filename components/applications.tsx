@@ -4,8 +4,8 @@ import type { Application } from "@/lib/types";
 
 const applicationProductSlugs = [
   "bondtite-hydra",
-  "bondtite-multifix",
-  "bondtite-aqua",
+  "bondtite-multibond",
+  "bondtite-quik-spray",
   "bondtite-foambond"
 ];
 

@@ -38,9 +38,9 @@ export const siteApplications: SiteApplication[] = [
     title: "Furniture and",
     accent: "joinery.",
     description:
-      "Adhesive systems for cabinetry, modular kitchens, plywood lamination, edge banding, veneer pressing and MDF assembly.",
+      "Hydra+ led adhesive selection for cabinetry, modular kitchens, plywood lamination, veneer pressing and MDF assembly.",
     seoDescription:
-      "Explore Bondtite adhesives for furniture, joinery, modular kitchens, plywood, MDF, veneer pressing and laminate work.",
+      "Explore Bondtite Hydra+ adhesives for furniture, joinery, modular kitchens, plywood, MDF, veneer pressing and laminate work.",
     imageTone: "workshop",
     products: ["BONDTITE HYDRA+", "BONDTITE DELUXE", "BONDTITE EDGE D3"],
     steps: ["Choose the PVA grade by water exposure.", "Prepare clean timber surfaces.", "Clamp evenly until the joint sets."],
@@ -56,46 +56,46 @@ export const siteApplications: SiteApplication[] = [
     ]
   },
   {
-    slug: "construction-and-repair",
+    slug: "construction-and-infrastructure",
     title: "Construction and",
-    accent: "repair.",
+    accent: "infrastructure.",
     description:
-      "Products for panel fixing, stone bonding, ceramic correction, metal repair and mixed substrate site assemblies.",
+      "Multibond led bonding for site panels, trims, fabrication details and mixed substrate construction work.",
     seoDescription:
-      "Find Bondtite adhesives for construction repair, stone bonding, ceramic correction, metal repair and mixed substrates.",
+      "Find Bondtite Multibond adhesives for construction, infrastructure, site panels, trims and mixed substrate assembly.",
     imageTone: "macro",
-    products: ["BONDTITE RAPID", "BONDTITE MULTIFIX"],
-    steps: ["Identify the strongest substrate pair.", "Choose epoxy or cartridge format.", "Support the assembly until cure develops."],
+    products: ["BONDTITE MULTIBOND", "BONDTITE MULTIFIX", "BONDTITE RAPID"],
+    steps: ["Identify the substrate pair.", "Apply Multibond evenly to prepared surfaces.", "Press and support the assembly until tack develops."],
     faqs: [
       {
-        question: "Which Bondtite product fits stone or metal repair?",
-        answer: "Bondtite Rapid is the focused two-part epoxy option for metal, stone and ceramic repair."
+        question: "Which Bondtite product fits construction and infrastructure work?",
+        answer: "Start with Bondtite Multibond for flexible bonding across panels, trims and mixed site substrates."
       },
       {
-        question: "When should I choose Multifix?",
-        answer: "Choose Multifix when the job involves cartridge application or a wide mix of site substrates."
+        question: "When should I choose Rapid or Multifix instead?",
+        answer: "Use Rapid for two-part epoxy repair and Multifix when a cartridge format is better for fixing work."
       }
     ]
   },
   {
-    slug: "waterproofing-and-wet-areas",
-    title: "Waterproofing and",
-    accent: "wet areas.",
+    slug: "diy-segment",
+    title: "DIY",
+    accent: "segment.",
     description:
-      "Adhesive choices for monsoon-prone joinery, bathroom cabinets, wet-area details and humidity-exposed workshops.",
+      "Quikspray led bonding for quick home repairs, craft fixes, fixtures and everyday adhesive jobs.",
     seoDescription:
-      "Browse Bondtite adhesives for wet-area joinery, waterproof woodwork, bathroom cabinets and high-humidity applications.",
+      "Browse Bondtite Quikspray and Quick adhesives for DIY repairs, craft work, fixtures and everyday bonding jobs.",
     imageTone: "products",
-    products: ["BONDTITE HYDRA+", "BONDTITE RAPID"],
-    steps: ["Check whether the job is humid or water exposed.", "Use a D3 wood adhesive for wet-area joinery.", "Seal and protect assemblies as required."],
+    products: ["BONDTITE QUIK SPRAY", "Bondtite Quick Instant Adhesive", "Bondtite Quick Spot-On"],
+    steps: ["Clean the repair surface.", "Use Quikspray for fast coverage or Quick for precision fixes.", "Press the bond and allow the recommended set time."],
     faqs: [
       {
-        question: "What does D3 mean for wood adhesive?",
-        answer: "D3 indicates a water-resistance class suited to interior joinery with frequent humidity or occasional water exposure."
+        question: "Which Bondtite product works best for DIY jobs?",
+        answer: "Use Bondtite Quikspray for fast spray coverage and Bondtite Quick variants for small precision fixes."
       },
       {
-        question: "Is wet-area adhesive the same as waterproofing chemical?",
-        answer: "No. Adhesive selection is about bond performance. Waterproofing systems are separate site treatments."
+        question: "Can DIY users apply these products easily?",
+        answer: "Yes. Choose the format by job size: spray for larger surfaces and small tubes or bottles for controlled application."
       }
     ]
   },
@@ -104,16 +104,16 @@ export const siteApplications: SiteApplication[] = [
     title: "Auto and",
     accent: "upholstery.",
     description:
-      "Fast tack and flexible bonding for foam, fabric, rubber trims, headliners, panels and service workshop repairs.",
+      "Foambond led bonding for foam, fabric, rubber trims, headliners, panels and service workshop repairs.",
     seoDescription:
-      "Explore Bondtite adhesives for auto upholstery, foam, fabric, rubber trims, headliners and service workshop repairs.",
+      "Explore Bondtite Foambond adhesives for auto upholstery, foam, fabric, rubber trims, headliners and service workshop repairs.",
     imageTone: "workshop",
-    products: ["BONDTITE QUIK SPRAY", "BONDTITE STRONG AND CLEAR"],
+    products: ["BONDTITE FOAMBOND", "BONDTITE HEATBOND", "BONDTITE QUIK SPRAY"],
     steps: ["Dry fit the trim or upholstery surface.", "Apply contact adhesive to the correct face.", "Press evenly once tack develops."],
     faqs: [
       {
         question: "Which adhesive works for foam and upholstery?",
-        answer: "Bondgrip Quickgrip SP is built for fast tack foam, rubber, leatherette and upholstery work."
+        answer: "Bondtite Foambond is the focused choice for foam, fabric and upholstery bonding."
       },
       {
         question: "Can clear adhesive be used on trims?",

@@ -8,7 +8,7 @@ import { baseUrl, headerCta, mainNavigation, siteApplications } from "@/lib/site
 export const metadata: Metadata = {
   title: "Applications | Bondtite Adhesives",
   description:
-    "Browse Bondtite adhesive applications for furniture, construction repair, wet areas, auto and upholstery workflows.",
+    "Browse Bondtite adhesive applications for furniture, construction, DIY, auto and upholstery workflows.",
   alternates: { canonical: "/applications" }
 };
 
