@@ -6,17 +6,13 @@ export function Footer({ footer }: { footer: { columns: FooterColumn[] } }) {
     <footer className="footer">
       <div className="container">
         <div className="footer-contact" id="contact" aria-label="Contact options">
-          <a href="mailto:trade@bondtite.in">
+          <a href="mailto:customercare@astraladhesives.com">
             <span>Email</span>
-            trade@bondtite.in
+            customercare@astraladhesives.com
           </a>
-          <a href="tel:1800000000">
+          <a href="tel:+917311103331">
             <span>Trade desk</span>
-            1800 XXX XXXX
-          </a>
-          <a href="#products">
-            <span>Find a dealer</span>
-            9,500+ locations
+            +91-7311103331
           </a>
           <a href="mailto:dealer@bondtite.in">
             <span>Become a dealer</span>

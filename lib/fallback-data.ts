@@ -247,9 +247,9 @@ export const fallbackHomepageData: HomepageData = {
     }
   ],
   stats: [
-    { value: "28", suffix: "+", label: "Years" },
-    { value: "9,500", suffix: "+", label: "Retailers" },
-    { value: "270K", suffix: "+", label: "Trade users" },
+    { value: "30", suffix: "+", label: "Years" },
+    { value: "9,500", suffix: "+", label: "Employees" },
+    { value: "2.7 lakh", suffix: "+", label: "Dealers" },
     { value: "27", label: "Products" }
   ],
   faqs: [

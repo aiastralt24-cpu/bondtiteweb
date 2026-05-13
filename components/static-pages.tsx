@@ -66,13 +66,13 @@ export function ContactPage() {
             </p>
           </div>
           <div className="contact-panel">
-            <a href="mailto:trade@bondtite.in">
+            <a href="mailto:customercare@astraladhesives.com">
               <span>Email</span>
-              trade@bondtite.in
+              customercare@astraladhesives.com
             </a>
-            <a href="tel:1800000000">
+            <a href="tel:+917311103331">
               <span>Trade desk</span>
-              1800 XXX XXXX
+              +91-7311103331
             </a>
             <a href="/products">
               <span>Product help</span>
