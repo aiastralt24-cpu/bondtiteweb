@@ -199,25 +199,25 @@ export const fallbackHomepageData: HomepageData = {
       titleBefore: "Furniture and ",
       titleAccent: "joinery.",
       body:
-        "Hydra+ supports plywood lamination, modular kitchens, veneer pressing and MDF assembly where water-resistant wood bonds matter."
+        "Hydra+ for plywood, modular kitchens, veneer pressing and MDF assembly."
     },
     {
       titleBefore: "Construction and ",
       titleAccent: "infrastructure.",
       body:
-        "Multibond handles site panels, trims, fabrication details and mixed substrate assembly with a flexible rubber bond."
+        "Multibond for site panels, trims, fabrication details and mixed substrates."
     },
     {
       titleBefore: "DIY ",
       titleAccent: "segment.",
       body:
-        "Quikspray gives fast spray application for small repairs, craft work, fixtures and everyday bonding jobs."
+        "Quikspray for small repairs, craft work, fixtures and everyday bonding."
     },
     {
       titleBefore: "Auto and ",
       titleAccent: "upholstery.",
       body:
-        "Foambond is made for foam, fabric, rubber trims, headliners, panels and service workshop repairs."
+        "Foambond for foam, fabric, rubber trims, headliners and panel repairs."
     }
   ],
   resources: [

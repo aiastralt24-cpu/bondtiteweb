@@ -1463,6 +1463,7 @@ button {
   letter-spacing: -0.03em;
   line-height: 1.03;
   margin: 0 0 14px;
+  max-width: min(520px, 68%);
 }
 
 .application-card h3 span {
@@ -1475,7 +1476,7 @@ button {
   display: -webkit-box;
   line-clamp: 2;
   margin: 0 0 18px;
-  max-width: 520px;
+  max-width: min(460px, 58%);
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
