@@ -131,6 +131,25 @@ export function CategoryPage({
           </article>
         </div>
       </section>
+
+      <section className="product-detail__section section">
+        <div className="container product-detail__section-grid">
+          <div>
+            <span className="mono">Category FAQs</span>
+            <h2 className="display">
+              Common {category.shortLabel.toLowerCase()} questions.
+            </h2>
+          </div>
+          <div className="product-faq-list">
+            {category.faqs.map((faq) => (
+              <details key={faq.question}>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
