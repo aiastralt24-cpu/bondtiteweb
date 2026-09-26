@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ProductPack } from "@/components/product-pack";
 import { catalogProducts, getProductPath } from "@/lib/products";
 
-const featured = ["bondtite-hydra", "bondtite-rapid", "bondtite-strong-and-clear", "bondtite-multifix"]
+const featured = ["bondtite-hydra", "bondtite-fast-and-clear", "bondtite-super-strength", "bondtite-quick"]
   .flatMap(slug => catalogProducts.filter(product => product.slug === slug));
 
 export function FeaturedRange() {
