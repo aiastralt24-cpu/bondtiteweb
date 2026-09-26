@@ -8,10 +8,19 @@
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "test:e2e": "playwright test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "leads:admin": "node scripts/leads-admin.mjs",
+    "leads:backup": "node scripts/leads-backup.mjs",
+    "leads:backup:watch": "node scripts/leads-backup.mjs --watch",
+    "leads:restore": "node scripts/leads-restore.mjs",
+    "test:leads": "node scripts/test-leads.mjs",
+    "test:search": "node scripts/check-search.mjs"
   },
   "dependencies": {
+    "@fontsource/archivo": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.3.0",
     "@sanity/client": "^7.12.0",
+    "gsap": "^3.15.0",
     "next": "^16.0.7",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -25,5 +34,8 @@
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.7",
     "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

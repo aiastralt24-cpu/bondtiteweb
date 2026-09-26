@@ -1,3 +1,5 @@
+import { serializeJsonLd } from "@/lib/seo";
+import { withSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ApplicationDetailPage } from "@/components/application-pages";
@@ -22,16 +24,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { application: slug } = await params;
   const application = getApplicationBySlug(slug);
   if (!application) return {};
-  return {
-    title: `${application.title} ${application.accent} | Bondtite Applications`,
+  return withSeo({
+    title: application.seoTitle ?? `${application.title} ${application.accent} | Bondtite Applications`,
     description: application.seoDescription,
     alternates: { canonical: `/applications/${application.slug}` },
     openGraph: {
-      title: `${application.title} ${application.accent}`,
+      title: application.seoTitle ?? `${application.title} ${application.accent}`,
       description: application.seoDescription,
       url: `${baseUrl}/applications/${application.slug}`
     }
-  };
+  });
 }
 
 export default async function ApplicationRoute({ params }: Props) {
@@ -61,8 +63,8 @@ export default async function ApplicationRoute({ params }: Props) {
     <>
       <Header navigation={mainNavigation} cta={headerCta} />
       <ApplicationDetailPage application={application} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }} />
       <Footer footer={data.footer} />
     </>
   );

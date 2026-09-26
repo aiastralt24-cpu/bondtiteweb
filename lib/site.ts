@@ -3,14 +3,14 @@ export const baseUrl = "https://www.bondtite.in";
 export const mainNavigation = [
   { label: "Products", href: "/products" },
   { label: "Applications", href: "/applications" },
-  { label: "Resources", href: "/resources" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" }
 ];
 
-export const headerCta = { label: "Find your bond", href: "/#bond-finder" };
+export const headerCta = { label: "Product advisor", href: "/product-advisor" };
 
 export type SiteApplication = {
+  seoTitle?: string;
   slug: string;
   title: string;
   accent: string;
@@ -37,23 +37,34 @@ export const siteApplications: SiteApplication[] = [
     slug: "furniture-and-joinery",
     title: "Furniture and",
     accent: "joinery.",
-    description:
-      "Hydra+ led adhesive selection for cabinetry, modular kitchens, plywood lamination, veneer pressing and MDF assembly.",
-    seoDescription:
-      "Explore Bondtite Hydra+ adhesives for furniture, joinery, modular kitchens, plywood, MDF, veneer pressing and laminate work.",
-    imageTone: "workshop",
-    products: ["BONDTITE HYDRA+", "BONDTITE DELUXE", "BONDTITE EDGE D3"],
-    steps: ["Choose the PVA grade by water exposure.", "Prepare clean timber surfaces.", "Clamp evenly until the joint sets."],
+    seoTitle: "Wood Adhesives for Furniture, Plywood & MDF | Bondtite",
+    description: "Explore wood adhesives for furniture assembly, plywood, decorative laminates, MDF and veneer.",
+    seoDescription: "Explore Bondtite wood adhesives for furniture, plywood, laminates, MDF and veneer. Compare Hydra+, Deluxe and Edge D3, with preparation tips and FAQs.",
+    steps: [
+      "Clean dust, oil and loose material from the surfaces.",
+      "Apply an even coat without diluting the adhesive.",
+      "Press evenly and follow the product’s instructions for drying time."
+    ],
     faqs: [
       {
-        question: "Which adhesive is best for plywood furniture?",
-        answer: "A PVA adhesive is usually the best starting point. Use Hydra+ where humidity or wet-area exposure matters."
+        question: "Which Bondtite adhesive can I use for plywood furniture?",
+        answer: "Deluxe lists plywood and decorative laminate bonding among its uses. Hydra+ and Edge D3 are other woodworking options; choose according to your surfaces and moisture exposure."
       },
       {
-        question: "Can the same adhesive be used for MDF and veneer?",
-        answer: "Yes, many PVA systems cover MDF and veneer pressing, but open time and clamp pressure should match the job."
+        question: "Can Bondtite Deluxe bond MDF and veneer?",
+        answer: "Yes. Bondtite Deluxe lists MDF and veneer among its woodworking applications. Follow its surface preparation and application instructions."
+      },
+      {
+        question: "Should I add water to Bondtite wood adhesive?",
+        answer: "No. Hydra+, Deluxe and Edge D3 are intended for use without dilution."
       }
-    ]
+    ],
+    imageTone: "workshop",
+    products: [
+  "BONDTITE HYDRA+",
+  "BONDTITE DELUXE",
+  "BONDTITE EDGE D3"
+]
   },
   {
     slug: "construction-and-infrastructure",

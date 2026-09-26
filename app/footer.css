@@ -1,0 +1,64 @@
+.bond-footer { background:var(--palette-navy); padding:0; color:#fff; }
+.bond-footer__intro { display:grid; grid-template-columns:1.5fr 1fr; gap:60px; align-items:end; padding:68px 0 56px; border-bottom:1px solid #ffffff26; }
+.bond-footer__eyebrow { display:block; color:var(--palette-gold); font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; margin-bottom:24px; }
+.bond-footer__intro h2 { margin:0; font-size:clamp(48px,5.5vw,78px); line-height:1; letter-spacing:-.02em; }
+.bond-footer__intro h2 span { color:var(--palette-gold); }
+.bond-footer .bond-footer__start { justify-self:end; padding-bottom:4px; }
+.bond-footer .bond-footer__start p { margin:0 0 24px; max-width:320px; color:var(--palette-on-dark); font-size:15px; }
+.bond-footer .bond-footer__start a { display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:14px 28px; background:var(--palette-gold); color:var(--palette-navy); font-weight:600; border:1px solid var(--palette-gold); transition:background .2s; }
+.bond-footer .bond-footer__start a:hover { background:var(--palette-gold); text-decoration:none; }
+.bond-footer__directory { display:grid; grid-template-columns:1.6fr repeat(3,1fr); gap:48px; padding:52px 0; }
+.bond-footer .wordmark { display:block; width:172px; }
+.bond-footer__astral { display:block; margin-top:12px; font-size:10px; letter-spacing:.24em; color:var(--palette-gold); }
+.bond-footer .bond-footer__brand p { margin:22px 0 18px; max-width:280px; font-size:14px; }
+.bond-footer .bond-footer__finder { display:inline-block; padding:5px 0; border-bottom:1px solid var(--palette-gold); color:var(--palette-gold); }
+.bond-footer h3 { color:var(--palette-on-dark); font-size:11px; margin-bottom:18px; }
+.bond-footer nav a { padding:7px 0; color:var(--palette-on-dark); font-size:14px; }
+.bond-footer a:focus-visible { outline:2px solid var(--palette-gold); outline-offset:5px; }
+.bond-footer__contact { display:grid; grid-template-columns:1.6fr 1fr 1fr; border-top:1px solid #ffffff26; border-bottom:1px solid #ffffff26; padding:28px 0; gap:32px; }
+.bond-footer__contact>div { display:flex; flex-direction:column; gap:9px; min-width:0; }
+.bond-footer__contact>div+div { padding-left:28px; border-left:1px solid #ffffff26; }
+.bond-footer__contact span { color:var(--palette-on-dark); font-size:11px; }
+.bond-footer__contact a { color:white; font-size:15px; overflow-wrap:anywhere; width:fit-content; padding:3px 0; }
+.bond-footer__bottom { display:flex; justify-content:space-between; gap:20px; color:var(--palette-on-dark); padding:22px 0; font-size:11px; }
+@media(max-width:980px) {
+ .bond-footer__directory { grid-template-columns:1.3fr repeat(3,1fr); gap:24px; }
+ .bond-footer__intro { gap:32px; }
+ .bond-footer__contact { grid-template-columns:1.4fr 1fr 1fr; gap:20px; }
+ .bond-footer__contact>div+div { padding-left:20px; }
+}
+@media(max-width:700px) {
+ .bond-footer__intro { grid-template-columns:1fr; padding:44px 0 36px; gap:24px; }
+ .bond-footer__intro h2 { font-size:48px; }
+ .bond-footer .bond-footer__start { justify-self:start; }
+ .bond-footer__directory { grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px 24px; padding:36px 0; }
+ .bond-footer__brand { grid-column:1/-1; }
+ .bond-footer nav a { min-height:44px; }
+ .bond-footer__contact { grid-template-columns:1fr; gap:24px; }
+ .bond-footer__contact>div+div { padding-left:0; border-left:0; }
+ .bond-footer__contact a { min-height:32px; }
+ .bond-footer__bottom { flex-direction:column; gap:8px; }
+}
+
+.bond-footer .bond-footer__start {
+  width:100%; max-width:340px; padding:8px 0 8px 28px;
+  border-left:1px solid #dcc49366;
+}
+.bond-footer .bond-footer__start h3 {
+  margin:0 0 12px; color:#fff; font-family:var(--font-body);
+  font-size:22px; line-height:1.3; font-weight:600;
+  letter-spacing:-.02em; text-transform:none;
+}
+.bond-footer .bond-footer__start p {
+  margin:0 0 22px; color:var(--palette-on-dark); font-size:14px; line-height:1.7;
+}
+.bond-footer .bond-footer__start a {
+  min-height:46px; padding:12px 22px; font-size:14px; line-height:1.4;
+}
+@media(max-width:700px) {
+  .bond-footer .bond-footer__start { max-width:none; padding:4px 0 4px 20px; }
+  .bond-footer .bond-footer__start h3 { font-size:21px; }
+}
+/* Contact details sit between the invitation and the site directory. */
+.bond-footer__intro + .bond-footer__contact { border-top:0; }
+.bond-footer__bottom { border-top:1px solid #ffffff26; }

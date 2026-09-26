@@ -1,3 +1,6 @@
+import { brandId, organizationId } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/seo";
+import { withSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/footer";
@@ -10,13 +13,13 @@ import {
   getProductBySlug,
   getProductPath
 } from "@/lib/products";
-import { headerCta, mainNavigation } from "@/lib/site";
+import { baseUrl, headerCta, mainNavigation } from "@/lib/site";
 
 type Props = {
   params: Promise<{ category: string; product: string }>;
 };
 
-const baseUrl = "https://www.bondtite.in";
+
 
 export function generateStaticParams() {
   return catalogProducts.map((product) => ({
@@ -34,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  return {
+  return withSeo({
     title: `${product.name} | ${category.label} | Bondtite`,
     description: product.productSummary,
     alternates: {
@@ -47,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [product.image],
       type: "website"
     }
-  };
+  });
 }
 
 export default async function ProductDetailRoute({ params }: Props) {
@@ -87,9 +90,13 @@ export default async function ProductDetailRoute({ params }: Props) {
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${baseUrl}${getProductPath(product)}#product`,
+    url: `${baseUrl}${getProductPath(product)}`,
+    manufacturer: { "@id": organizationId },
     name: product.name,
     brand: {
       "@type": "Brand",
+      "@id": brandId,
       name: "Bondtite"
     },
     category: category.label,
@@ -119,15 +126,15 @@ export default async function ProductDetailRoute({ params }: Props) {
       <ProductDetailPage category={category} product={product} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(productJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }}
       />
       <Footer footer={data.footer} />
     </>

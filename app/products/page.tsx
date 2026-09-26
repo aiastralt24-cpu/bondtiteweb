@@ -1,14 +1,16 @@
+import { serializeJsonLd } from "@/lib/seo";
+import { withSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { ProductPage } from "@/components/product-page";
 import { getHomepageData } from "@/lib/content";
 import { productCategories } from "@/lib/products";
-import { headerCta, mainNavigation } from "@/lib/site";
+import { baseUrl, headerCta, mainNavigation } from "@/lib/site";
 
-const baseUrl = "https://www.bondtite.in";
 
-export const metadata: Metadata = {
+
+export const metadata: Metadata = withSeo({
   title: "Bondtite Products | Adhesives by Chemistry and Application",
   description:
     "Browse Bondtite PVA, epoxy, clear and specialty adhesives by substrate, site condition, cure speed and pack format.",
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
     url: `${baseUrl}/products`,
     type: "website"
   }
-};
+});
 
 export default async function Products() {
   const data = await getHomepageData();
@@ -44,7 +46,7 @@ export default async function Products() {
       <ProductPage />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(collectionJsonLd) }}
       />
       <Footer footer={data.footer} />
     </>

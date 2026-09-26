@@ -1,0 +1,31 @@
+:root { --motion-fast:160ms; --motion-state:220ms; --motion-enter:450ms; --motion-ease:cubic-bezier(.22,1,.36,1); }
+@keyframes bond-state-in { from { opacity:0; translate:0 8px; } to { opacity:1; translate:0 0; } }
+@keyframes bond-dialog-in { from { opacity:0; transform:translateY(8px) scale(.98); } to { opacity:1; transform:translateY(0) scale(1); } }
+@keyframes bond-backdrop-in { from { opacity:0; } to { opacity:1; } }
+@media(prefers-reduced-motion:no-preference) {
+ .task-advisor__questions,.task-advisor__location,.task-advisor__handoff,.enquiry-desk[role="status"],.tds-dialog [role="status"] { animation:bond-state-in var(--motion-state) var(--motion-ease); }
+ .tds-dialog[open] { animation:bond-dialog-in var(--motion-state) var(--motion-ease); }
+ .tds-dialog[open]::backdrop { animation:bond-backdrop-in 180ms ease-out; }
+ .mobile-nav { display:grid; grid-template-rows:0fr; max-height:none; transition:grid-template-rows 220ms var(--motion-ease); }
+ .mobile-nav[data-open="true"] { max-height:none; grid-template-rows:1fr; }
+ .mobile-nav__clip { overflow:hidden; min-height:0; }
+ .mobile-nav__inner { opacity:0; transform:translateY(-6px); transition:opacity 160ms ease-out,transform 220ms var(--motion-ease); }
+ .mobile-nav[data-open="true"] .mobile-nav__inner { opacity:1; transform:none; }
+}
+.range-product-card,.application-choice,.related-product { transition:border-color var(--motion-fast) ease-out,background-color var(--motion-fast) ease-out; }
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+ .product-story__related-image .product-image { transition:transform 220ms var(--motion-ease); }
+ .related-product:hover .product-image { transform:translateY(-3px); }
+ .range-product-card:hover { border-color:var(--palette-blue); }
+}
+.enquiry-desk__action:disabled,.tds-dialog button[type="submit"]:disabled { cursor:progress; opacity:.7; }
+@media(prefers-reduced-motion:reduce) {
+ html { scroll-behavior:auto!important; }
+ .mobile-nav__clip { min-height:0; }
+ .mobile-nav[data-open="true"] { max-height:none; }
+}
+@media(prefers-reduced-motion:no-preference) {
+ .range-browser__compare { animation:bond-state-in var(--motion-state) var(--motion-ease); }
+ .range-browser__dialog[open] { animation:bond-dialog-in var(--motion-state) var(--motion-ease); }
+ .range-browser__dialog[open]::backdrop { animation:bond-backdrop-in 180ms ease-out; }
+}

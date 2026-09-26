@@ -1,0 +1,25 @@
+/* Blue consistently denotes the primary action; gold is reserved for accents. */
+body .button--primary,
+.bond-home .bond-hero__actions .button,
+.bond-footer .bond-footer__start a,
+.enquiry-desk__action,
+.bond-film__play,
+.product-quick-actions a:last-child {
+  background:var(--palette-blue); color:var(--palette-white); border-color:var(--palette-blue);
+}
+body .button--primary:hover,
+.bond-home .bond-hero__actions .button:hover,
+.bond-footer .bond-footer__start a:hover,
+.enquiry-desk__action:hover,
+.bond-film__play:hover,
+.product-quick-actions a:last-child:hover {
+  background:var(--palette-navy); color:var(--palette-white); border-color:var(--palette-navy);
+}
+input,select,textarea { accent-color:var(--palette-blue); }
+.contact-studio { background:var(--palette-paper); }
+.enquiry-desk__field :is(input,select,textarea) {
+  background:var(--palette-white); border-color:var(--palette-muted);
+}
+.enquiry-desk__field :is(input,select,textarea):focus {
+  border-color:var(--palette-blue);
+}

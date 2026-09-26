@@ -8,8 +8,10 @@ export function ProductPack({
   product: Product;
   priority?: boolean;
 }) {
+  const whiteBackdrop = /^\/assets\/products\/bondtite-quick-.*\.jpg$/.test(product.image);
+
   return (
-    <span className={`product-image product-image--${product.imageTone ?? "pack"}`}>
+    <span className={`product-image product-image--${product.imageTone ?? "pack"}${whiteBackdrop ? " product-image--white-backdrop" : ""}`}>
       <Image
         src={product.image}
         alt={product.imageAlt}

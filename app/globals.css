@@ -1,19 +1,16 @@
-@import url("https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap");
-
 :root {
-  --paper: #fbfaf7;
-  --bone: #f4f1ec;
-  --line: #ddd7cc;
-  --ink: #0a1628;
-  --ink-soft: #2c3a4f;
-  --ink-quiet: #5a6878;
-  --blue: #0e4fa8;
-  --blue-deep: #082e63;
-  --amber: #c8852b;
-  --font-display: "General Sans", "Inter Tight", system-ui, sans-serif;
-  --font-body: "Inter Tight", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --paper: var(--palette-paper);
+  --bone: var(--palette-ivory);
+  --line: var(--palette-border);
+  --ink: var(--palette-ink);
+  --ink-soft: var(--palette-ink);
+  --ink-quiet: var(--palette-muted);
+  --blue: var(--palette-blue);
+  --blue-deep: var(--palette-navy);
+  --amber: var(--palette-gold);
+  --font-display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --font-body: "Archivo", Arial, sans-serif;
+  --font-mono: "Archivo", Arial, sans-serif;
   --container: 1280px;
 }
 
@@ -608,7 +605,7 @@ button {
 }
 
 .chem-card:hover {
-  background: #fffdf9;
+  background: var(--palette-paper);
   box-shadow: 0 20px 48px rgba(10, 22, 40, 0.08);
   transform: translateY(-2px);
 }
@@ -867,7 +864,7 @@ button {
 }
 
 .footer {
-  background: var(--ink);
+  background: var(--brand-night);
   color: var(--bone);
   padding: 56px 0 28px;
 }
@@ -1282,7 +1279,7 @@ button {
 }
 
 .range-card:hover {
-  background: #fffdf8;
+  background: var(--palette-paper);
   transform: translateY(-2px);
 }
 
@@ -1371,7 +1368,7 @@ button {
 .application-card {
   background:
     radial-gradient(circle at 78% 24%, rgba(14, 79, 168, 0.34), transparent 32%),
-    linear-gradient(135deg, #061424 0%, #0b1d32 58%, #07101d 100%);
+    linear-gradient(135deg, var(--palette-navy) 0%, var(--palette-navy) 58%, var(--palette-navy) 100%);
   border-radius: 14px;
   grid-column: span 6;
   min-height: 360px;
@@ -3160,7 +3157,7 @@ button {
 .dealer-hero {
   background:
     radial-gradient(circle at 82% 18%, rgba(14, 79, 168, 0.26), transparent 34%),
-    linear-gradient(135deg, #07101d 0%, #0b1d32 58%, #061424 100%);
+    linear-gradient(135deg, var(--palette-navy) 0%, var(--palette-navy) 58%, var(--palette-navy) 100%);
   color: var(--bone);
   overflow: hidden;
   padding: clamp(76px, 9vw, 124px) 0;
@@ -3366,7 +3363,7 @@ button {
   border: 1px solid var(--line);
   display: grid;
   gap: 24px;
-  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   padding: 28px;
 }
 
@@ -3574,3 +3571,5 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+.skip-content{position:fixed;left:16px;top:12px;z-index:1000;transform:translateY(-180%);padding:14px 20px;background:white;color:#10233b;border:2px solid #2854a0}.skip-content:focus{transform:translateY(0)}

@@ -1,3 +1,5 @@
+import { serializeJsonLd } from "@/lib/seo";
+import { withSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 import { ApplicationsPage } from "@/components/application-pages";
 import { Footer } from "@/components/footer";
@@ -5,12 +7,12 @@ import { Header } from "@/components/header";
 import { getHomepageData } from "@/lib/content";
 import { baseUrl, headerCta, mainNavigation, siteApplications } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSeo({
   title: "Applications | Bondtite Adhesives",
   description:
     "Browse Bondtite adhesive applications for furniture, construction, DIY, auto and upholstery workflows.",
   alternates: { canonical: "/applications" }
-};
+});
 
 export default async function ApplicationsRoute() {
   const data = await getHomepageData();
@@ -30,7 +32,7 @@ export default async function ApplicationsRoute() {
     <>
       <Header navigation={mainNavigation} cta={headerCta} />
       <ApplicationsPage />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
       <Footer footer={data.footer} />
     </>
   );

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useMemo, useState } from "react";
 import { ProductPack } from "@/components/product-pack";
 import {
@@ -55,9 +57,9 @@ export function ProductChemistry({
               Product <span className="accent">range.</span>
             </h2>
           </div>
-          <a className="range-link" href="/products">
-            View all {catalogProducts.length} →
-          </a>
+          <Link className="range-link" href="/products">
+            View all {catalogProducts.length}
+          </Link>
         </div>
 
         <div className="range-filters" aria-label="Product category filters">
@@ -91,9 +93,9 @@ export function ProductChemistry({
                 <h3>{product.name}</h3>
                 <p>{chemistry?.description ?? product.productSummary}</p>
                 <div className="range-card__footer">
-                  <a href={getProductPath(product)}>Details →</a>
+                  <a href={getProductPath(product)}>Details</a>
                   <a href={product.sourceUrl} target="_blank" rel="noreferrer">
-                    Buy ↗
+                    Buy
                   </a>
                 </div>
               </article>

@@ -1,0 +1,21 @@
+/* One neutral family for the homepage; brand colours remain the accents. */
+body:has(.bond-home) {
+  --paper:var(--palette-paper);
+  --bone:var(--palette-ivory);
+  --surface-warm:var(--palette-ivory);
+  --surface-pack:var(--palette-ivory);
+  --line:var(--palette-border);
+  background:var(--paper);
+}
+.bond-home { background:var(--paper); }
+.bond-home :is(.job-section,.job-section__intro,.job-list,.bond-film,.featured-range,.finder) { background:var(--paper); }
+.bond-home :is(.material-story,.featured-range__visual,.recommendation__image) { background:var(--surface-warm); }
+.bond-home .recommendation { background:#fff; border-color:var(--line); }
+.bond-home :is(.job-list__row,.job-list__row:first-child,.bond-film,.material-story__caption) { border-color:var(--line); }
+.bond-home .bond-hero { background:var(--brand-night); color:#fff; }
+.bond-home .bond-hero h1 span { color:var(--palette-gold); }
+.bond-home :is(.bond-hero__copy p,.bond-hero__caption) { color:var(--palette-on-dark); }
+.bond-home .bond-hero__secondary { color:#fff; border-color:#ffffff60; }
+.bond-home .bond-hero__ring { border-color:#ffffff16; }
+.bond-home .bond-hero__pack { filter:drop-shadow(0 24px 18px #0007); }
+body:has(.bond-home) .header--scrolled { background:var(--paper); border-color:var(--line); color:var(--ink); }

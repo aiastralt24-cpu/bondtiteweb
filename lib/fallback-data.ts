@@ -4,18 +4,17 @@ export const fallbackHomepageData: HomepageData = {
   navigation: [
     { label: "Products", href: "/products" },
     { label: "Applications", href: "/applications" },
-    { label: "Resources", href: "/resources" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" }
   ],
-  headerCta: { label: "Find your bond", href: "#bond-finder" },
+  headerCta: { label: "Product advisor", href: "/product-advisor" },
   hero: {
     titleBefore: "The bond that ",
     titleAccent: "holds",
     titleAfter: " India.",
     body:
       "Proudly Engineered in India for demanding trade work. Tested across humidity, heat, enclosed workshops and open sites. Built for furniture, fabrication and construction.",
-    cta: { label: "Find your bond", href: "#bond-finder" },
+    cta: { label: "Product advisor", href: "/product-advisor" },
     proof: [
       {
         title: "PVA to epoxy",
@@ -271,7 +270,7 @@ export const fallbackHomepageData: HomepageData = {
     {
       question: "Can one adhesive bond every material?",
       answer:
-        "No. Wood, metal, plastic, rubber and fabric need different chemistries. The Bond Finder points to the closest product based on substrate, environment and speed."
+        "No. Wood, metal, plastic, rubber and fabric need different chemistries. The Product advisor helps you shortlist products that list your selected surfaces."
     }
   ],
   footer: {
@@ -279,35 +278,35 @@ export const fallbackHomepageData: HomepageData = {
       {
         title: "Products",
         links: [
-          { label: "PVA adhesives", href: "#products" },
-          { label: "Epoxy adhesives", href: "#products" },
-          { label: "Cyanoacrylates", href: "#products" },
-          { label: "Specialty range", href: "#products" }
+          { label: "Wood adhesives", href: "/products/woodworking" },
+          { label: "Epoxy adhesives", href: "/products/epoxy-adhesives" },
+          { label: "Instant adhesives", href: "/products/cyanoacrylates" },
+          { label: "All products", href: "/products" }
         ]
       },
       {
         title: "Applications",
         links: [
-          { label: "Furniture", href: "#applications" },
-          { label: "Construction", href: "#applications" },
-          { label: "DIY segment", href: "#applications" },
-          { label: "Upholstery", href: "#applications" }
+          { label: "Furniture", href: "/applications/furniture-and-joinery" },
+          { label: "Construction", href: "/applications/construction-and-infrastructure" },
+          { label: "DIY segment", href: "/applications/diy-segment" },
+          { label: "Upholstery", href: "/applications/auto-and-upholstery" }
         ]
       },
       {
         title: "Resources",
         links: [
-          { label: "Technical data", href: "#resources" },
-          { label: "Certifications", href: "#resources" },
-          { label: "Bond Finder", href: "#bond-finder" }
+          { label: "Technical data", href: "/resources/technical-data-sheets" },
+          { label: "Certifications", href: "/resources/certifications-and-standards" },
+          { label: "Product advisor", href: "/product-advisor" }
         ]
       },
       {
         title: "Company",
         links: [
-          { label: "About Bondtite", href: "#legacy" },
-          { label: "Trade desk", href: "#contact" },
-          { label: "Contact", href: "#contact" }
+          { label: "About Bondtite", href: "/about" },
+          { label: "Become a dealer", href: "/become-a-dealer" },
+          { label: "Contact", href: "/contact" }
         ]
       }
     ]

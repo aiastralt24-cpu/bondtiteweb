@@ -1,58 +1,30 @@
-import { ProductPack } from "@/components/product-pack";
-import { catalogProducts } from "@/lib/products";
-import type { Application } from "@/lib/types";
+import Link from "next/link";
+import { siteApplications } from "@/lib/site";
 
-const applicationProductSlugs = [
-  "bondtite-hydra",
-  "bondtite-multibond",
-  "bondtite-quik-spray",
-  "bondtite-foambond"
+const descriptions = [
+  "Plywood, laminates, modular kitchens and furniture assembly.",
+  "Panels, trims, site fixing and mixed-material work.",
+  "Small repairs, craft projects and everyday fixes.",
+  "Foam, fabrics, interior trims and upholstery work."
 ];
 
-export function Applications({ applications }: { applications: Application[] }) {
+export function Applications() {
   return (
-    <section className="section applications" id="applications">
-      <div className="container">
-        <div className="app-head">
-          <div>
-            <span className="mono">Applications</span>
-            <h2 className="display section-title">
-              Built for every <span className="accent">application.</span>
-            </h2>
-          </div>
-          <p>
-            Trade users do not shop abstract categories. They shop the material,
-            site condition and finish they need to hold.
-          </p>
+    <section className="job-section" id="applications">
+      <div className="container job-section__grid">
+        <div className="job-section__intro">
+          <span className="mono">Start with the job</span>
+          <h2>What are you<br />working on?</h2>
+          <p>A good bond starts with the right choice. Explore the products and preparation steps for your application.</p>
+          <Link className="tertiary" href="/applications">Explore all applications</Link>
         </div>
-        <div className="application-grid">
-          {applications.map((application, index) => {
-            const product = catalogProducts.find(
-              (item) => item.slug === applicationProductSlugs[index]
-            );
+        <div className="job-list">
+          {siteApplications.map((application, index) => (
+            <a className="job-list__row" href={`/applications/${application.slug}`} key={application.slug}>
+              <div><h3>{application.title} {application.accent}</h3><p>{descriptions[index]}</p></div>
 
-            return (
-              <article
-                className={`application-card application-card--${index + 1}`}
-                key={application.titleAccent}
-              >
-                {product ? (
-                  <div className="application-card__product" aria-hidden="true">
-                    <ProductPack product={product} />
-                  </div>
-                ) : null}
-                <div className="application-card__content">
-                  <span className="mono">0{index + 1}</span>
-                  <h3>
-                    {application.titleBefore}
-                    <span>{application.titleAccent}</span>
-                  </h3>
-                  <p>{application.body}</p>
-                  <a href="#bond-finder">Match adhesive →</a>
-                </div>
-              </article>
-            );
-          })}
+            </a>
+          ))}
         </div>
       </div>
     </section>

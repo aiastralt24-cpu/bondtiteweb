@@ -1,0 +1,13 @@
+/* Nine shared interface colours. Illustration and image colours are independent. */
+:root {
+  --palette-navy: #0a2443;
+  --palette-blue: #2854a1;
+  --palette-gold: #dfb665;
+  --palette-paper: #f8f7f3;
+  --palette-ivory: #efede6;
+  --palette-white: #ffffff;
+  --palette-ink: #0a1628;
+  --palette-muted: #626975;
+  --palette-border: #dedad0;
+  --palette-on-dark: color-mix(in srgb, var(--palette-white) 76%, var(--palette-navy));
+}

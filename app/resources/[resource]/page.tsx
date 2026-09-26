@@ -1,3 +1,6 @@
+import { organizationId } from "@/lib/seo";
+import { serializeJsonLd } from "@/lib/seo";
+import { withSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/footer";
@@ -22,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { resource: slug } = await params;
   const resource = getResourceBySlug(slug);
   if (!resource) return {};
-  return {
+  return withSeo({
     title: `${resource.title} | Bondtite Resources`,
     description: resource.seoDescription,
     alternates: { canonical: `/resources/${resource.slug}` },
@@ -32,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${baseUrl}/resources/${resource.slug}`,
       type: "article"
     }
-  };
+  });
 }
 
 export default async function ResourceRoute({ params }: Props) {
@@ -53,8 +56,8 @@ export default async function ResourceRoute({ params }: Props) {
     "@type": "Article",
     headline: resource.title,
     description: resource.seoDescription,
-    author: { "@type": "Organization", name: "Bondtite" },
-    publisher: { "@type": "Organization", name: "Bondtite" },
+    author: { "@id": organizationId },
+    publisher: { "@id": organizationId },
     mainEntityOfPage: `${baseUrl}/resources/${resource.slug}`
   };
 
@@ -62,8 +65,8 @@ export default async function ResourceRoute({ params }: Props) {
     <>
       <Header navigation={mainNavigation} cta={headerCta} />
       <ResourceDetailPage resource={resource} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleJsonLd) }} />
       <Footer footer={data.footer} />
     </>
   );

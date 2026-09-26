@@ -186,8 +186,8 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "cyanoacrylates",
-    label: "Cyanoacrylates",
-    shortLabel: "Cyanoacrylate",
+    label: "Instant adhesives",
+    shortLabel: "Instant adhesives",
     title: "Adhesives for quick precision fixes.",
     accent: "instant.",
     description:
@@ -991,7 +991,7 @@ export const catalogProducts: CatalogProduct[] = sourceProducts.map((product, in
       {
         question: `Where can I verify ${product.name} details?`,
         answer:
-          "This internal page is based on the provided product workbook. The linked official product page should be treated as the source for SKU, use and technical details."
+          "Visit Astral’s official product page for product-specific uses, instructions and technical details."
       },
       {
         question: `Which category is ${product.name} listed under?`,

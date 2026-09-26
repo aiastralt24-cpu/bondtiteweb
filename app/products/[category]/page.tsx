@@ -1,3 +1,5 @@
+import { serializeJsonLd } from "@/lib/seo";
+import { withSeo } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CategoryPage } from "@/components/category-page";
@@ -9,13 +11,13 @@ import {
   getProductsByCategory,
   productCategories
 } from "@/lib/products";
-import { headerCta, mainNavigation } from "@/lib/site";
+import { baseUrl, headerCta, mainNavigation } from "@/lib/site";
 
 type Props = {
   params: Promise<{ category: string }>;
 };
 
-const baseUrl = "https://www.bondtite.in";
+
 
 export function generateStaticParams() {
   return productCategories.map((category) => ({ category: category.slug }));
@@ -29,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  return {
+  return withSeo({
     title: `${category.label} | Bondtite Products`,
     description: category.seoDescription,
     alternates: {
@@ -41,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${baseUrl}/products/${category.slug}`,
       type: "website"
     }
-  };
+  });
 }
 
 export default async function ProductCategoryRoute({ params }: Props) {
@@ -94,11 +96,11 @@ export default async function ProductCategoryRoute({ params }: Props) {
       <CategoryPage category={category} products={products} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }}
       />
       <Footer footer={data.footer} />
     </>

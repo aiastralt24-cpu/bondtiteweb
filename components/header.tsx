@@ -1,7 +1,10 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Cta, NavItem } from "@/lib/types";
 
 export function Header({
@@ -13,8 +16,11 @@ export function Header({
   cta: Cta;
   variant?: "default" | "heroOverlay";
 }) {
+  const pathname = usePathname();
+  const isCurrent = (href: string) => pathname === href || pathname.startsWith(href + "/");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
   const isHeroOverlay = variant === "heroOverlay";
 
   useEffect(() => {
@@ -43,9 +49,10 @@ export function Header({
     .join(" ");
 
   return (
-    <header className={headerClassName}>
+    <header className={headerClassName} onKeyDown={(event) => { if (event.key === "Escape" && isMenuOpen) { setIsMenuOpen(false); menuButton.current?.focus(); } }}>
+      <a className="skip-content" href="#main-content" onClick={event=>{const main=document.querySelector('main');if(main){event.preventDefault();main.id='main-content';main.tabIndex=-1;main.focus();main.scrollIntoView({block:'start',behavior:'instant'});}}}>Skip to content</a>
       <div className="container header__inner">
-        <a className="wordmark" href="/" aria-label="Bondtite by Astral home">
+        <Link className="wordmark" href="/" aria-label="Bondtite by Astral home">
           <Image
             src="/assets/bondtite-logo-positive.png"
             alt="Bondtite Adhesives"
@@ -53,12 +60,12 @@ export function Header({
             height={543}
             priority
           />
-        </a>
+        </Link>
         <nav className="nav" aria-label="Primary navigation">
-          {navigation.map((item) => (
-            <a key={item.href} href={item.href}>
+          {navigation.filter(item => !item.href.startsWith("/resources")).map((item) => (
+            <Link key={item.href} href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <a className="button button--primary" href={cta.href}>
@@ -66,6 +73,7 @@ export function Header({
         </a>
         <button
           className="menu-toggle"
+          ref={menuButton}
           type="button"
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
@@ -80,16 +88,18 @@ export function Header({
         id="mobile-navigation"
         data-open={isMenuOpen}
         aria-hidden={!isMenuOpen}
+        inert={!isMenuOpen}
       >
-        <nav className="container mobile-nav__inner" aria-label="Mobile navigation">
-          {navigation.map((item) => (
-            <a
+        <div className="mobile-nav__clip"><nav className="container mobile-nav__inner" aria-label="Mobile navigation">
+          {navigation.filter(item => !item.href.startsWith("/resources")).map((item) => (
+            <Link
+              aria-current={isCurrent(item.href) ? "page" : undefined}
               key={item.href}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <a
             className="button button--primary"
@@ -98,7 +108,7 @@ export function Header({
           >
             {cta.label}
           </a>
-        </nav>
+        </nav></div>
       </div>
     </header>
   );

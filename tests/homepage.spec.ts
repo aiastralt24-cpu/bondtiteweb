@@ -5,11 +5,8 @@ test("renders the homepage sections from fallback content", async ({ page }) => 
 
   await expect(page.getByRole("heading", { name: /The bond that holds India/i })).toBeVisible();
   await expect(page.getByRole("heading", { name: "What are you bonding?" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /Product range/i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /Built for every application/i })).toBeVisible();
-  await expect(
-    page.getByRole("heading", { level: 2, name: /Everything trade needs/i })
-  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: /A different bond/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /What are you working on/i })).toBeVisible();
 });
 
 test("updates the Bond Finder recommendation", async ({ page }) => {
@@ -19,14 +16,16 @@ test("updates the Bond Finder recommendation", async ({ page }) => {
   await page.getByRole("button", { name: "Heat exposed" }).click();
   await page.getByRole("button", { name: "Same day" }).click();
 
-  await expect(page.locator(".recommendation h3")).toHaveText("Bondtite Rapid");
+  await expect(page.locator(".recommendation h3")).toHaveText(/Bondtite Rapid/i);
 });
 
-test("FAQ rows expand with native keyboard-accessible disclosure", async ({ page }) => {
+
+
+test("homepage keeps one story and a compact range", async ({ page }) => {
   await page.goto("/");
-
-  const question = page.getByText("Are Bondtite PVA products safe indoors?");
-  await question.click();
-
-  await expect(page.getByText(/single-component and low odour/i)).toBeVisible();
+  await expect(page.locator(".range-stage")).toHaveCount(0);
+  await expect(page.locator(".featured-range__item")).toHaveCount(4);
+  await expect(page.getByRole("button", { name: "Play the film" })).toBeVisible();
+  await page.getByRole("button", { name: "Apply", exact: true }).click();
+  await expect(page.locator(".material-story__description")).toContainText("less porous surface first");
 });

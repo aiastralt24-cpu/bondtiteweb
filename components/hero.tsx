@@ -1,37 +1,25 @@
+import Link from "next/link";
 import Image from "next/image";
 import type { HeroData } from "@/lib/types";
 
 export function Hero({ hero }: { hero: HeroData }) {
   return (
-    <section className="hero" id="top">
-      <div className="container hero__grid">
-        <div>
-          <h1 className="display">
-            {hero.titleBefore}
-            <span className="accent">{hero.titleAccent}</span>
-            {hero.titleAfter}
-          </h1>
-          <p>{hero.body}</p>
-          <a className="button button--primary" href={hero.cta.href}>
-            {hero.cta.label}
-          </a>
-          <div className="hero__proof" aria-label="Bondtite proof points">
-            {hero.proof.map((item) => (
-              <span key={item.title}>
-                <strong>{item.title}</strong>
-                {item.detail}
-              </span>
-            ))}
+    <section className="bond-hero" id="top">
+      <div className="container bond-hero__grid">
+        <div className="bond-hero__copy">
+          <h1>{hero.titleBefore}<span>{hero.titleAccent}</span>{hero.titleAfter}</h1>
+          <p>From the first fix to the final finish. Adhesives for furniture, fabrication and everyday repairs.</p>
+          <div className="bond-hero__actions">
+            <a className="button button--primary" href="/product-advisor">Product advisor </a>
+            <Link className="bond-hero__secondary" href="/products">Explore the range </Link>
           </div>
         </div>
-        <div className="hero__media hero__media--ranbir">
-          <Image
-            src="/assets/campaign/ranbir-slider-image.png"
-            alt="Ranbir Kapoor for Bondtite Adhesives"
-            fill
-            priority
-            sizes="(max-width: 980px) 100vw, 48vw"
-          />
+        <div className="bond-hero__stage" aria-label="Bondtite adhesive range">
+          <span className="bond-hero__ring" aria-hidden="true" />
+          <Image className="bond-hero__pack bond-hero__pack--left" src="/assets/products/bondtite-rapid-pack.png" alt="Bondtite Rapid epoxy adhesive" width={360} height={400} priority />
+          <Image className="bond-hero__pack bond-hero__pack--main" src="/assets/products/bondtite-hydra-pack.png" alt="Bondtite Hydra+ wood adhesive" width={450} height={560} priority />
+          <Image className="bond-hero__pack bond-hero__pack--right" src="/assets/products/bondtite-multifix-pack.png" alt="Bondtite Multifix construction adhesive" width={170} height={470} priority />
+          <div className="bond-hero__caption"><span>Different materials. One Bondtite family.</span><span>BY ASTRAL</span></div>
         </div>
       </div>
     </section>

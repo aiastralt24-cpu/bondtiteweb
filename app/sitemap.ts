@@ -3,7 +3,7 @@ import { catalogProducts, getProductPath, productCategories } from "@/lib/produc
 import { baseUrl, siteApplications, siteResources } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/products", "/applications", "/resources", "/about", "/contact", "/become-a-dealer"];
+  const staticRoutes = ["", "/products", "/applications", "/resources", "/about", "/contact", "/become-a-dealer", "/product-advisor", "/privacy-policy", "/cookie-policy", "/terms-and-conditions"];
   const categoryRoutes = productCategories.map((category) => `/products/${category.slug}`);
   const productRoutes = catalogProducts.map((product) => getProductPath(product));
   const applicationRoutes = siteApplications.map((application) => `/applications/${application.slug}`);
@@ -16,9 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...applicationRoutes,
     ...resourceRoutes
   ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route === "/products" ? 0.9 : 0.7
+    url: `${baseUrl}${route}`
   }));
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ProductPack } from "@/components/product-pack";
 import { catalogProducts } from "@/lib/products";
 
@@ -13,7 +14,7 @@ const dealerProducts = [
 const benefits = [
   {
     label: "Range depth",
-    title: "27 product lines",
+    title: "A range for everyday trade",
     body: "Woodworking, rubber, sprayable, epoxy, stone care and quick-fix formats for daily trade demand."
   },
   {
@@ -30,18 +31,18 @@ const benefits = [
 
 const steps = [
   "Share your location, business type and current adhesive category mix.",
-  "Our team reviews distribution fit, product range and expected trade demand.",
-  "You receive range guidance, commercial next steps and onboarding support."
+  "Discuss distribution fit, the relevant product range and local demand with the team.",
+  "Ask about commercial terms, product availability and the next steps for your business."
 ];
 
 export function DealerPage() {
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
       <section className="dealer-hero">
         <div className="container dealer-hero__grid">
           <div>
             <nav className="breadcrumbs" aria-label="Breadcrumb">
-              <a href="/">Home</a>
+              <Link href="/">Home</Link>
               <span>Become a dealer</span>
             </nav>
             <span className="mono">Partner with Bondtite</span>
@@ -55,7 +56,7 @@ export function DealerPage() {
             <div className="dealer-hero__actions">
               <a
                 className="button button--primary"
-                href="mailto:customercare@astraladhesives.com?subject=Bondtite dealer enquiry"
+                href="/contact?request=dealer"
               >
                 Apply by email
               </a>
@@ -65,20 +66,11 @@ export function DealerPage() {
             </div>
           </div>
           <div className="dealer-hero__panel">
-            <span className="mono">Network proof</span>
-            <div className="dealer-metrics" aria-label="Bondtite network highlights">
-              <div>
-                <strong>2.7 lakh+</strong>
-                <span>Dealers</span>
-              </div>
-              <div>
-                <strong>30+</strong>
-                <span>Years</span>
-              </div>
-              <div>
-                <strong>27</strong>
-                <span>Products</span>
-              </div>
+            <span className="mono">The Bondtite partnership</span>
+            <div className="dealer-overview">
+              <p><strong>Products for the job</strong>Explore woodworking, epoxy, construction and repair adhesives.</p>
+              <p><strong>Practical guidance</strong>Discuss product selection and request current technical documents.</p>
+              <p><strong>Let’s talk trade</strong>Share your location and business details with Astral customer care.</p>
             </div>
           </div>
         </div>
@@ -142,9 +134,8 @@ export function DealerPage() {
             </h2>
           </div>
           <ol>
-            {steps.map((step, index) => (
+            {steps.map((step) => (
               <li key={step}>
-                <span>0{index + 1}</span>
                 <p>{step}</p>
               </li>
             ))}
@@ -167,7 +158,7 @@ export function DealerPage() {
           <div>
             <a
               className="button button--primary"
-              href="mailto:customercare@astraladhesives.com?subject=Bondtite dealer enquiry"
+              href="/contact?request=dealer"
             >
               customercare@astraladhesives.com
             </a>
