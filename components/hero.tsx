@@ -16,9 +16,9 @@ export function Hero({ hero }: { hero: HeroData }) {
         </div>
         <div className="bond-hero__stage" aria-label="Bondtite adhesive range">
           <span className="bond-hero__ring" aria-hidden="true" />
-          <Image className="bond-hero__pack bond-hero__pack--left" src="/assets/products/bondtite-rapid-pack.png" alt="Bondtite Rapid epoxy adhesive" width={360} height={400} priority />
+          <Image className="bond-hero__pack bond-hero__pack--left" src="/assets/products/bondtite-fast-and-clear-pack.png" alt="Bondtite Fast and Clear epoxy adhesive" width={1600} height={935} priority />
           <Image className="bond-hero__pack bond-hero__pack--main" src="/assets/products/bondtite-hydra-pack.png" alt="Bondtite Hydra+ wood adhesive" width={450} height={560} priority />
-          <Image className="bond-hero__pack bond-hero__pack--right" src="/assets/products/bondtite-multifix-pack.png" alt="Bondtite Multifix construction adhesive" width={170} height={470} priority />
+          <Image className="bond-hero__pack bond-hero__pack--right" src="/assets/products/bondtite-quick.png" alt="Bondtite Quick instant adhesive" width={490} height={490} priority />
           <div className="bond-hero__caption"><span>Different materials. One Bondtite family.</span><span>BY ASTRAL</span></div>
         </div>
       </div>
