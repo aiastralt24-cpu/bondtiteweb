@@ -48,7 +48,7 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
     storage: "Store dry in original, properly closed containers at 2-40°C."
   },
   "bondtite-fast-and-clear": {
-    summary: "BONDITE FAST AND CLEAR is a 5-minute high-strength, two-component transparent epoxy adhesive system.",
+    summary: "BONDTITE FAST AND CLEAR is a 5-minute high-strength, two-component transparent epoxy adhesive system.",
     packTypes: "3 gm 6 gm 13 gm 36 gm 90 gm 180 gm 270 gm 450 gm 1 kg",
     steps: ["Surfaces must be clean, dry and free from oil, wax and paint.", "Roughen smooth surfaces and pre-fit parts to be joined.", "Squeeze equal volumes from part-A and part-B, mix for one minute, apply and clamp for 20 minutes."],
     features: ["5-minute transparent epoxy system", "High strength", "Two-component adhesive", "Full strength achieved in 4 hour"],
@@ -106,7 +106,7 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
   "bondtite-quik-spray": {
     summary: "BONDTITE QUIK SPRAY is a sprayable rubber-based adhesive that gives superior bonding over a variety of surfaces where immediate bond strength with optimum heat resistance is required.",
     packTypes: "200 ml 500 ml",
-    steps: ["Shake container well and ensure surfaces are clean.", "Hold the can 8-10 cm away at a 90 degree angle.", "Spray evenly, leave surfaces for 1-2 minutes or until dry to touch, then apply even pressure."],
+    steps: ["Shake container well and ensure surfaces are clean.", "Hold the can 8-10 cm away at a 90 degree angle.", "Spray evenly with 50% overlap, leave surfaces for 1-2 minutes or until dry to touch, then apply even pressure."],
     features: ["Bonds foam, metal, wood and other surfaces", "Fast bonding", "No odour", "High temperature resistant up to 120°C", "Easy-to-use"],
     shelfLife: "Shelf Life: Up to 1 Years",
     storage: "Store dry in original, properly closed containers at 2-40°C."
@@ -120,7 +120,7 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
     storage: "Store dry in original, properly closed containers at 2-40°C."
   },
   "bondtite-strong-and-clear": {
-    summary: "BONDITE STRONG AND CLEAR is a 30-minute high-strength, two-component transparent epoxy adhesive system.",
+    summary: "BONDTITE STRONG AND CLEAR is a 30-minute high-strength, two-component transparent epoxy adhesive system.",
     packTypes: "450 gm 1 kg 1.8 kg",
     steps: ["Surfaces must be clean, dry and free from oil, wax and paint.", "Wash glass and ceramic surfaces with soap and water, rinse and let dry.", "Squeeze equal volume from part-A and part-B, mix for one minute, apply and clamp for 24 hours."],
     features: ["30-minute setting time", "15 minutes pot life", "Odourless", "Colourless and transparent bond line", "Suitable for glass, marble, granite, metal and automobile repair applications"],

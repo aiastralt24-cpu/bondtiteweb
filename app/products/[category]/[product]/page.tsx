@@ -1,3 +1,4 @@
+import {productSpecifications} from '@/lib/product-specifications';
 import { brandId, organizationId } from "@/lib/seo";
 import { serializeJsonLd } from "@/lib/seo";
 import { withSeo } from "@/lib/seo";
@@ -102,7 +103,8 @@ export default async function ProductDetailRoute({ params }: Props) {
     category: category.label,
     image: `${baseUrl}${product.image}`,
     description: product.productSummary,
-    material: product.substrates.join(", ")
+    ...(product.substrates.length ? {material: product.substrates.join(", ")} : {}),
+    additionalProperty: [{"@type":"PropertyValue",name:"Adhesive chemistry",value:product.chemistry}, ...(productSpecifications[product.slug]?.rows ?? []).map(([name,value])=>({"@type":"PropertyValue",name,value}))]
   };
   const faqJsonLd = {
     "@context": "https://schema.org",

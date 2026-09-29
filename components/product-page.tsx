@@ -1,20 +1,22 @@
 "use client";
+import {matchesMaterial,matchesProductQuery} from '@/lib/product-search';
+
 
 import Link from "next/link";
 import {useStateMotion} from '@/components/use-state-motion';
 import { useMemo, useRef, useState } from "react";
 import { ProductPack } from "@/components/product-pack";
-import { catalogProducts, getProductPath, productCategories } from "@/lib/products";
+import { catalogProducts, getProductPath, productCategories, productMatchesCategory } from "@/lib/products";
 import { formatPackSizes, productCardDescription } from "@/lib/product-format";
 
 const categoryLabels: Record<string, string> = {
-  "synthetic-rubber-adhesives": "Rubber adhesives", "industrial-adhesives": "Industrial adhesives",
+  "acrylic-adhesives":"Acrylic adhesives", "synthetic-rubber-adhesives": "Rubber adhesives", "industrial-adhesives": "Industrial adhesives",
   woodworking: "Wood adhesives", "epoxy-adhesives": "Epoxy adhesives",
   cyanoacrylates: "Instant adhesives", "stone-care": "Stone care",
   "sprayable-rubber-adhesives": "Spray adhesives"
 };
 const applications = [...new Set(catalogProducts.flatMap(product => product.applications))].sort();
-const materials = ["All materials", "Wood", "Metal", "Plastic", "Foam"];
+const materials = ["All materials", "Wood", "Laminate", "Metal", "Plastic", "Glass", "Stone", "Ceramic", "Foam", "Leather", "Rubber"];
 
 export function ProductPage() {
   const [category, setCategory] = useState("all");
@@ -25,10 +27,10 @@ export function ProductPage() {
   const [compare, setCompare] = useState<string[]>([]);
   const dialog = useRef<HTMLDialogElement>(null);
   const visibleProducts = useMemo(() => catalogProducts
-    .filter(product => category === "all" || product.categorySlug === category)
+    .filter(product => category === "all" || productMatchesCategory(product,category))
     .filter(product => application === "all" || product.applications.includes(application))
-    .filter(product => material === "All materials" || product.substrates.some(item => item.toLowerCase().includes(material.toLowerCase())))
-    .filter(product => `${product.name} ${product.chemistry} ${product.reason} ${product.applications.join(" ")} ${product.substrates.join(" ")}`.toLowerCase().includes(query.trim().toLowerCase()))
+    .filter(product => material === "All materials" || matchesMaterial(product,material))
+    .filter(product => matchesProductQuery(product,query))
     .sort((a, b) => sort === "A-Z" ? a.name.localeCompare(b.name) : a.rank - b.rank), [category, application, material, query, sort]);
   const resultsMotion=useRef<HTMLDivElement>(null);
   useStateMotion(resultsMotion,visibleProducts.map(product=>product.id).join('|'));

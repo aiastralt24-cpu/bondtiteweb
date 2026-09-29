@@ -1,3 +1,4 @@
+import {productSpecifications} from '@/lib/product-specifications';
 import { ProductPanelStack } from "@/components/product-panel-stack";
 import { ProductSectionNav } from "@/components/product-section-nav";
 import { hasDownloadableTds } from "@/lib/documents";
@@ -15,12 +16,15 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
   const relatedSummaries: Record<string, string> = { "bondtite-deluxe": "Water-resistant PVA for everyday woodwork.", "bondtite-aqua": "Waterproof PVA for furniture and joinery.", "bondtite-edge-d3": "D3 wood adhesive with cross-linked technology." };
   const related = catalogProducts.filter(item => item.categorySlug === product.categorySlug && item.id !== product.id).slice(0, 3);
   const features = hydra ? ["Fast-setting", "Anti-bubble cross-linked technology", "Formaldehyde-free"] : product.features;
+  const technical = productSpecifications[product.slug];
   const specs = [
     ["Category", category.label],
+    ["Adhesive chemistry", product.chemistry],
+    ["Setting time", product.settingTime],
     ...(hydra ? [["Adhesive type", "Single-component PVA emulsion"]] : []),
     ...(!hydra ? [["Pack sizes", formatPackSizes(product.packTypes)]] : []),
     ["Water resistance", hydra ? "EN 204, class D3" : product.waterRating],
-    ...(hydra ? [["Physical state", "White, viscous liquid"], ["Viscosity at 30°C", "180–240 poise · ASTM D 2196-05"], ["Specific gravity at 25°C", "1.05–1.07 g/cc · ASTM D 1475"], ["pH", "2.5–3.5"]] : []),
+    ...(technical?.rows ?? []),
     ["Open time", product.openTime], ["Clamp time", product.clampTime],
     ["Shelf life", product.shelfLife?.replace(/^Shelf Life:\s*/i, "")],
     ["Storage", hydra ? "Keep dry in sealed original containers at 2–40°C. Reseal partially used containers or pouches immediately." : product.storage]
@@ -52,7 +56,7 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
         <span className="mono">Bondtite · {hydra ? "Wood adhesive" : category.label}</span>
         <h1 id="product-title">{hydra ? <>Hydra<span>+</span></> : product.label}</h1>
         <p className="product-split__intro">{hydra ? "Fast-setting PVA wood adhesive with anti-bubble, cross-linked technology for furniture and joinery." : productCardDescription(product)}</p>
-        <div className="hydra-actions"><Link className="button button--primary" href={enquiry}>Enquire about this product</Link>{hasDownloadableTds(product.slug) ? <TdsDownload productName="Hydra+" productSlug={product.slug} /> : <Link className="button hydra-tds-button" href={`${enquiry}&request=technical-documentation`}>Request TDS / SDS</Link>}</div>
+        <div className="hydra-actions"><Link className="button button--primary" href={enquiry}>Enquire about this product</Link>{hasDownloadableTds(product.slug) ? <TdsDownload productName={product.label} productSlug={product.slug} /> : <Link className="button hydra-tds-button" href={`${enquiry}&request=technical-documentation`}>Request TDS / SDS</Link>}</div>
       </div>
     </section>
     <ProductSectionNav sections={[
@@ -78,7 +82,7 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
               {hydra ? <svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"><path d={["M3 10h26v17H3V10Zm0 6h26M12 10v17M20 10v17M6 13h3m6 7h2m6 0h2M6 10V6h7v4M18 10V5a3 3 0 0 1 6 0v2","M5 16h22l-2 11H7L5 16Zm5 0v-5h12v5M12 8V5h8v3M11 22h10M10 27v2m12-2v2","M4 5h24v12H4V5Zm4 12v10m8-10v10m8-10v10M3 27h26M7 21h18M9 5v12m14-12V5"][index]}/></svg> : <span className="product-use-case-number" aria-hidden="true">{String(index+1).padStart(2,"0")}</span>}
               <h3>{hydra ? ["Kitchen","Bathroom","Balcony"][index] : use}</h3>{hydra&&<span>{use}</span>}
             </li>)}</ul>
-            <div className="hydra-compatible"><h3>Compatible materials</h3><ul>{materials.map(material=><li key={material}>{material}</li>)}</ul></div>
+            {materials.length > 0 && <div className="hydra-compatible"><h3>Compatible materials</h3><ul>{materials.map(material=><li key={material}>{material}</li>)}</ul></div>}
             {hydra&&<Link className="hydra-application-link" href="/applications/furniture-and-joinery"><span>Explore furniture & joinery</span></Link>}
           </div>
         </section>
@@ -92,7 +96,8 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
             <table className="hydra-spec-table"><caption className="hydra-visually-hidden">{product.label} product specifications</caption><thead><tr><th scope="col">Property</th><th scope="col">Specification</th></tr></thead><tbody>{specs.filter(([label])=>label!=="Storage").map(([label,value])=><tr key={label}><th scope="row">{label}</th><td>{value}</td></tr>)}</tbody></table>
             <div className="hydra-technical-notes">
               {storage&&<details><summary>Storage & handling</summary><div><p>{storage}</p></div></details>}
-              <details><summary>Sources & specification notes</summary><div>{hydra&&<><p>Physical properties: Astral TDS v02, 1 April 2024. Pack sizes and storage guidance: Astral product page.</p><p>The TDS lists different pack sizes and 5–25°C unopened shelf-life conditions; confirm current requirements with Astral before specification.</p></>}<a href={product.sourceUrl} target="_blank" rel="noreferrer">View Astral’s product information</a></div></details>
+              {product.limitations.length > 0 && <div><h3>Application notes</h3>{product.limitations.map(note => <p key={note}>{note}</p>)}</div>}
+              <details><summary>Sources & specification notes</summary><div>{technical && <p>{technical.revision}. Technical properties include the stated test conditions. Pack sizes and application instructions follow the Astral product page unless listed only in the TDS.</p>}{hydra&&<><p>Physical properties: Astral TDS v02, 1 April 2024. Pack sizes and storage guidance: Astral product page.</p><p>The TDS lists different pack sizes and 5–25°C unopened shelf-life conditions; confirm current requirements with Astral before specification.</p></>}<a href={product.sourceUrl} target="_blank" rel="noreferrer">View Astral’s product information</a></div></details>
             </div>
           </div>
         </section>

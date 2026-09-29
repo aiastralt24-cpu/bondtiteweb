@@ -36,6 +36,21 @@ try{
   const pdf=await request('/api/tds',tds,{'Idempotency-Key':randomUUID()});assert.equal(pdf.status,200);assert.equal(Buffer.from(await pdf.arrayBuffer()).subarray(0,4).toString(),'%PDF');
   assert.equal(database.prepare("SELECT count(*) AS n FROM leads WHERE source='tds'").get().n,1);
   const tdsOrigin=database.prepare("SELECT source_page,form_name FROM leads WHERE source='tds'").get();assert.equal(tdsOrigin.source_page,origin+'/products/woodworking/bondtite-hydra');assert.equal(tdsOrigin.form_name,'TDS download form');
+  // Every registered document saves its own product and returns its own PDF.
+  const manifest=readFileSync('lib/documents.ts','utf8');
+  const docs=JSON.parse(manifest.slice(manifest.indexOf('= ')+2,manifest.indexOf(';\nexport')));
+  let documentIndex=0;
+  for(const [slug,document] of Object.entries(docs)) {
+    const mobile=String(9876500000+documentIndex++);
+    const result=await request('/api/tds',{...tds,mobile,product:slug,source_page:origin+'/products/test/'+slug},{'Idempotency-Key':randomUUID()});
+    assert.equal(result.status,200,slug);
+    assert.deepEqual(Buffer.from(await result.arrayBuffer()),readFileSync(path.join('private/documents',document.file)),slug+' exact PDF');
+    assert.ok(result.headers.get('content-disposition').includes(document.file));
+    const lead=database.prepare('SELECT product,source_page FROM leads WHERE mobile=?').get(mobile);
+    assert.equal(lead.source_page,origin+'/products/test/'+slug);
+    assert.ok(lead.product && (slug==='bondtite-hydra'||lead.product!=='Hydra+'));
+  }
+  for(const product of ['__proto__','constructor','../../secret','unlisted'])assert.equal((await request('/api/tds',{...tds,product},{'Idempotency-Key':randomUUID()})).status,400);
   assert.equal((await fetch(origin+'/api/admin/leads/export')).status,401);
   const login=await fetch(origin+'/api/admin/login',{method:'POST',redirect:'manual',headers:{Origin:origin,'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({username:'tester',password})});
   assert.equal(login.status,303);const cookie=login.headers.get('set-cookie').split(';')[0];

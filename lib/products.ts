@@ -1,3 +1,4 @@
+import { catalogueFacts } from './catalogue-facts';
 import { additionalProducts } from "@/lib/additional-products";
 import type { Product } from "@/lib/types";
 import { verifiedAstralDetails } from "@/lib/verified-astral";
@@ -9,7 +10,8 @@ export type ProductCategorySlug =
   | "stone-care"
   | "cyanoacrylates"
   | "synthetic-rubber-adhesives"
-  | "industrial-adhesives";
+  | "industrial-adhesives"
+  | "acrylic-adhesives";
 
 export type ProductCategory = {
   slug: ProductCategorySlug;
@@ -32,6 +34,8 @@ export type CatalogProduct = Product & {
   condition: string;
   cure: string;
   openTime: string;
+  settingTime?: string;
+  limitations: string[];
   clampTime: string;
   waterRating: string;
   packTypes: string;
@@ -46,6 +50,9 @@ export type CatalogProduct = Product & {
 };
 
 export type ProductSeed = {
+  chemistry?: string;
+  settingTime?: string;
+  limitations?: string[];
   faqs?: Array<{ question: string; answer: string }>;
   name: string;
   categorySlug: ProductCategorySlug;
@@ -67,6 +74,7 @@ export type ProductSeed = {
 };
 
 export const productCategories: ProductCategory[] = [
+{slug:"acrylic-adhesives",label:"Acrylic adhesives",shortLabel:"Acrylic adhesives",title:"Fast-grab acrylic bonding.",accent:"acrylic.",description:"Two-component acrylic adhesive for rigid plastics, metals and mixed-material assembly.",seoDescription:"Explore Bondtite Uniweld acrylic adhesive for fast initial grab and vibration-resistant bonding.",bestFor:["Metal","Rigid plastics","Glass"],faqs:[{question:"What type of adhesive is Uniweld?",answer:"Bondtite Uniweld is a two-component acrylic adhesive."}]},
 {"slug":"synthetic-rubber-adhesives","label":"Synthetic rubber adhesives","shortLabel":"Rubber adhesives","title":"Contact adhesives for laminate work.","accent":"laminates.","description":"Explore rubber-based contact adhesives for decorative laminate bonding.","seoDescription":"Explore Bondtite Clearbond rubber-based contact adhesive for decorative laminates and vertical lamination.","bestFor":["Plywood","Decorative laminates"],"faqs":[{"question":"What is Clearbond used for?","answer":"Clearbond is used to bond decorative laminate to plywood, including vertical lamination."}]},
 {"slug":"industrial-adhesives","label":"Industrial adhesives","shortLabel":"Industrial adhesives","title":"Bonding systems for industrial applications.","accent":"industrial work.","description":"Epoxy and MMA systems for structural bonding, flooring, potting and concrete repair.","seoDescription":"Explore Bondtite industrial epoxy and MMA systems for structural bonding, flooring, electrical potting and concrete injection grouting.","bestFor":["Metal","Composites","Concrete"],"faqs":[{"question":"Which industrial systems are available?","answer":"The range includes AST epoxy bonding systems, MMA 999A / MMA 999B, and AST FR4202 / AST FH4102 injection grout."},{"question":"Where can I get mixing and curing instructions?","answer":"Request the current technical data sheet for your exact resin and hardener combination from the Bondtite team."}]},
   {
@@ -76,7 +84,7 @@ export const productCategories: ProductCategory[] = [
     title: "Adhesives for furniture, boards and joinery.",
     accent: "woodworking.",
     description:
-      "Bondtite woodworking products listed in the source workbook for wood, boards, laminates, WPC, foam and construction fixing workflows.",
+      "Adhesives for furniture, boards, laminates, WPC, foam and construction fixing.",
     seoDescription:
       "Explore Bondtite woodworking adhesives from the official product list, including Deluxe, Aqua, Hydra+, Edge D3, Heatbond, Foambond, Multibond and Multifix.",
     bestFor: ["Wood", "Plywood", "MDF", "Laminates"],
@@ -728,7 +736,7 @@ const productFaqBank: Record<string, CatalogProduct["faqs"]> = {
     {
       question: "What are the key benefits of Bondtite Pro?",
       answer:
-        "Bondtite Pro offers high impact resistance, easy spreadability, excellent UV and all-weather resistance and hybrid technology."
+        "Bondtite Pro offers high impact resistance, easy spreadability, excellent UV and all-weather resistance and a two-component epoxy formulation."
     },
     {
       question: "How long should Bondtite Pro be clamped?",
@@ -872,7 +880,7 @@ const productFaqBank: Record<string, CatalogProduct["faqs"]> = {
     {
       question: "What is Bondtite Quick Art & Craft used for?",
       answer:
-        "Bondtite Quick Art & Craft is used for art, craft, DIY, hobby, school and decorative projects on porous and non-porous craft surfaces."
+        "Bondtite Quick Art & Craft is used for art, craft, DIY, hobby and decorative projects on porous and non-porous craft surfaces."
     },
     {
       question: "Is Bondtite Quick Art & Craft non-drip?",
@@ -885,9 +893,9 @@ const productFaqBank: Record<string, CatalogProduct["faqs"]> = {
         "Yes. It allows short repositioning within about 20 seconds, which helps with craft alignment."
     },
     {
-      question: "Is Bondtite Quick Art & Craft suitable for school projects?",
+      question: "Is Bondtite Quick Art & Craft suitable for detailed craft projects?",
       answer:
-        "Yes. It is suitable for school, hobby and DIY craft projects where clean application and fast bonding are needed."
+        "Yes. It is suitable for hobby and DIY craft projects where clean application and fast bonding are needed."
     }
   ],
   "bondtite-quick-ultra-glue-brush-and-nozzle": [
@@ -956,9 +964,11 @@ function fallbackImage(categorySlug: ProductCategorySlug) {
   return "/assets/products/bondtite-hydra-square.png";
 }
 
-export const catalogProducts: CatalogProduct[] = sourceProducts.map((product, index) => {
+export const catalogProducts: CatalogProduct[] = sourceProducts.map((seed, index) => {
+  const facts = catalogueFacts[slugify(seed.name)] ?? {};
+  const product = {...seed, ...facts};
   const slug = slugify(product.name);
-  const verified = verifiedAstralDetails[slugify(product.name)] ?? {};
+  const verified = {...verifiedAstralDetails[slugify(product.name)], ...facts};
   const category = categoryLabel(product.categorySlug);
   const substrates = product.substrates ?? productCategories.find((item) => item.slug === product.categorySlug)?.bestFor ?? [];
   return {
@@ -966,7 +976,7 @@ export const catalogProducts: CatalogProduct[] = sourceProducts.map((product, in
     slug,
     categorySlug: product.categorySlug,
     name: product.name,
-    chemistry: category,
+    chemistry: product.chemistry ?? category,
     label: product.name.replace(/^BONDTITE\s+/i, "").replace(/^Bondtite\s+/i, ""),
     meta: product.meta ?? category,
     image: product.image ?? fallbackImage(product.categorySlug),
@@ -980,7 +990,9 @@ export const catalogProducts: CatalogProduct[] = sourceProducts.map((product, in
     substrates,
     condition: "See official product page",
     cure: "Refer TDS",
-    openTime: product.openTime ?? "See official page",
+    openTime: slug === "bondtite-rapid" ? "See official page" : product.openTime ?? "See official page",
+    settingTime: product.settingTime,
+    limitations: product.limitations ?? [],
     clampTime: product.clampTime ?? "See official page",
     waterRating: product.waterRating ?? "As per product TDS",
     packTypes: verified.packTypes ?? product.packTypes ?? "See official page",
@@ -1012,8 +1024,11 @@ export function getCategoryBySlug(slug: string) {
   return productCategories.find((category) => category.slug === slug);
 }
 
+export function productMatchesCategory(product: CatalogProduct, slug: string) {
+  return product.categorySlug === slug || (slug === 'epoxy-adhesives' && product.chemistry === 'Epoxy') || (slug === 'synthetic-rubber-adhesives' && product.chemistry === 'Synthetic rubber');
+}
 export function getProductsByCategory(slug: string) {
-  return catalogProducts.filter((product) => product.categorySlug === slug);
+  return catalogProducts.filter(product => productMatchesCategory(product, slug));
 }
 
 export function getProductBySlug(categorySlug: string, productSlug: string) {
