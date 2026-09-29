@@ -130,22 +130,37 @@
 .application-guide-hero__caption strong { max-width:65%; overflow-wrap:anywhere; }
 .application-guide-product h3 { overflow-wrap:anywhere; }
 
-/* Compact homepage applications grid. */
-.application-bento { padding:72px 0; background:var(--paper); }
-.application-bento__header { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; margin-bottom:30px; }
+/* Editorial application bento: material imagery, clear links, compact hierarchy. */
+.application-bento { padding:64px 0; background:var(--paper); }
+.application-bento__header { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; margin-bottom:28px; }
 .application-bento__header h2 { font-size:clamp(38px,4vw,56px); line-height:1.08; letter-spacing:-.02em; margin:14px 0; }
 .application-bento__header p { margin:0; font-size:16px; color:var(--ink-quiet); }
 .application-bento__all { flex-shrink:0; display:inline-flex; align-items:center; min-height:44px; font-size:14px; color:var(--blue); font-weight:600; text-decoration:underline; text-underline-offset:7px; }
-.application-bento__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
-.application-bento__card { display:grid; grid-template-columns:minmax(0,1fr) 88px; align-items:center; gap:18px; padding:26px; min-height:218px; border:1px solid var(--line); background:var(--palette-ivory); transition:border-color .2s,transform .2s; }
-.application-bento__copy { display:flex; flex-direction:column; height:100%; min-width:0; }
-.application-bento__card h3 { font-size:30px; line-height:1.12; letter-spacing:-.015em; margin:0 0 12px; }
-.application-bento__card p { font-size:13px; line-height:1.6; color:var(--ink-quiet); margin:0 0 22px; }
-.application-bento__action { font-size:12px; font-weight:600; color:var(--blue); margin-top:auto; }
-.application-bento__pack { display:grid; place-items:center; }
-.application-bento__pack .product-image { width:88px; height:130px; }
-.application-bento__card:hover { border-color:var(--blue); transform:translateY(-3px); }
-.application-bento__card:focus-visible { outline:2px solid var(--blue); outline-offset:4px; }
-@media(max-width:1050px) { .application-bento__grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media(max-width:600px) { .application-bento { padding:44px 0; }.application-bento__header { flex-direction:column; align-items:flex-start; gap:14px; margin-bottom:24px; }.application-bento__header h2 { font-size:40px; }.application-bento__header p { font-size:14px; }.application-bento__grid { grid-template-columns:1fr; gap:12px; }.application-bento__card { min-height:172px; padding:22px; grid-template-columns:minmax(0,1fr) 76px; gap:16px; }.application-bento__card h3 { font-size:28px; }.application-bento__pack .product-image { width:76px; height:112px; }.application-bento__card p { margin-bottom:16px; } }
-@media(prefers-reduced-motion:reduce) { .application-bento__card { transition:none; }.application-bento__card:hover { transform:none; } }
+.application-bento__grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); grid-template-rows:180px 180px 200px; gap:16px; }
+.application-bento__card { position:relative; isolation:isolate; overflow:hidden; grid-column:span 2; background:var(--palette-ivory); border:1px solid var(--line); text-decoration:none; }
+.application-bento__copy { position:relative; z-index:2; display:flex; flex-direction:column; justify-content:flex-end; height:100%; padding:26px; width:66%; }
+.application-bento__index { font-size:10px; color:var(--blue); font-weight:600; letter-spacing:.12em; margin-bottom:auto; }
+.application-bento__card h3 { font-size:30px; line-height:1.08; letter-spacing:-.015em; margin:12px 0 10px; text-wrap:balance; }
+.application-bento__card p { font-size:12px; line-height:1.65; color:var(--ink-quiet); margin:0; max-width:32ch; }
+.application-bento__scene { position:absolute; z-index:0; inset:0 0 0 48%; overflow:hidden; }
+.application-bento__scene img { object-fit:cover; transition:transform 650ms cubic-bezier(.2,.7,.2,1); }
+.application-bento__scene::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,var(--palette-ivory),transparent 42%); }
+.application-bento__card:hover .application-bento__scene img { transform:scale(1.045); }
+.application-bento__card:focus-visible { outline:3px solid var(--blue); outline-offset:4px; }
+.application-bento__card--furniture { grid-column:span 3; grid-row:span 2; }
+.application-bento__card--furniture .application-bento__scene { inset:0; }
+.application-bento__card--furniture .application-bento__scene::after { background:linear-gradient(0deg,rgba(9,23,36,.88),rgba(9,23,36,.08) 85%); }
+.application-bento__card--furniture .application-bento__copy { width:100%; padding:32px; }
+.application-bento__card--furniture h3 { font-size:48px; max-width:14ch; color:white; }
+.application-bento__card--furniture p { color:#fff; font-size:14px; }
+.application-bento__card--furniture .application-bento__index { color:white; }
+.application-bento__card--construction,.application-bento__card--diy { grid-column:span 3; }
+.application-bento__card--construction .application-bento__copy,.application-bento__card--diy .application-bento__copy { width:58%; }
+.application-bento__card--industrial { background:var(--palette-navy); border-color:var(--palette-navy); }
+.application-bento__card--industrial .application-bento__scene::after { background:linear-gradient(90deg,var(--palette-navy),rgba(12,35,58,.35)); }
+.application-bento__card--industrial h3 { color:white; }
+.application-bento__card--industrial p { color:#e2e7ed; }
+.application-bento__card--industrial .application-bento__index { color:var(--palette-gold); }
+@media(max-width:1000px) { .application-bento__copy { padding:20px; width:72%; }.application-bento__card h3 { font-size:26px; }.application-bento__grid { grid-template-rows:180px 180px 220px; } }
+@media(max-width:700px) { .application-bento { padding:44px 0; }.application-bento__header { flex-direction:column; align-items:flex-start; gap:12px; margin-bottom:24px; }.application-bento__header h2 { font-size:40px; }.application-bento__header p { font-size:14px; }.application-bento__grid { grid-template-columns:1fr 1fr; grid-template-rows:none; gap:12px; }.application-bento__card { grid-column:span 2; min-height:160px; }.application-bento__card--furniture { grid-column:span 2; grid-row:auto; min-height:290px; }.application-bento__card--furniture .application-bento__copy { padding:24px; }.application-bento__card--furniture h3 { font-size:40px; }.application-bento__copy { width:65%; padding:22px; }.application-bento__card--construction .application-bento__copy,.application-bento__card--diy .application-bento__copy { width:65%; }.application-bento__card h3 { font-size:28px; }.application-bento__card p { font-size:12px; } }
+@media(prefers-reduced-motion:reduce) { .application-bento__scene img { transition:none; }.application-bento__card:hover .application-bento__scene img { transform:none; } }
