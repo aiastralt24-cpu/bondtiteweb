@@ -11,7 +11,7 @@ import { baseUrl, headerCta, mainNavigation } from "@/lib/site";
 export const metadata: Metadata = withSeo({
   title: "About Bondtite | Wood, Epoxy & Instant Adhesives by Astral",
   description:
-    "Meet Bondtite by Astral. Explore adhesives for wood, panels, repairs and industrial work, discover the product families and follow key brand milestones.",
+    "Meet Bondtite by Astral. Explore adhesives for wood, panels and everyday repairs, discover the product families and follow key brand milestones.",
   alternates: { canonical: "/about" }
 });
 

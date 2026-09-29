@@ -10,8 +10,8 @@ const {matchesMaterial,matchesProductQuery}=require('../lib/product-search.ts');
 const {advise,inferJob}=require('../lib/advisor-rules.ts');
 const {tdsDocuments,hasDownloadableTds}=require('../lib/documents.ts');
 const get=slug=>catalogProducts.find(p=>p.slug===slug);
-assert.equal(catalogProducts.length,37);
-assert.equal(new Set(catalogProducts.map(p=>p.slug)).size,37);
+assert.equal(catalogProducts.length,28);
+assert.equal(new Set(catalogProducts.map(p=>p.slug)).size,28);
 assert.equal(get('bondtite-uniweld').categorySlug,'acrylic-adhesives');
 assert.equal(get('bondtite-uniweld').chemistry,'Acrylic');
 assert.ok(!getProductsByCategory('epoxy-adhesives').includes(get('bondtite-uniweld')));
@@ -26,7 +26,9 @@ assert.ok(get('bondtite-super-strength').packTypes.includes('900 gm'));
 assert.equal(get('bondtite-rapid').settingTime,'10 minutes');
 assert.ok(!get('bondtite-rapid').openTime.includes('10'));
 for(const p of catalogProducts){assert.ok(p.sourceUrl.startsWith('https://www.astraladhesives.com/'));assert.ok(!/workbook|school projects/i.test(p.productSummary));}
-assert.ok(!/hybrid/i.test(JSON.stringify(get('bondtite-pro'))));
+const {hiddenProductSlugs}=require('../lib/product-visibility.ts');
+for(const slug of hiddenProductSlugs) assert.equal(get(slug),undefined,slug+' must be hidden');
+assert.equal(getProductsByCategory('industrial-adhesives').length,0);
 for(const p of catalogProducts.filter(p=>p.slug.startsWith('bondtite-quick-'))){assert.notEqual(p.packTypes,'See official page');assert.ok(p.steps.length>=3);}
 assert.equal(Object.keys(tdsDocuments).length,22);
 for(const [slug,doc]of Object.entries(tdsDocuments)){assert.ok(get(slug));assert.equal(fs.readFileSync(path.join('private/documents',doc.file)).subarray(0,4).toString(),'%PDF');}
@@ -38,7 +40,7 @@ assert.equal(advise({job:'other',first:'Glass',second:'Glass',condition:'moistur
 assert.equal(advise({job:'wood',first:'Wood',second:'Wood',condition:'other'}),null);
 console.log('PASS: catalogue coverage, categories, material search, corrected packs, timing semantics, official sources, 22 PDFs, allowlist, reversible advisor pairs and unsupported-condition fallback.');
 const {siteApplications}=require('../lib/site.ts');
-assert.equal(siteApplications.length,6);
+assert.equal(siteApplications.length,4);
 const included=new Set();
 for(const application of siteApplications){
  assert.ok(application.groups.length>0);
@@ -46,5 +48,5 @@ for(const application of siteApplications){
  assert.deepEqual(application.products,[...new Set(application.groups.flatMap(g=>g.products.map(p=>p.slug)))]);
  for(const group of application.groups)for(const item of group.products){assert.ok(get(item.slug),application.slug+' missing '+item.slug);assert.ok(item.note.length>20);included.add(item.slug);}
 }
-assert.equal(included.size,37,'Every product has an explicitly curated application placement');
-console.log('PASS: six application pages, valid groups, contextual descriptions and 37 mapped products.');
+assert.equal(included.size,28,'Every product has an explicitly curated application placement');
+console.log('PASS: four application pages, valid groups, contextual descriptions and 28 mapped products.');

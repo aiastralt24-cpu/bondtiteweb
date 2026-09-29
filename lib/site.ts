@@ -1,3 +1,4 @@
+import { isProductVisible } from './product-visibility';
 export const baseUrl = "https://www.bondtite.in";
 
 export const mainNavigation = [
@@ -36,7 +37,7 @@ export type SiteResource = {
 };
 
 // Curated job-to-product mappings reviewed against official Astral product pages.
-export const siteApplications: SiteApplication[] = [
+const allSiteApplications: SiteApplication[] = [
   {
     "slug": "furniture-and-joinery",
     "title": "Furniture and",
@@ -245,10 +246,6 @@ export const siteApplications: SiteApplication[] = [
       {
         "question": "How do Metallic and White Paste differ?",
         "answer": "Metallic gives a metal-like finish for metal repairs. White Paste is a filled white epoxy for white marble work and other specifically listed applications."
-      },
-      {
-        "question": "Where are concrete injection-grouting products?",
-        "answer": "Explore Industrial bonding & concrete repair for AST FR4202 / AST FH4102, the low-viscosity epoxy injection-grouting system."
       }
     ],
     "seoTitle": "Construction & fixing Adhesives | Bondtite",
@@ -647,6 +644,11 @@ export const siteApplications: SiteApplication[] = [
     ]
   }
 ];
+
+export const siteApplications: SiteApplication[] = allSiteApplications.map(application => {
+  const groups = application.groups.map(group => ({...group, products: group.products.filter(product => isProductVisible(product.slug))})).filter(group => group.products.length > 0);
+  return {...application, groups, products: [...new Set(groups.flatMap(group => group.products.map(product => product.slug)))]};
+}).filter(application => application.groups.length > 0);
 
 export const siteResources: SiteResource[] = [
   {

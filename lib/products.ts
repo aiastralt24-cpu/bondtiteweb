@@ -1,3 +1,4 @@
+import { isProductVisible } from './product-visibility';
 import { catalogueFacts } from './catalogue-facts';
 import { additionalProducts } from "@/lib/additional-products";
 import type { Product } from "@/lib/types";
@@ -73,7 +74,7 @@ export type ProductSeed = {
   storage?: string;
 };
 
-export const productCategories: ProductCategory[] = [
+const allProductCategories: ProductCategory[] = [
 {slug:"acrylic-adhesives",label:"Acrylic adhesives",shortLabel:"Acrylic adhesives",title:"Fast-grab acrylic bonding.",accent:"acrylic.",description:"Two-component acrylic adhesive for rigid plastics, metals and mixed-material assembly.",seoDescription:"Explore Bondtite Uniweld acrylic adhesive for fast initial grab and vibration-resistant bonding.",bestFor:["Metal","Rigid plastics","Glass"],faqs:[{question:"What type of adhesive is Uniweld?",answer:"Bondtite Uniweld is a two-component acrylic adhesive."}]},
 {"slug":"synthetic-rubber-adhesives","label":"Synthetic rubber adhesives","shortLabel":"Rubber adhesives","title":"Contact adhesives for laminate work.","accent":"laminates.","description":"Explore rubber-based contact adhesives for decorative laminate bonding.","seoDescription":"Explore Bondtite Clearbond rubber-based contact adhesive for decorative laminates and vertical lamination.","bestFor":["Plywood","Decorative laminates"],"faqs":[{"question":"What is Clearbond used for?","answer":"Clearbond is used to bond decorative laminate to plywood, including vertical lamination."}]},
 {"slug":"industrial-adhesives","label":"Industrial adhesives","shortLabel":"Industrial adhesives","title":"Bonding systems for industrial applications.","accent":"industrial work.","description":"Epoxy and MMA systems for structural bonding, flooring, potting and concrete repair.","seoDescription":"Explore Bondtite industrial epoxy and MMA systems for structural bonding, flooring, electrical potting and concrete injection grouting.","bestFor":["Metal","Composites","Concrete"],"faqs":[{"question":"Which industrial systems are available?","answer":"The range includes AST epoxy bonding systems, MMA 999A / MMA 999B, and AST FR4202 / AST FH4102 injection grout."},{"question":"Where can I get mixing and curing instructions?","answer":"Request the current technical data sheet for your exact resin and hardener combination from the Bondtite team."}]},
@@ -178,23 +179,18 @@ export const productCategories: ProductCategory[] = [
     description:
       "Bondtite stone care products for stone, concrete, marble and repair-focused applications.",
     seoDescription:
-      "Explore Bondtite stone care products from the official product list, including Bondtite Pro and Bondtite Rapid.",
+      "Explore Bondtite stone care products from the official product list, including Bondtite Rapid.",
     bestFor: ["Stone", "Marble", "Concrete", "Repair"],
     faqs: [
       {
         question: "Which Bondtite products are suitable for stone and marble repair?",
         answer:
-          "Bondtite Rapid is useful for fast stone and repair work, while Bondtite Pro is designed for high-performance bonding where impact, UV and weather resistance are important."
+          "Explore Bondtite Rapid for compatible stone and repair applications. Follow its product-specific preparation and application instructions."
       },
       {
         question: "Can Bondtite Rapid be used on marble and concrete?",
         answer:
           "Yes. Bondtite Rapid can be used on marble, concrete, ceramic, metal, wood, glass, fiberglass and tiles when surfaces are compatible and properly prepared."
-      },
-      {
-        question: "Is Bondtite Pro suitable for exterior stone applications?",
-        answer:
-          "Bondtite Pro is listed as UV and weather-resistant, making it suitable for relevant exterior and weather-exposed bonding applications."
       }
     ]
   },
@@ -233,6 +229,8 @@ export const productCategories: ProductCategory[] = [
     ]
   }
 ];
+
+export const productCategories = allProductCategories.filter(category => category.slug !== 'industrial-adhesives');
 
 const sourceProducts: ProductSeed[] = [
   {
@@ -964,7 +962,7 @@ function fallbackImage(categorySlug: ProductCategorySlug) {
   return "/assets/products/bondtite-hydra-square.png";
 }
 
-export const catalogProducts: CatalogProduct[] = sourceProducts.map((seed, index) => {
+export const catalogProducts: CatalogProduct[] = sourceProducts.filter(seed => isProductVisible(slugify(seed.name))).map((seed, index) => {
   const facts = catalogueFacts[slugify(seed.name)] ?? {};
   const product = {...seed, ...facts};
   const slug = slugify(product.name);
