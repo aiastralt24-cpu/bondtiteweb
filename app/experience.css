@@ -324,8 +324,8 @@ html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-
 .story-link { color: var(--blue); border-color: var(--blue); }
 .bond-hero__copy p, .bond-hero__caption { color: var(--palette-on-dark); }
 
-/* Blend the white-backed Quick pack photography into its neutral surface. */
-.product-image--white-backdrop { filter: none; mix-blend-mode: multiply; }
+/* Blend white-backed pack photography into the neutral surface without a square shadow. */
+.product-image.product-image--white-backdrop { filter: none; mix-blend-mode: multiply; }
 
 /* Keep breathing room beneath the hero after removing the category strip. */
 .bond-hero { padding-bottom: 36px; }
