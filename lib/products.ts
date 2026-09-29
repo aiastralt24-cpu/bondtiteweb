@@ -1,3 +1,4 @@
+import { additionalProducts } from "@/lib/additional-products";
 import type { Product } from "@/lib/types";
 import { verifiedAstralDetails } from "@/lib/verified-astral";
 
@@ -6,7 +7,9 @@ export type ProductCategorySlug =
   | "sprayable-rubber-adhesives"
   | "epoxy-adhesives"
   | "stone-care"
-  | "cyanoacrylates";
+  | "cyanoacrylates"
+  | "synthetic-rubber-adhesives"
+  | "industrial-adhesives";
 
 export type ProductCategory = {
   slug: ProductCategorySlug;
@@ -42,7 +45,8 @@ export type CatalogProduct = Product & {
   faqs: Array<{ question: string; answer: string }>;
 };
 
-type ProductSeed = {
+export type ProductSeed = {
+  faqs?: Array<{ question: string; answer: string }>;
   name: string;
   categorySlug: ProductCategorySlug;
   sourceUrl: string;
@@ -63,6 +67,8 @@ type ProductSeed = {
 };
 
 export const productCategories: ProductCategory[] = [
+{"slug":"synthetic-rubber-adhesives","label":"Synthetic rubber adhesives","shortLabel":"Rubber adhesives","title":"Contact adhesives for laminate work.","accent":"laminates.","description":"Explore rubber-based contact adhesives for decorative laminate bonding.","seoDescription":"Explore Bondtite Clearbond rubber-based contact adhesive for decorative laminates and vertical lamination.","bestFor":["Plywood","Decorative laminates"],"faqs":[{"question":"What is Clearbond used for?","answer":"Clearbond is used to bond decorative laminate to plywood, including vertical lamination."}]},
+{"slug":"industrial-adhesives","label":"Industrial adhesives","shortLabel":"Industrial adhesives","title":"Bonding systems for industrial applications.","accent":"industrial work.","description":"Epoxy and MMA systems for structural bonding, flooring, potting and concrete repair.","seoDescription":"Explore Bondtite industrial epoxy and MMA systems for structural bonding, flooring, electrical potting and concrete injection grouting.","bestFor":["Metal","Composites","Concrete"],"faqs":[{"question":"Which industrial systems are available?","answer":"The range includes AST epoxy bonding systems, MMA 999A / MMA 999B, and AST FR4202 / AST FH4102 injection grout."},{"question":"Where can I get mixing and curing instructions?","answer":"Request the current technical data sheet for your exact resin and hardener combination from the Bondtite team."}]},
   {
     slug: "woodworking",
     label: "Woodworking",
@@ -439,7 +445,8 @@ const sourceProducts: ProductSeed[] = [
     imageTone: "square",
     summary: "Quick Instant Adhesive cyanoacrylate product listed in the source workbook.",
     substrates: ["Multi-material", "Household precision"]
-  }
+  },
+  ...additionalProducts
 ];
 
 const productFaqBank: Record<string, CatalogProduct["faqs"]> = {
@@ -987,7 +994,7 @@ export const catalogProducts: CatalogProduct[] = sourceProducts.map((product, in
     features: verified.features ?? product.features ?? [],
     shelfLife: verified.shelfLife ?? product.shelfLife,
     storage: verified.storage ?? product.storage,
-    faqs: productFaqBank[slug] ?? [
+    faqs: product.faqs ?? productFaqBank[slug] ?? [
       {
         question: `Where can I verify ${product.name} details?`,
         answer:

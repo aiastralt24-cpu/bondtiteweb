@@ -84,7 +84,7 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
         </section>
         <section className="product-story__section" id="how-to-use">
           <div className="hydra-section-heading"><h2>How to use</h2><p>From surface preparation <br/>to the finished bond.</p></div>
-          <ol className="hydra-stepper">{steps.map((step,index)=><li key={`${index}-${step}`}><span className="hydra-stepper__number" aria-hidden="true">{String(index+1).padStart(2,"0")}</span><div>{hydra&&<h3>{["Prepare the surfaces","Use without dilution","Apply an even coat","Allow open time","Press and hold","Clean the joint"][index]}</h3>}<p>{step}</p></div></li>)}</ol>
+          {steps.length ? <ol className="hydra-stepper">{steps.map((step,index)=><li key={`${index}-${step}`}><span className="hydra-stepper__number" aria-hidden="true">{String(index+1).padStart(2,"0")}</span><div>{hydra&&<h3>{["Prepare the surfaces","Use without dilution","Apply an even coat","Allow open time","Press and hold","Clean the joint"][index]}</h3>}<p>{step}</p></div></li>)}</ol> : <div className="product-application-guidance"><h3>Get the application guide</h3><p>Ask for the current technical data sheet for {product.label}, including mixing, preparation and curing instructions for your application.</p><Link className="button button--primary" href={`${enquiry}&request=technical-documentation`}>Request technical guidance</Link></div>}
         </section>
         <section className="product-story__section" id="product-specs">
           <div className="hydra-section-heading"><h2>Technical details</h2><p>The specifications <br/>behind the bond.</p></div>

@@ -8,6 +8,7 @@ import { catalogProducts, getProductPath, productCategories } from "@/lib/produc
 import { formatPackSizes, productCardDescription } from "@/lib/product-format";
 
 const categoryLabels: Record<string, string> = {
+  "synthetic-rubber-adhesives": "Rubber adhesives", "industrial-adhesives": "Industrial adhesives",
   woodworking: "Wood adhesives", "epoxy-adhesives": "Epoxy adhesives",
   cyanoacrylates: "Instant adhesives", "stone-care": "Stone care",
   "sprayable-rubber-adhesives": "Spray adhesives"
