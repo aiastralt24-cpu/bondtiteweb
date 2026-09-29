@@ -16,10 +16,13 @@ export function AboutPage() {
     {year:"2025",title:"Superbrands recognition",text:"Bondtite receives the Superbrands 2025 award."}
   ];
   return <AboutExperience>
-    <section className="brand-hero" aria-labelledby="brand-title"><div className="container brand-hero__inner">
-      <div className="brand-hero__copy"><span className="mono">About Bondtite</span><h1 id="brand-title">Meet Bondtite.<br/><span>Part of your<br/>everyday.</span></h1><p>An adhesive brand from Astral, bringing together products for furniture making, everyday repairs and specialist bonding.</p><div className="brand-hero__actions"><a className="button button--primary" href="#brand-story">Our story</a></div></div>
-      <figure className="brand-hero__visual"><div className="brand-hero__image"><Image src="/assets/campaign/ranbir-slider-image.png" alt="Bondtite campaign featuring Ranbir Kapoor holding Hydra+ wood adhesive" fill priority sizes="(max-width: 760px) 100vw, 48vw" /></div><figcaption>Bondtite Hydra+ <span>Woodworking adhesive</span></figcaption></figure>
-    </div></section>
+    <section className="brand-hero brand-hero--campaign" aria-labelledby="brand-title">
+      <div className="brand-hero__inner container">
+        <div className="brand-hero__copy"><span className="mono">The Bondtite story · By Astral</span><h1 id="brand-title">Good work.<br /><span>Great bonds.</span></h1><p>For the things we make.<br />And everything we bring together.</p><a className="brand-link" href="#brand-story">Get to know Bondtite </a></div>
+        <div className="brand-hero__visual"><span className="brand-hero__word" aria-hidden="true">BONDTITE</span><Image src="/assets/campaign/ranbir-slider-image.png" alt="Bondtite campaign featuring Ranbir Kapoor with Hydra+ wood adhesive" fill priority sizes="(max-width: 700px) 100vw, 60vw" /></div>
+
+      </div>
+    </section>
     <section className="brand-statement" id="brand-story" aria-labelledby="brand-statement-title"><div className="container brand-statement__content">
       <div><span className="mono">Our place in the Astral family</span><h2 id="brand-statement-title">Bondtite,<br/>from Astral.</h2></div>
       <div className="brand-statement__bottom"><p className="brand-statement__lead">Bondtite is part of Astral Adhesives, with a range that spans wood, epoxy, rubber, instant and specialist adhesives.</p><p>From the furniture workshop to home repairs and industrial assembly, each product is developed for particular materials and ways of working. That is what brings this varied range together: a focus on the connection being made.</p><a className="brand-link" href="https://www.astraladhesives.com/brand/bondtite.html" target="_blank" rel="noreferrer">Discover Bondtite at Astral</a></div>

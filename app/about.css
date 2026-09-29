@@ -62,3 +62,15 @@
 .brand-everyday__next { display:flex; align-items:center; justify-content:space-between; gap:24px; border-top:1px solid var(--palette-border); padding-top:28px; margin-top:36px; }
 .brand-everyday__next p { font-size:18px; margin:0; }
 @media(max-width:760px) { .brand-everyday { padding-block:40px; }.brand-everyday__grid { grid-template-columns:1fr; gap:32px; }.brand-everyday__item h3 { margin-top:18px; }.brand-everyday__next { align-items:flex-start; flex-direction:column; gap:20px; }.brand-statement { padding-block:36px; } }
+
+/* Restored campaign hero; the narrative sections below remain unchanged. */
+.brand-hero--campaign { background:var(--palette-ivory); overflow:hidden; }
+.brand-hero--campaign .brand-hero__inner { position:relative; min-height:min(850px,calc(100svh - 80px)); display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:0; padding-block:0; }
+.brand-hero--campaign .brand-hero__copy { position:relative; z-index:2; padding:80px 0 100px; }
+.brand-hero--campaign h1 { font-size:clamp(88px,9.7vw,154px); line-height:.94; letter-spacing:-.035em; margin:28px 0; white-space:nowrap; }
+.brand-hero--campaign .brand-hero__copy p { margin:0 0 32px; font-size:18px; line-height:1.65; color:var(--ink); }
+.brand-hero--campaign .brand-hero__visual { position:absolute; right:-4%; bottom:24px; width:59%; height:90%; display:block; margin:0; max-width:none; }
+.brand-hero--campaign .brand-hero__visual img { object-fit:contain; object-position:center bottom; z-index:1; }
+.brand-hero--campaign .brand-hero__word { position:absolute; top:2%; left:0; font:700 clamp(80px,12vw,190px)/1 var(--font-display); writing-mode:vertical-rl; color:var(--palette-border); letter-spacing:-.025em; }
+@media(max-width:1000px) and (min-width:701px) { .brand-hero--campaign h1 { font-size:clamp(72px,10vw,100px); }.brand-hero--campaign .brand-hero__inner { min-height:620px; }.brand-hero--campaign .brand-hero__visual { right:-10%; width:65%; height:80%; } }
+@media(max-width:700px) { .brand-hero--campaign .brand-hero__inner { display:flex; flex-direction:column; align-items:stretch; min-height:0; }.brand-hero--campaign .brand-hero__copy { padding:36px 0 0; }.brand-hero--campaign h1 { font-size:clamp(58px,13vw,90px); margin:24px 0 18px; }.brand-hero--campaign .brand-hero__copy p { font-size:15px; margin-bottom:16px; }.brand-hero--campaign .brand-hero__visual { position:relative; right:auto; bottom:auto; width:100%; height:360px; margin-top:16px; }.brand-hero--campaign .brand-hero__word { font-size:80px; } }
