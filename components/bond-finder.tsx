@@ -1,5 +1,4 @@
 "use client";
-import {useStateMotion} from '@/components/use-state-motion';
 import Link from 'next/link';
 import {useEffect,useRef,useState} from 'react';
 import {AdvisorChips} from '@/components/advisor-chips';
@@ -9,70 +8,62 @@ import {materialHelp,inferJob,advise} from '@/lib/advisor-rules';
 import {advisorTasks,type TaskId} from '@/lib/advisor-tasks';
 import type {BondFinderData} from '@/lib/types';
 
-const materials=Object.keys(materialHelp).map(value=>({value,label:value}));
+const common=['Wood','Plywood','MDF','Laminate','Metal','Plastic','Rubber','Glass'];
+const materials=[...common,...Object.keys(materialHelp).filter(value=>!common.includes(value))].map(value=>({value,label:value}));
+const unsure={value:'Other / not sure',label:'Not sure'};
 const environments=[{value:'dry',label:'Inside, away from water'},{value:'moisture',label:'Kitchen or bathroom furniture'},{value:'other',label:'Outside / another setting'}];
 export function BondFinder({finder}:{finder:BondFinderData}){
- const [description,setDescription]=useState(''),[taskId,setTaskId]=useState<TaskId|null>(null),[first,setFirst]=useState(''),[second,setSecond]=useState(''),[condition,setCondition]=useState('');
- const restorePosition=useRef(false);
- const [restored,setRestored]=useState(false);
+ const [taskId,setTaskId]=useState<TaskId|null>(null),[first,setFirst]=useState(''),[second,setSecond]=useState(''),[condition,setCondition]=useState(''),[step,setStep]=useState(0),[restored,setRestored]=useState(false);
+ const heading=useRef<HTMLHeadingElement>(null);
  useEffect(()=>{
   const frame=requestAnimationFrame(()=>{
-  try { const saved=JSON.parse(sessionStorage.getItem('bondtite-advisor')||'null');
-   if(saved && (saved.taskId==='custom'||advisorTasks.some(t=>t.id===saved.taskId))) {
-    const valid=(v:string)=>v===''||v==='Other / not sure'||Object.hasOwn(materialHelp,v);
-    if(valid(saved.first)&&valid(saved.second)&&['','dry','moisture','other'].includes(saved.condition)) {
-     restorePosition.current=true;setTaskId(saved.taskId);setDescription(saved.taskId==='custom'?'Choose by materials':advisorTasks.find(t=>t.id===saved.taskId)?.label||'');setFirst(saved.first);setSecond(saved.second);setCondition(saved.condition);
+   try {const saved=JSON.parse(sessionStorage.getItem('bondtite-advisor')||'null');
+    const valid=(v:unknown)=>typeof v==='string'&&(v===''||v===unsure.value||Object.hasOwn(materialHelp,v));
+    if(saved&&(saved.taskId==='custom'||advisorTasks.some(t=>t.id===saved.taskId))&&valid(saved.first)&&valid(saved.second)&&['','dry','moisture','other'].includes(saved.condition)){
+     setTaskId(saved.taskId);setFirst(saved.first);setSecond(saved.second);setCondition(saved.condition);
+     // Restore answers without moving the viewport or skipping past the question.
+     setStep(1);
     }
-   }
-  } catch { /* Storage may be unavailable. The advisor still works. */ }
-  setRestored(true);
+   }catch{/* The advisor also works without storage. */}
+   setRestored(true);
   });return()=>cancelAnimationFrame(frame);
  },[]);
- useEffect(()=>{if(!restored)return;try {sessionStorage.setItem('bondtite-advisor',JSON.stringify({taskId,first,second,condition}));}catch{}},[restored,taskId,first,second,condition]);
- const answer=useRef<HTMLElement>(null);
- useEffect(()=>{if(!restored||!restorePosition.current)return;restorePosition.current=false;const frame=requestAnimationFrame(()=>{answer.current?.focus({preventScroll:true});answer.current?.scrollIntoView({block:'center',behavior:'instant'});});return()=>cancelAnimationFrame(frame);},[restored]);
- const question=useRef<HTMLDivElement>(null),materialEntry=useRef<HTMLButtonElement>(null);
+ useEffect(()=>{if(restored)try{sessionStorage.setItem('bondtite-advisor',JSON.stringify({taskId,first,second,condition}));}catch{}},[restored,taskId,first,second,condition]);
  const task=advisorTasks.find(t=>t.id===taskId),job=inferJob(first,second);
- const pairReady=!!first&&!!second,needsCondition=pairReady&&!['Other / not sure'].includes(first)&&!['Other / not sure'].includes(second);
- const result=pairReady&&(!needsCondition||condition)?advise({job,first,second,condition}):null;
- useStateMotion(answer,`${taskId}:${first}:${second}:${condition}`);
+ const pairReady=!!first&&!!second,unknown=first===unsure.value||second===unsure.value;
+ const result=pairReady&&(unknown||condition)?advise({job,first,second,condition}):null;
  const product=catalogProducts.find(p=>p.slug===result?.slug);
- const finished=pairReady&&(!needsCondition||!!condition);
- const unknown=first==='Other / not sure'||second==='Other / not sure';
+ const alternative=catalogProducts.find(p=>p.slug===result?.alternative?.slug);
  const conditionLabel=environments.find(e=>e.value===condition)?.label;
- const summary=`Task: ${description||task?.label||'Help choosing an adhesive'}\nSurfaces: ${first||'Not chosen'} + ${second||'Not chosen'}${needsCondition&&conditionLabel?`\nLocation: ${conditionLabel}`:''}`;
+ const summary=`Task: ${task?.label||'Choose by materials'}\nSurfaces: ${first} + ${second}${conditionLabel?`\nLocation: ${conditionLabel}`:''}`;
  const contact='/contact?request=product-selection&project='+encodeURIComponent(summary);
- function begin(id:TaskId,text?:string){const chosen=advisorTasks.find(t=>t.id===id);setTaskId(id);setDescription(text??chosen?.label??description);setFirst(chosen?.first||'');setSecond('');setCondition(id==='kitchen'?'moisture':'');requestAnimationFrame(()=>question.current?.focus());}
+ function go(next:number){setStep(next);requestAnimationFrame(()=>{heading.current?.focus({preventScroll:true});heading.current?.closest('.task-advisor__workspace')?.scrollIntoView({block:'start',behavior:'instant'});});}
+ function chooseTask(id:TaskId){if(id===taskId)return;setTaskId(id);setFirst(advisorTasks.find(t=>t.id===id)?.first||'');setSecond('');setCondition(id==='kitchen'?'moisture':'');}
  function changeFirst(value:string){setFirst(value);setSecond('');setCondition('');}
- function reset(){setTaskId(null);setFirst('');setSecond('');setCondition('');requestAnimationFrame(()=>materialEntry.current?.focus());}
- const surfaceOptions=task?.job==='laminate'||task?.job==='acrylic'?materials.filter(m=>(task.job==='acrylic'?['Plywood','MDF','HDHMR','WPC']:['Wood','Plywood','MDF']).includes(m.value)):task?.job==='foam'?['Foam','Leather','Rexine','Wood','Metal'].map(value=>({value,label:value})):materials;
- return <section className={`task-advisor${taskId?' is-working':''}`} aria-label={finder.title}><div className="container">
-  <header className="task-advisor__intro"><span className="mono">Bondtite product advisor</span><h1>A little help.<br/><span>A better bond.</span></h1><p>Choose your materials or a familiar job. Find a product and how to put it to work.</p></header>
-  <div className={`task-advisor__workspace${taskId?' is-active':''}`}>
-   <div className="task-advisor__conversation">
-    {!taskId?<><button type="button" ref={materialEntry} className="task-advisor__material-entry" onClick={()=>begin('custom','Choose by materials')}><span>Already know your materials?</span><strong>Choose materials</strong></button><div className="task-advisor__examples"><p>Or start with something familiar</p><div>{advisorTasks.map((item,index)=><button type="button" key={item.id} onClick={()=>begin(item.id)}><span className="task-advisor__example-number" aria-hidden="true">0{index+1}</span><span><strong>{item.label}</strong><small>{item.description}</small></span></button>)}</div></div></>:<>
-     <div className="task-advisor__task"><span className="mono">Your task</span><p>{description}</p><button type="button" className="task-advisor__text" onClick={reset}>Change task</button></div>
-     <div className="task-advisor__questions" ref={question} tabIndex={-1}>
-      <span className="task-advisor__eyebrow">{task?'Let’s get the surfaces right':'Let’s start with the materials'}</span>
-      <h2>{task?.prompt||'What are the two surfaces?'}</h2>
-      <p>{taskId==='repair'?'Choose the surfaces at the joint, rather than the finish around it.':taskId==='custom'?'Pick the materials where the adhesive will go.':taskId==='foam'?'Choose the material touching the foam.':'Choose the board or material underneath.'}</p>
-      {taskId==='repair'?<AdvisorChips label="Joining surfaces" value={second==='Wood'?'bare':second?'other':''} options={[{value:'bare',label:'Both are bare wood'},{value:'other',label:'Painted, coated or another material'}]} onChange={v=>{setFirst('Wood');setSecond(v==='bare'?'Wood':'Other / not sure');setCondition('');}}/>:<>
-       {(!task||taskId==='build')&&<AdvisorChips label="First surface" value={first} options={[...materials.filter(m=>taskId!=='build'||['Wood','Plywood','MDF'].includes(m.value)),{value:'Other / not sure',label:'Something else / not sure'}]} onChange={changeFirst}/>}
-       {first&&<AdvisorChips label={task?.first?`${first} is joining to`:'Second surface'} value={second} options={[...(taskId==='build'?materials.filter(m=>['Wood','Plywood','MDF'].includes(m.value)):surfaceOptions),{value:'Other / not sure',label:taskId==='foam'?'Fabric or another material':'Something else / not sure'}]} onChange={v=>{setSecond(v);if(taskId!=='kitchen')setCondition('');}}/>}
-      </>}
-      <details className="task-advisor__materials"><summary>Help me identify the material</summary><dl>{Object.entries(materialHelp).map(([name,help])=><div key={name}><dt>{name}</dt><dd>{help}</dd></div>)}</dl></details>
-      {pairReady&&needsCondition&&<div className="task-advisor__location"><h3>Where will it be used?</h3><AdvisorChips label="Finished item location" value={condition} options={environments} onChange={setCondition}/></div>}
-     </div>
+ function restart(){setTaskId(null);setFirst('');setSecond('');setCondition('');go(0);}
+ const surfaceOptions=task?.job==='laminate'||task?.job==='acrylic'?materials.filter(m=>(task.job==='acrylic'?['Plywood','MDF','HDHMR','WPC']:['Wood','Plywood','MDF']).includes(m.value)):task?.job==='foam'?['Foam','Leather','Rexine','Wood','Metal'].map(value=>({value,label:value})):taskId==='build'?materials.filter(m=>['Wood','Plywood','MDF'].includes(m.value)):materials;
+ const titles=['What are you working on?',task?.prompt||'Which materials are you joining?','Where will it be used?',product?'Your product recommendation':'Let’s help you choose'];
+ return <section className="task-advisor" aria-label={finder.title}><div className="container">
+  <header className="task-advisor__intro"><span className="mono">Bondtite product advisor</span><h1>Find the right bond.</h1><p>A few simple choices. A product for your job.</p></header>
+  <div className="task-advisor__workspace">
+   <ol className="task-advisor__steps" aria-label="Your progress">{['Job','Materials','Location','Result'].map((label,index)=><li key={label} aria-current={step===index?'step':undefined} className={index<step?'is-complete':''}><span aria-hidden="true">{index<step?'✓':index+1}</span>{label}</li>)}</ol>
+   <div className="task-advisor__panel">
+    <div className="task-advisor__panel-heading"><p className="task-advisor__eyebrow">{step===3?'Your result':`Step ${step+1} of 3`}</p><h2 ref={heading} tabIndex={-1}>{titles[step]}</h2>{step===1&&task&&<p>{task.label}</p>}</div>
+    {step===0&&<><div className="task-advisor__jobs" role="radiogroup" aria-label="Your job">{advisorTasks.map(item=><label key={item.id} className="task-advisor__job"><input type="radio" name="advisor-job" checked={taskId===item.id} onChange={()=>chooseTask(item.id)}/><span><strong>{item.label}</strong><small>{item.description}</small></span></label>)}</div><label className="task-advisor__job task-advisor__custom"><input type="radio" name="advisor-job" checked={taskId==='custom'} onChange={()=>chooseTask('custom')}/><span><strong>Something else</strong><small>I’ll choose the two materials</small></span></label></>}
+    {step===1&&<>
+     {taskId==='repair'?<AdvisorChips label="Joining surfaces" value={second==='Wood'?'bare':second?'other':''} options={[{value:'bare',label:'Both are bare wood'},{value:'other',label:'Painted, coated or another material'}]} onChange={v=>{setFirst('Wood');setSecond(v==='bare'?'Wood':unsure.value);setCondition('');}}/>:<div className="task-advisor__surfaces">
+      {(!task||taskId==='build')&&<AdvisorChips compact label="First material" value={first} options={[...(taskId==='build'?surfaceOptions:materials),unsure]} onChange={changeFirst}/>}
+      {(first||!task)&&<AdvisorChips compact label={task?.first?`${first} is joining to`:'Second material'} value={second} options={[...surfaceOptions,unsure]} onChange={v=>{setSecond(v);setCondition(taskId==='kitchen'?'moisture':'');}}/>}
+     </div>}
+     <details className="task-advisor__materials"><summary>Not sure what your material is?</summary><dl>{Object.entries(materialHelp).map(([name,help])=><div key={name}><dt>{name}</dt><dd>{help}</dd></div>)}</dl></details>
     </>}
+    {step===2&&<><p className="task-advisor__pair">{first} + {second}</p><AdvisorChips label="Choose the closest setting" value={condition} options={environments} onChange={setCondition}/></>}
+    {step===3&&<>
+     <div className="task-advisor__answers"><span>{first} + {second}{!unknown&&conditionLabel?` · ${conditionLabel}`:''}</span><button type="button" onClick={()=>go(1)}>Edit answers</button></div>
+     {product&&result?<article className="task-advisor__product"><div className="task-advisor__product-top"><ProductPack product={product}/><div><h3>{product.label}</h3><p>{result.reason}</p><Link className="button button--primary" href={getProductPath(product)}>View product</Link></div></div><details className="task-advisor__details"><summary>How to use it</summary><p>{result.method}</p><Link href={getProductPath(product)}>Read the full product instructions</Link></details>{alternative&&result.alternative&&<details className="task-advisor__details"><summary>Another option: {alternative.label}</summary><p>{result.alternative.difference}</p><Link href={getProductPath(alternative)}>View {alternative.label}</Link></details>}<a className="task-advisor__source" href={result.source} target="_blank" rel="noreferrer">Based on Astral product guidance</a><Link className="task-advisor__human" href={contact}>Have a question? Talk to our team</Link></article>:<div className="task-advisor__handoff"><p>{unknown?'Our team can help identify your material and find a product for the job.':'Our team can help with this combination of materials and setting.'} Your answers are included in your enquiry.</p><Link className="button button--primary" href={contact}>Help me choose</Link></div>}
+    </>}
+    <div className="task-advisor__actions">{step>0?<button type="button" className="task-advisor__back" onClick={()=>go(step===3&&unknown?1:step-1)}>Back</button>:<span/>}{step<3?<button type="button" className="button button--primary" disabled={step===0?!taskId:step===1?!pairReady:!condition} onClick={()=>go(step===1&&unknown?3:step+1)}>{step===2?'Show my product':step===1&&unknown?'Get help':'Continue'}</button>:<button type="button" className="task-advisor__back" onClick={restart}>Start again</button>}</div>
    </div>
-   <aside ref={answer} tabIndex={-1} className="task-advisor__answer" aria-label="Your product guidance">
-    {!taskId?<div className="task-advisor__welcome"><span className="mono">From your task to the right product</span><div className="task-advisor__bond-mark" aria-hidden="true"><span/><span/></div><h2>Start with the job.<br/>We’ll help with the bond.</h2><p>A couple of details connect your materials to the right product guidance.</p><ul><li>One clear product recommendation</li><li>A reason that relates to your job</li><li>Practical application guidance</li></ul></div>:<>
-     <div role="status" className="task-advisor__live">{product?'Your recommendation is ready.':finished?'Let’s take a closer look at this job.':pairReady?'One more detail: where will it be used?':'Choose the joining surfaces to see your recommendation.'}</div>
-     {product&&result?<article className="task-advisor__product"><div className="task-advisor__product-top"><div><span className="mono">For these materials</span><h2>{product.label}</h2><p>{first} + {second}</p></div><ProductPack product={product}/></div><div className="task-advisor__why"><h3>Why this one?</h3><p>{result.reason}</p></div><div className="task-advisor__method"><h3>Putting it to work</h3><p>{result.method}</p></div><Link className="button button--primary" href={getProductPath(product)}>See product & full instructions</Link>{result.alternative && (()=>{const alternative=catalogProducts.find(p=>p.slug===result.alternative?.slug);return alternative?<div className="task-advisor__why"><h3>Another option</h3><p>{result.alternative.difference}</p><Link href={getProductPath(alternative)}>Explore {alternative.label}</Link></div>:null;})()}<a className="task-advisor__source" href={result.source} target="_blank" rel="noreferrer">Based on Astral product guidance</a>{['wood','laminate'].includes(job)&&<div className="task-advisor__adjust"><span>Different conditions?</span><button type="button" onClick={()=>setCondition(condition==='dry'?'moisture':'dry')}>{condition==='dry'?'It’s for kitchen or bathroom furniture':'It will stay dry indoors'}</button></div>}</article>:finished?<div className="task-advisor__handoff"><h2>{unknown?'Let’s identify that surface.':'Let’s look at your exact application.'}</h2><p>{unknown?'Tell our team what the item is made of and whether the joining area is coated. Your task and answers are already included.':'Share where the bond will be used and what it needs to hold. Your task and materials will go with your enquiry.'}</p><Link className="button button--primary" href={contact}>Get help with this job</Link><button type="button" className="task-advisor__text" onClick={reset}>Try a different task</button></div>:<div className="task-advisor__preview"><span className="mono">Your bond, taking shape</span><h2>{pairReady?`${first} meets ${second}.`:task?.first?`Let’s work with ${task.first.toLowerCase()}.`:'Every good bond starts at the surface.'}</h2><p>{pairReady?'The setting helps us match the product to how the finished item will be used.':taskId==='repair'?'The surfaces at the joint help us choose the adhesive.':taskId==='foam'?'Foam to foam and foam to natural leather have specific product guidance.':'A material name is enough to start. Use the material guide if you’re unsure.'}</p></div>}
-     {(first||second)&&<div className="task-advisor__summary"><span className="mono">Your answers</span><p>{first||'First surface'} <span>+</span> {second||'Choose the second surface'}</p>{needsCondition&&conditionLabel&&<small>{conditionLabel}</small>}<span className="task-advisor__editable">Change any answer to update this guidance.</span></div>}
-     {product&&<Link className="task-advisor__human" href={contact}>Want to talk it through? Ask our team</Link>}
-    </>}
-   </aside>
-  </div><footer className="task-advisor__footer"><span>Made for real jobs. Grounded in product guidance.</span><Link href="/products">Browse all products</Link></footer>
+  </div><footer className="task-advisor__footer"><Link href="/products">Browse all products</Link></footer>
  </div></section>;
 }
