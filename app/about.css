@@ -22,7 +22,7 @@
 .brand-statement__bottom p { font-size:16px; line-height:1.8; color:var(--palette-on-dark); margin:0 0 18px; max-width:50ch; }
 .brand-statement__bottom .brand-statement__lead { font-size:22px; line-height:1.5; color:var(--palette-white); }
 .brand-statement__bottom .brand-link { margin-top:6px; }
-.brand-range,.brand-history { padding-block:76px; }
+.brand-history { padding-block:56px; }
 .brand-section-heading { margin-bottom:36px; max-width:650px; }
 .brand-section-heading h2 { font-size:clamp(42px,4.6vw,66px); line-height:1.05; margin:20px 0; }
 .brand-section-heading>p { font-size:16px; line-height:1.7; color:var(--palette-muted); max-width:48ch; }
@@ -48,3 +48,17 @@
 @media(max-width:1000px) { .brand-hero__inner { gap:32px; } .brand-range__grid { gap:0 28px; } .brand-range__item { grid-template-columns:100px minmax(0,1fr); gap:18px; } .brand-range__pack .product-image { width:90px; } .brand-history__timeline { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:24px; } }
 @media(max-width:760px) { .brand-hero__inner { grid-template-columns:1fr; padding-block:32px 40px; } .brand-hero h1 { font-size:clamp(58px,11vw,82px); } .brand-hero__copy>p { font-size:16px; } .brand-hero__image { min-height:360px; } .brand-hero__visual { max-width:540px; width:100%; } .brand-statement { padding-block:40px; } .brand-statement__content { grid-template-columns:1fr; gap:28px; } .brand-statement h2 { max-width:20ch; } .brand-statement__bottom .brand-statement__lead { font-size:20px; } .brand-range,.brand-history { padding-block:44px; } .brand-range__grid { grid-template-columns:1fr; } .brand-range__item { grid-template-columns:110px minmax(0,1fr); padding-block:24px; } .brand-range__item h3 { font-size:28px; } .brand-next { grid-template-columns:1fr; gap:16px; padding-block:40px; } }
 @media(prefers-reduced-motion:reduce) { .brand-range__pack .product-image { transition:none; } .brand-range__item:hover .product-image { transform:none; } }
+
+/* Narrative flow: introduction, Astral context, milestones, everyday relevance. */
+.brand-statement { padding-block:48px; }
+.brand-statement h2 { font-size:clamp(38px,4vw,54px); margin-top:18px; }
+.brand-section-heading h2 { font-size:clamp(38px,4vw,54px); }
+.brand-everyday { padding-block:56px 64px; border-top:1px solid var(--palette-border); }
+.brand-everyday__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
+.brand-everyday__image { position:relative; aspect-ratio:3/2; overflow:hidden; background:var(--palette-ivory); }
+.brand-everyday__image img { object-fit:cover; }
+.brand-everyday__item h3 { font-size:30px; line-height:1.15; margin:22px 0 12px; }
+.brand-everyday__item p { font-size:14px; color:var(--palette-muted); line-height:1.75; max-width:38ch; margin:0; }
+.brand-everyday__next { display:flex; align-items:center; justify-content:space-between; gap:24px; border-top:1px solid var(--palette-border); padding-top:28px; margin-top:36px; }
+.brand-everyday__next p { font-size:18px; margin:0; }
+@media(max-width:760px) { .brand-everyday { padding-block:40px; }.brand-everyday__grid { grid-template-columns:1fr; gap:32px; }.brand-everyday__item h3 { margin-top:18px; }.brand-everyday__next { align-items:flex-start; flex-direction:column; gap:20px; }.brand-statement { padding-block:36px; } }

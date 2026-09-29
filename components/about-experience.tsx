@@ -8,7 +8,7 @@ export function AboutExperience({children}:{children:ReactNode}) {
  const setup=useCallback((motion:typeof gsap,_trigger:typeof ScrollTrigger,element:HTMLElement)=>{
   const select=motion.utils.selector(element);
   motion.from(select('.brand-hero__copy > *'),{y:16,duration:.65,stagger:.06,ease:'power2.out'});
-  for(const item of select('.brand-range__item, .brand-history__timeline li')) {
+  for(const item of select('.brand-everyday__item, .brand-history__timeline li')) {
    motion.from(item,{y:18,duration:.55,ease:'power2.out',scrollTrigger:{trigger:item,start:'top 92%',once:true}});
   }
  },[]);
