@@ -1,3 +1,4 @@
+import { FurnitureApplication } from "@/components/furniture-application";
 import { RangeProductGrid } from "@/components/range-product-grid";
 import Link from "next/link";
 import { ProductPack } from "@/components/product-pack";
@@ -46,6 +47,7 @@ export function ApplicationsPage() {
 }
 
 export function ApplicationDetailPage({ application }: { application: SiteApplication }) {
+  if (application.slug === "furniture-and-joinery") return <FurnitureApplication application={application}/>;
   const products=productLinks(application.products),overview={title:application.displayTitle,description:application.description,materials:application.materials.join(" · ")};
   return <main id="main-content" tabIndex={-1} className="range-page"><div className="container">
     <nav className="breadcrumbs range-breadcrumbs" aria-label="Breadcrumb"><Link href="/applications">Applications</Link><span aria-current="page">{overview.title}</span></nav>
