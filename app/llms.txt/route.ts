@@ -15,7 +15,7 @@ export function GET(){
  '## Resources',...siteResources.map(p=>link(p.title,`/resources/${p.slug}`)),
  '## Policies',...['privacy-policy','cookie-policy','terms-and-conditions'].map(p=>link(p.replaceAll('-',' '),`/${p}`)),
  '## Technical documents',
- 'The Hydra+ technical data sheet is available through its product page after completing the TDS request form. Other product pages offer technical-document enquiries. Key product information is also available in the public product-page text.',
+ 'Published technical data sheets are linked from the relevant product pages through a TDS request form. Products without a published TDS offer technical-document enquiries. Key product information is also available in the public product-page text.',
  '## Scope',
  'The Product Advisor is an interactive guide. Do not infer prices, stock, ratings, certifications or unsupported substrate suitability from this index. Administrative pages, enquiry records and download APIs are not public information sources.'
  ].join('\n\n')+'\n';

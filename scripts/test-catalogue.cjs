@@ -37,3 +37,14 @@ assert.equal(advise({job:'other',first:'Plastic',second:'Plastic',condition:'dry
 assert.equal(advise({job:'other',first:'Glass',second:'Glass',condition:'moisture'}),null);
 assert.equal(advise({job:'wood',first:'Wood',second:'Wood',condition:'other'}),null);
 console.log('PASS: catalogue coverage, categories, material search, corrected packs, timing semantics, official sources, 22 PDFs, allowlist, reversible advisor pairs and unsupported-condition fallback.');
+const {siteApplications}=require('../lib/site.ts');
+assert.equal(siteApplications.length,6);
+const included=new Set();
+for(const application of siteApplications){
+ assert.ok(application.groups.length>0);
+ assert.equal(new Set(application.groups.map(g=>g.id)).size,application.groups.length);
+ assert.deepEqual(application.products,[...new Set(application.groups.flatMap(g=>g.products.map(p=>p.slug)))]);
+ for(const group of application.groups)for(const item of group.products){assert.ok(get(item.slug),application.slug+' missing '+item.slug);assert.ok(item.note.length>20);included.add(item.slug);}
+}
+assert.equal(included.size,37,'Every product has an explicitly curated application placement');
+console.log('PASS: six application pages, valid groups, contextual descriptions and 37 mapped products.');

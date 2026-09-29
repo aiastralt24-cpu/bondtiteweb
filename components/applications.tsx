@@ -1,12 +1,6 @@
 import Link from "next/link";
 import { siteApplications } from "@/lib/site";
 
-const descriptions = [
-  "Plywood, laminates, modular kitchens and furniture assembly.",
-  "Panels, trims, site fixing and mixed-material work.",
-  "Small repairs, craft projects and everyday fixes.",
-  "Foam, fabrics, interior trims and upholstery work."
-];
 
 export function Applications() {
   return (
@@ -19,9 +13,9 @@ export function Applications() {
           <Link className="tertiary" href="/applications">Explore all applications</Link>
         </div>
         <div className="job-list">
-          {siteApplications.map((application, index) => (
+          {siteApplications.map((application) => (
             <a className="job-list__row" href={`/applications/${application.slug}`} key={application.slug}>
-              <div><h3>{application.title} {application.accent}</h3><p>{descriptions[index]}</p></div>
+              <div><h3>{application.title} {application.accent}</h3><p>{application.description}</p></div>
 
             </a>
           ))}

@@ -10,7 +10,7 @@ import { baseUrl, headerCta, mainNavigation, siteApplications } from "@/lib/site
 export const metadata: Metadata = withSeo({
   title: "Applications | Bondtite Adhesives",
   description:
-    "Browse Bondtite adhesive applications for furniture, construction, DIY, auto and upholstery workflows.",
+    "Explore Bondtite products by job: furniture, construction, DIY, upholstery, bangle making, industrial bonding and concrete repair.",
   alternates: { canonical: "/applications" }
 });
 
