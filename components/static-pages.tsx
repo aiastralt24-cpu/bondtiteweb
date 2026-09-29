@@ -3,36 +3,34 @@ import Image from "next/image";
 import { AboutExperience } from "@/components/about-experience";
 import Link from "next/link";
 import { ProductPack } from "@/components/product-pack";
-import { catalogProducts, getProductPath } from "@/lib/products";
+import { catalogProducts } from "@/lib/products";
 export function AboutPage() {
+  const range = [
+    {name:"Wood & panels",slug:"bondtite-hydra",href:"/products/woodworking",text:"From timber joints and laminates to acrylic, PVC and WPC panels."},
+    {name:"Epoxy adhesives",slug:"bondtite-fast-and-clear",href:"/products/epoxy-adhesives",text:"Two-part systems for clear bonds, stone work, metal and wood repairs."},
+    {name:"Contact & spray",slug:"bondtite-foambond",href:"/products/synthetic-rubber-adhesives",text:"Surface bonding for laminates, foam, upholstery and selected flooring jobs."},
+    {name:"Instant adhesives",slug:"bondtite-quick",href:"/products/cyanoacrylates",text:"Precision nozzles, gels and brush formats for compatible small repairs."},
+    {name:"Acrylic adhesives",slug:"bondtite-uniweld",href:"/products/acrylic-adhesives",text:"Two-component acrylic bonding for listed rigid plastics, metals and other materials."},
+    {name:"Industrial systems",slug:"bondtite-mma-999a-mma-999b",href:"/products/industrial-adhesives",text:"Specialist systems for structural bonding, composites, potting and concrete repair."}
+  ];
   const milestones = [
-    { year: "2021", title: "A new chapter.\nIn epoxy.", text: "Bondtite Pro joins the range.", slug: "bondtite-pro", category: "Epoxy adhesives" },
-    { year: "2022", title: "From woodwork.\nTo quick fixes.", text: "PVA wood adhesives and Bondtite Quick instant adhesives join the family.", slug: "bondtite-quick", category: "Wood & instant adhesives" },
-    { year: "2024", title: "A bond with\na clearer finish.", text: "Bondtite Strong & Clear becomes part of the portfolio.", slug: "bondtite-strong-and-clear", category: "Epoxy adhesives" }
+    {year:"2021",title:"Bondtite Pro",text:"A new addition to the epoxy range."},
+    {year:"2022",title:"Wood & instant",text:"PVA woodworking adhesives and Bondtite Quick launch."},
+    {year:"2024",title:"Strong & Clear",text:"The transparent epoxy joins the portfolio."},
+    {year:"2025",title:"Superbrands recognition",text:"Bondtite receives the Superbrands 2025 award."}
   ];
   return <AboutExperience>
-    <section className="brand-hero" aria-labelledby="brand-title">
-      <div className="brand-hero__inner container">
-        <div className="brand-hero__copy"><span className="mono">The Bondtite story · By Astral</span><h1 id="brand-title">Good work.<br /><span>Great bonds.</span></h1><p>For the things we make.<br />And everything we bring together.</p><a className="brand-link" href="#brand-story">Get to know Bondtite </a></div>
-        <div className="brand-hero__visual"><span className="brand-hero__word" aria-hidden="true">BONDTITE</span><Image src="/assets/campaign/ranbir-slider-image.png" alt="Bondtite campaign featuring Ranbir Kapoor with Hydra+ wood adhesive" fill priority sizes="(max-width: 700px) 100vw, 60vw" /></div>
-
-      </div>
-    </section>
-    <section className="brand-statement" id="brand-story" aria-labelledby="brand-statement-title">
-      <div className="container">
-        <div className="brand-statement__top"><span className="mono">A bond for the work you do</span></div>
-        <div className="brand-statement__content">
-          <h2 id="brand-statement-title">Build. Repair. Create.<span>With Bondtite.</span></h2>
-          <div className="brand-statement__bottom">
-            <p className="brand-statement__lead">From making furniture to everyday repairs, find an adhesive for your materials and your task.</p>
-            <p>Explore wood adhesives, epoxies, rubber adhesives and instant adhesives, all part of the Bondtite range from Astral.</p>
-            <a className="brand-link" href="https://www.astraladhesives.com/brand/bondtite.html" target="_blank" rel="noreferrer">Part of Astral Adhesives</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section className="brand-history" aria-labelledby="brand-history-title"><div className="container"><header className="brand-history__header"><span className="mono">The range, over time</span><h2 id="brand-history-title">Always something<br />to build on.</h2><p>Three moments in our product story.</p></header><div className="brand-history__stack">{milestones.map((milestone,index)=>{const product=catalogProducts.find(item=>item.slug===milestone.slug)!;return <article className={"brand-chapter brand-chapter--"+index} key={milestone.year}><div className="brand-chapter__copy"><span className="brand-chapter__year">{milestone.year}</span><h3>{milestone.title.split("\n").map((line,i)=><span key={i}>{line}</span>)}</h3><p>{milestone.text}</p><Link className="brand-link" href={getProductPath(product)}>Discover {product.label} </Link></div><div className="brand-chapter__visual"><span className="brand-chapter__category">{milestone.category}</span><ProductPack product={product}/><span className="brand-chapter__name">{product.name}</span></div></article>;})}</div><a className="brand-history__source" href="https://www.astraladhesives.com/about-us.html" target="_blank" rel="noreferrer">Milestones from Astral’s journey</a></div></section>
-    <section className="brand-next container"><span className="mono">From our story to yours</span><Link href="/applications"><h2>What are you<br /><span>working on?</span></h2><span className="brand-next__label">Explore applications</span></Link></section>
+    <section className="brand-hero" aria-labelledby="brand-title"><div className="container brand-hero__inner">
+      <div className="brand-hero__copy"><span className="mono">About Bondtite</span><h1 id="brand-title">Good work.<br/><span>Starts with<br/>the right bond.</span></h1><p>Adhesives from Astral for the furniture we make, the things we repair and the projects we bring to life.</p><div className="brand-hero__actions"><a className="button button--primary" href="#brand-story">Our story</a><Link className="brand-link" href="/products">Explore the range</Link></div></div>
+      <figure className="brand-hero__visual"><div className="brand-hero__image"><Image src="/assets/campaign/ranbir-slider-image.png" alt="Bondtite campaign featuring Ranbir Kapoor holding Hydra+ wood adhesive" fill priority sizes="(max-width: 760px) 100vw, 48vw" /></div><figcaption>Bondtite Hydra+ <span>Woodworking adhesive</span></figcaption></figure>
+    </div></section>
+    <section className="brand-statement" id="brand-story" aria-labelledby="brand-statement-title"><div className="container brand-statement__content">
+      <div><span className="mono">Part of Astral Adhesives</span><h2 id="brand-statement-title">Different kinds of work.<span>A range built around them.</span></h2></div>
+      <div className="brand-statement__bottom"><p className="brand-statement__lead">A furniture joint, a clear glass bond and a metal repair ask different things of an adhesive.</p><p>Bondtite brings together wood, epoxy, rubber, instant and specialist adhesives under the Astral name. Each product has its own role, with specific materials, application methods and working times.</p><p>Our catalogue brings {catalogProducts.length} products together so you can explore the range by the work you do.</p><a className="brand-link" href="https://www.astraladhesives.com/brand/bondtite.html" target="_blank" rel="noreferrer">Bondtite at Astral Adhesives</a></div>
+    </div></section>
+    <section className="brand-range container" aria-labelledby="brand-range-title"><header className="brand-section-heading"><span className="mono">Get to know the range</span><h2 id="brand-range-title">A place for every<br/>kind of bond.</h2><p>Start with a product family. Explore the materials and uses each one is designed for.</p></header><div className="brand-range__grid">{range.map(item=>{const product=catalogProducts.find(p=>p.slug===item.slug)!;return <Link className="brand-range__item" href={item.href} key={item.slug}><div className="brand-range__pack"><ProductPack product={product}/></div><div><h3>{item.name}</h3><p>{item.text}</p><span className="brand-range__action">Explore range</span></div></Link>;})}</div></section>
+    <section className="brand-history container" aria-labelledby="brand-history-title"><header className="brand-section-heading"><span className="mono">Selected milestones</span><h2 id="brand-history-title">Growing with the work.</h2><p>Product launches and recognition from Astral’s published journey.</p></header><ol className="brand-history__timeline">{milestones.map(item=><li key={item.year}><span className="brand-history__year">{item.year}</span><h3>{item.title}</h3><p>{item.text}</p></li>)}</ol><a className="brand-link" href="https://www.astraladhesives.com/about-us.html" target="_blank" rel="noreferrer">Explore Astral’s journey</a></section>
+    <section className="brand-next container" aria-labelledby="brand-next-title"><div><span className="mono">Put the range to work</span><h2 id="brand-next-title">Start with your project.</h2><p>Explore products by job, or choose your joining materials with the Product advisor.</p></div><div className="brand-next__actions"><Link className="button button--primary" href="/applications">Explore applications</Link><Link className="brand-link" href="/product-advisor">Find a product for your materials</Link></div></section>
   </AboutExperience>;
 }
 
