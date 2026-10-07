@@ -8,8 +8,8 @@ body:has(.bond-home) {
   background:var(--paper);
 }
 .bond-home { background:var(--paper); }
-.bond-home :is(.job-section,.job-section__intro,.job-list,.bond-film,.featured-range,.finder) { background:var(--paper); }
-.bond-home :is(.material-story,.featured-range__visual,.recommendation__image) { background:var(--surface-warm); }
+.bond-home :is(.job-section,.job-section__intro,.job-list,.application-bento,.bond-film,.material-story,.featured-range,.finder) { background:var(--paper); }
+.bond-home :is(.featured-range__visual,.recommendation__image) { background:var(--surface-warm); }
 .bond-home .recommendation { background:#fff; border-color:var(--line); }
 .bond-home :is(.job-list__row,.job-list__row:first-child,.bond-film,.material-story__caption) { border-color:var(--line); }
 .bond-home .bond-hero { background:var(--brand-night); color:#fff; }
@@ -19,3 +19,47 @@ body:has(.bond-home) {
 .bond-home .bond-hero__ring { border-color:#ffffff16; }
 .bond-home .bond-hero__pack { filter:drop-shadow(0 24px 18px #0007); }
 body:has(.bond-home) .header--scrolled { background:var(--paper); border-color:var(--line); color:var(--ink); }
+
+/* Reading hierarchy: expressive brand moments, quieter practical sections. */
+.bond-home :is(.application-bento__header,.bond-film__heading,.featured-range__head) h2 {
+  font-size:clamp(36px,3.7vw,52px);
+  line-height:1.08;
+  letter-spacing:-.015em;
+  margin:16px 0;
+  color:var(--palette-ink);
+}
+.bond-home .material-story h2,
+.bond-home .material-story[data-cinematic] h2 {
+  font-size:clamp(38px,4.1vw,58px);
+  line-height:1.08;
+  margin:20px 0;
+}
+.bond-home .featured-range h2 span,
+.bond-home .material-story h2 em {
+  display:inline-block;
+  color:var(--palette-navy);
+  font-size:.82em;
+  font-weight:600;
+  line-height:1.15;
+  margin-top:6px;
+}
+.bond-home :is(.application-bento__header,.material-story__copy,.featured-range__head) > .mono,
+.bond-home .featured-range__head .mono,
+.bond-home .application-bento__header .mono {
+  font-size:11px;
+  letter-spacing:.13em;
+}
+.bond-home .bond-film__heading { margin-bottom:28px; }
+.bond-home .bond-film__heading h2 { margin-top:0; }
+.bond-home :is(.application-bento__header,.material-story__copy) > p {
+  color:var(--palette-muted);
+  font-size:16px;
+  line-height:1.65;
+  max-width:52ch;
+}
+@media(max-width:700px) {
+  .bond-home :is(.application-bento__header,.bond-film__heading,.featured-range__head) h2,
+  .bond-home .material-story h2,
+  .bond-home .material-story[data-cinematic] h2 { font-size:36px; line-height:1.1; }
+  .bond-home .bond-film__heading { margin-bottom:22px; }
+}
