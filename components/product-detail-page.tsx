@@ -99,7 +99,6 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
             <div className="hydra-technical-notes">
               {storage&&<details><summary>Storage & handling</summary><div><p>{storage}</p></div></details>}
               {product.limitations.length > 0 && <div><h3>Application notes</h3>{product.limitations.map(note => <p key={note}>{note}</p>)}</div>}
-              <details><summary>Sources & specification notes</summary><div>{technical && <p>{technical.revision}. Technical properties include the stated test conditions. {totalGem ? "Pack size and application instructions follow the supplied TDS. The 8-hour setting claim is from the supplied packaging; full cure is 24 hours per the TDS." : "Pack sizes and application instructions follow the Astral product page unless listed only in the TDS."}</p>}{hydra&&<><p>Physical properties: Astral TDS v02, 1 April 2024. Pack sizes and storage guidance: Astral product page.</p><p>The TDS lists different pack sizes and 5–25°C unopened shelf-life conditions; confirm current requirements with Astral before specification.</p></>}{totalGem ? <TdsDownload productName={product.label} productSlug={product.slug}/> : <a href={product.sourceUrl} target="_blank" rel="noreferrer">View Astral’s product information</a>}</div></details>
             </div>
           </div>
         </section>
