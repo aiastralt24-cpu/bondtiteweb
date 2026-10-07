@@ -717,7 +717,7 @@ const productFaqBank: Record<string, CatalogProduct["faqs"]> = {
     {
       question: "How should Bondtite Fast and Clear be used?",
       answer:
-        "Clean and dry both surfaces, mix equal parts thoroughly, apply quickly, assemble the parts and allow proper curing before loading."
+        "Clean and dry both surfaces. Mix equal volumes of parts A and B for one minute, apply to the substrates to be bonded and clamp for 20 minutes."
     }
   ],
   "bondtite-pro": [

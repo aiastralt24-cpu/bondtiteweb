@@ -329,7 +329,7 @@ export const productSpecifications: Record<string,{rows:[string,string][];source
       ],
       [
         "Pot life at 25°C",
-        "9–14 minutes"
+        "9 minutes"
       ]
     ],
     "source": "https://www.astraladhesives.com/media/catalog/product/attachment/b/o/bondtite_rapid_-_new_tds.pdf",

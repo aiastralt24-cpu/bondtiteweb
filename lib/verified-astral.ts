@@ -50,9 +50,9 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
   "bondtite-fast-and-clear": {
     summary: "BONDTITE FAST AND CLEAR is a 5-minute high-strength, two-component transparent epoxy adhesive system.",
     packTypes: "3 gm 6 gm 13 gm 36 gm 90 gm 180 gm 270 gm 450 gm 1 kg",
-    steps: ["Surfaces must be clean, dry and free from oil, wax and paint.", "Roughen smooth surfaces and pre-fit parts to be joined.", "Squeeze equal volumes from part-A and part-B, mix for one minute, apply and clamp for 20 minutes."],
+    steps: ["Surfaces must be clean, dry and free from oil, wax and paint.", "Roughen smooth surfaces and pre-fit parts to be joined.", "Squeeze equal volumes from part-A and part-B, mix for one minute, apply to the substrates to be bonded and clamp for 20 minutes."],
     features: ["5-minute transparent epoxy system", "High strength", "Two-component adhesive", "Full strength achieved in 4 hour"],
-    shelfLife: "Shelf Life: 12 months in unopened packaging at +5°C to +25°C.",
+    shelfLife: "Shelf Life: 2 years from the date of manufacturing.",
     storage: "Store dry in original, properly closed containers at 2-40°C."
   },
   "bondtite-foambond": {
@@ -113,9 +113,9 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
   },
   "bondtite-rapid": {
     summary: "BONDTITE RAPID is a two-component epoxy adhesive system which sets in 10 minutes.",
-    packTypes: "3 gm",
-    steps: ["Surfaces must be clean, dry and free from oil, wax and paint.", "Roughen smooth surfaces for better adhesion.", "Mix part-A and part-B for one minute, apply, clamp for 30 minutes and allow full cure in 24 hours."],
-    features: ["Fast-setting within 10 minutes", "Bio-compatible adhesive", "Resistant to water and most common solvents", "Suitable for machinery and automobiles"],
+    packTypes: "3 gm, 7 gm, 35 gm, 87.5 gm, 175 gm, 875 gm, 1.75 kg set",
+    steps: ["Surfaces must be clean, dry and free from oil, wax and paint.", "Roughen smooth surfaces for better adhesion.", "Mix part-A and part-B for one minute. Apply to one or both surfaces and assemble. Clamp for 30 minutes and allow 24 hours for full cure."],
+    features: ["Fast-setting within 10 minutes", "Multi-substrate bonding", "Resistant to water and most common solvents", "Suitable for machinery and automobiles"],
     shelfLife: "Shelf Life: 2 years from the date of manufacturing.",
     storage: "Store dry in original, properly closed containers at 2-40°C."
   },
@@ -130,7 +130,7 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
   "bondtite-super-strength": {
     summary: "BONDTITE SUPER STRENGTH is a high-strength, two component epoxy adhesive system which sets in 8 hours.",
     packTypes: "3 gm 7 gm 9 gm 13 gm 36 gm 90 gm 180 gm 270 gm 450 gm",
-    steps: ["Surfaces must be clean, dry and free from oil, wax and paint.", "Roughen smooth surfaces and pre-fit parts to be joined.", "Squeeze equal volume from part-A and part-B, mix for one minute, apply and clamp for 24 hours."],
+    steps: ["Surfaces must be clean, dry and free from oil, wax and paint.", "Roughen smooth surfaces and pre-fit parts to be joined.", "Squeeze equal volume from part-A and part-B, mix for two minutes, apply and clamp for 24 hours."],
     features: ["Bio-compatible adhesive", "Multi-substrate adhesion", "Longer working time", "High-bond strength"],
     shelfLife: "Shelf Life: 2 years from the date of manufacturing.",
     storage: "Store dry in original, properly closed containers at 2-40°C."

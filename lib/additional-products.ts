@@ -83,19 +83,19 @@ export const additionalProducts: ProductSeed[] = [
       "Machinery repairs"
     ],
     "features": [
-      "Metal-filled finish",
+      "Metal-filled system",
       "Can be sanded and drilled after curing",
       "Fast-setting"
     ],
     "sourceUrl": "https://www.astraladhesives.com/bondtite-metallic.html",
     "image": "/assets/products/bondtite-metallic-official.png",
     "imageTone": "square",
-    "packTypes": "12 gm, 36 gm, 90 gm",
+    "packTypes": "12 gm",
     "steps": [
       "Clean and dry the surfaces, removing oil, wax and paint.",
       "Roughen smooth surfaces and dry-fit the parts.",
       "Mix equal volumes of parts A and B thoroughly for one minute, then apply.",
-      "Clamp for 30 minutes. The published instructions give one hour to handling strength and 24 hours to full cure."
+      "Clamp for 30 minutes. Handling strength is achieved in 1 hour; full cure takes 24 hours."
     ],
     "shelfLife": "24 months",
     "storage": "Store dry in the original closed container at 2–40°C. Reseal after use.",
@@ -110,7 +110,7 @@ export const additionalProducts: ProductSeed[] = [
       },
       {
         "question": "Which pack sizes are listed for Bondtite Metallic?",
-        "answer": "12 gm, 36 gm, 90 gm."
+        "answer": "12 gm."
       }
     ]
   },
@@ -125,8 +125,8 @@ export const additionalProducts: ProductSeed[] = [
     ],
     "applications": [
       "White marble work",
-      "Temple repairs",
-      "Sealing pipe openings"
+      "Temple manufacturing & repairs",
+      "Multi-substrate bonding"
     ],
     "features": [
       "White finish",
@@ -140,7 +140,7 @@ export const additionalProducts: ProductSeed[] = [
     "steps": [
       "Clean and dry the surfaces, removing oil, wax and paint.",
       "Roughen smooth surfaces and dry-fit the parts.",
-      "Mix equal volumes of resin and hardener thoroughly for one minute, then apply.",
+      "Mix equal volumes of resin and hardener thoroughly for two minutes, then apply.",
       "Allow 4–6 hours to set and 24 hours to fully cure."
     ],
     "shelfLife": "24 months",
@@ -152,7 +152,7 @@ export const additionalProducts: ProductSeed[] = [
       },
       {
         "question": "Which applications is Bondtite White Paste listed for?",
-        "answer": "White marble work, Temple repairs, Sealing pipe openings."
+        "answer": "White marble work, Temple manufacturing & repairs, Multi-substrate bonding."
       },
       {
         "question": "Which pack sizes are listed for Bondtite White Paste?",
@@ -179,7 +179,7 @@ export const additionalProducts: ProductSeed[] = [
     ],
     "features": [
       "Wood-coloured finish",
-      "Waterproof bonding",
+      "Water-resistant bonding",
       "Wood dust can be added for texture"
     ],
     "sourceUrl": "https://www.astraladhesives.com/bondtite-wood.html",
@@ -188,7 +188,7 @@ export const additionalProducts: ProductSeed[] = [
     "steps": [
       "Clean and dry the surfaces, removing oil, wax and paint.",
       "Roughen smooth surfaces and dry-fit the parts.",
-      "Mix equal volumes of parts A and B thoroughly for one minute, then apply.",
+      "Mix equal volumes of parts A and B thoroughly for two minutes, then apply.",
       "Allow 24 hours for full cure."
     ],
     "shelfLife": "24 months",

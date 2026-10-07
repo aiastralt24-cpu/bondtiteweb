@@ -202,7 +202,7 @@ const allSiteApplications: SiteApplication[] = [
           },
           {
             "slug": "bondtite-white-paste",
-            "note": "White marble repairs and sealing around PVC pipe openings in concrete."
+            "note": "White marble work, temple manufacturing and repairs, and multi-substrate bonding."
           }
         ]
       },

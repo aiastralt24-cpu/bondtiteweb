@@ -402,7 +402,7 @@ export const catalogueFacts: Record<string, Partial<ProductSeed>> = {
     "steps": [
       "Clean, dry and roughen the surfaces; wash glass or ceramic, rinse and dry, then check the fit.",
       "Measure equal volumes of resin and hardener, or 100:75 by weight. Mix thoroughly for one minute.",
-      "Apply promptly to both surfaces and assemble. Clamp for 30 minutes as specified on the product page.",
+      "Apply to one or both surfaces and assemble. Clamp for 30 minutes.",
       "Allow 24 hours for full cure."
     ]
   },
