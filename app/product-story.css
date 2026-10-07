@@ -234,3 +234,7 @@
 .product-use-cases>li { border:1px solid var(--palette-border); margin:-1px 0 0 -1px; }
 .product-use-cases .product-use-case-number { display:block; color:var(--palette-blue); font-size:12px; margin-bottom:20px; }
 @media(max-width:700px) { .product-split h1 { font-size:clamp(44px,11vw,72px); } }
+.product-split__visual:has(.total-gem-carton) { flex-direction:column; padding:24px; gap:16px; }
+.total-gem-carton { width:100%; text-align:center; }
+.total-gem-carton summary { color:var(--palette-blue); cursor:pointer; font-size:14px; padding:12px; }
+.total-gem-carton img { display:block; margin:16px auto 0; }

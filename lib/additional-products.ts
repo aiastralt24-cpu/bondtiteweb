@@ -2,6 +2,73 @@ import type { ProductSeed } from "@/lib/products";
 
 // Reviewed against the linked Astral product pages on 29 September 2026.
 export const additionalProducts: ProductSeed[] = [
+{
+  "name": "Bondtite Total Gem",
+  "categorySlug": "epoxy-adhesives",
+  "chemistry": "Epoxy",
+  "sourceUrl": "#product-specs",
+  "summary": "Two-component epoxy adhesive for imitation jewellery, stone setting, fashion accessories and decorative assembly. Cures at room temperature with high bond strength and good gap-filling properties.",
+  "image": "/assets/products/bondtite-total-gem-jar.png",
+  "imageTone": "square",
+  "substrates": [
+    "Metal",
+    "Glass",
+    "Stone",
+    "Pearls",
+    "Crystals"
+  ],
+  "applications": [
+    "Stone fixing in imitation jewellery",
+    "Kundan and rhinestone bonding",
+    "Metal-to-metal bonding",
+    "Glass-to-metal bonding",
+    "Pearl and crystal fixing",
+    "Decorative handicrafts",
+    "Fashion accessories assembly"
+  ],
+  "features": [
+    "High bond strength",
+    "Good gap-filling properties",
+    "Room-temperature curing",
+    "Moisture and chemical resistance"
+  ],
+  "packTypes": "1.8 kg set",
+  "settingTime": "8 hours (packaging claim)",
+  "waterRating": "Moisture resistant; not for continuous wet exposure or immersion",
+  "shelfLife": "2 years from manufacture when stored at 2–40°C",
+  "storage": "Store in a dry place in the original, properly closed containers at 2–40°C. Close partially emptied containers immediately.",
+  "limitations": [
+    "Does not bond polyethylene (PE) or polypropylene (PP).",
+    "Not for continuously wet areas or water immersion.",
+    "Not for applications requiring short-term heat exposure above 100°C."
+  ],
+  "steps": [
+    "Clean and dry the surfaces, removing oil, wax and paint.",
+    "Pre-fit the parts before mixing.",
+    "Measure resin (Part A) and hardener (Part B) in equal volumes, or at a ratio of 100:80 by weight.",
+    "Mix thoroughly for 2 minutes until homogeneous.",
+    "Apply to one or both surfaces as required and assemble within the working time.",
+    "Leave undisturbed until cured. Full cure takes 24 hours."
+  ],
+  "faqs": [
+    {
+      "question": "What is Bondtite Total Gem used for?",
+      "answer": "It is developed for imitation jewellery, stone setting, Kundan and rhinestone bonding, pearls and crystals, fashion accessories and decorative handicrafts."
+    },
+    {
+      "question": "How should the resin and hardener be mixed?",
+      "answer": "Mix Part A and Part B in equal volumes (1:1), or at 100:80 by weight. Mix thoroughly for 2 minutes."
+    },
+    {
+      "question": "What is the working time and full cure time?",
+      "answer": "The TDS lists an 80–100 minute pot life at 25°C for a 100 g mixture and a full cure time of 24 hours. The packaging states an 8-hour setting time; setting and full cure are different stages."
+    },
+    {
+      "question": "Which pack size is available?",
+      "answer": "Bondtite Total Gem is supplied as a 1.8 kg set."
+    }
+  ]
+},
   {
     "name": "Bondtite Metallic",
     "categorySlug": "epoxy-adhesives",

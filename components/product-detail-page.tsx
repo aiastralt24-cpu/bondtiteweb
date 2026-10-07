@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {productSpecifications} from '@/lib/product-specifications';
 import { ProductPanelStack } from "@/components/product-panel-stack";
 import { ProductSectionNav } from "@/components/product-section-nav";
@@ -9,6 +10,7 @@ import { catalogProducts, getProductPath, type CatalogProduct, type ProductCateg
 import { formatPackSizes, productCardDescription } from "@/lib/product-format";
 
 export function ProductDetailPage({ category, product }: { category: ProductCategory; product: CatalogProduct }) {
+  const totalGem = product.slug === "bondtite-total-gem";
   const hydra = product.slug === "bondtite-hydra";
   // Official Astral TDS, version 02 (01.04.2024):
   // https://www.astraladhesives.com/media/catalog/product/attachment/t/d/tds_-_bondtite_hydra_.pdf
@@ -51,7 +53,7 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
   return <main id="main-content" tabIndex={-1} className="product-story product-story--split">
     <nav className="container hydra-breadcrumbs breadcrumbs" aria-label="Breadcrumb"><Link href="/products">Products</Link><Link href={`/products/${category.slug}`}>{category.label}</Link><span aria-current="page">{product.label}</span></nav>
     <section className="product-split container" aria-labelledby="product-title">
-      <div className="product-split__visual"><ProductPack product={product} priority /></div>
+      <div className="product-split__visual"><ProductPack product={product} priority />{totalGem&&<details className="total-gem-carton"><summary>View the 1.8 kg carton</summary><Image src="/assets/products/bondtite-total-gem-carton.png" alt="Bondtite Total Gem 1.8 kg outer carton" width={420} height={328} style={{maxWidth:"100%",height:"auto"}}/></details>}</div>
       <div className="product-split__content">
         <span className="mono">Bondtite · {hydra ? "Wood adhesive" : category.label}</span>
         <h1 id="product-title">{hydra ? <>Hydra<span>+</span></> : product.label}</h1>
@@ -97,7 +99,7 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
             <div className="hydra-technical-notes">
               {storage&&<details><summary>Storage & handling</summary><div><p>{storage}</p></div></details>}
               {product.limitations.length > 0 && <div><h3>Application notes</h3>{product.limitations.map(note => <p key={note}>{note}</p>)}</div>}
-              <details><summary>Sources & specification notes</summary><div>{technical && <p>{technical.revision}. Technical properties include the stated test conditions. Pack sizes and application instructions follow the Astral product page unless listed only in the TDS.</p>}{hydra&&<><p>Physical properties: Astral TDS v02, 1 April 2024. Pack sizes and storage guidance: Astral product page.</p><p>The TDS lists different pack sizes and 5–25°C unopened shelf-life conditions; confirm current requirements with Astral before specification.</p></>}<a href={product.sourceUrl} target="_blank" rel="noreferrer">View Astral’s product information</a></div></details>
+              <details><summary>Sources & specification notes</summary><div>{technical && <p>{technical.revision}. Technical properties include the stated test conditions. {totalGem ? "Pack size and application instructions follow the supplied TDS. The 8-hour setting claim is from the supplied packaging; full cure is 24 hours per the TDS." : "Pack sizes and application instructions follow the Astral product page unless listed only in the TDS."}</p>}{hydra&&<><p>Physical properties: Astral TDS v02, 1 April 2024. Pack sizes and storage guidance: Astral product page.</p><p>The TDS lists different pack sizes and 5–25°C unopened shelf-life conditions; confirm current requirements with Astral before specification.</p></>}{totalGem ? <TdsDownload productName={product.label} productSlug={product.slug}/> : <a href={product.sourceUrl} target="_blank" rel="noreferrer">View Astral’s product information</a>}</div></details>
             </div>
           </div>
         </section>

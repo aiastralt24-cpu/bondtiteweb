@@ -1,5 +1,6 @@
 // Official Astral documents reviewed 29 September 2026. Files are served only after lead capture.
 export const tdsDocuments: Record<string, {file: string; source: string}> = {
+"bondtite-total-gem": {"file":"bondtite-total-gem-tds.pdf","source":"Supplied Astral TDS v01, 01.06.2026"},
   "bondtite-fast-and-clear": {
     "file": "bondtite-fast-and-clear-tds.pdf",
     "source": "https://www.astraladhesives.com/media/catalog/product/attachment/b/o/bondtite_fast_clear_-_new_tds.pdf"

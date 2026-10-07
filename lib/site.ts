@@ -337,8 +337,9 @@ const allSiteApplications: SiteApplication[] = [
       {
         "id": "craft-and-coverage",
         "title": "Craft work & surface coverage",
-        "description": "Different formats for detail work and larger supported surfaces.",
+        "description": "Products for jewellery assembly, decorative detail work and supported surface bonding.",
         "products": [
+{"slug":"bondtite-total-gem","note":"Two-part epoxy for imitation jewellery, stone setting, Kundan, rhinestones, pearls and crystals."},
           {
             "slug": "bondtite-quick-art-and-craft-glue",
             "note": "A clear, non-drip craft formula with a short repositioning window."

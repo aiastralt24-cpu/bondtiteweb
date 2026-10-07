@@ -1,6 +1,48 @@
 // Non-conflicting properties transcribed from the linked official Astral TDS.
 // Units and test conditions are retained; disputed cure, pack and shelf-life values are excluded.
 export const productSpecifications: Record<string,{rows:[string,string][];source:string;revision:string}> = {
+"bondtite-total-gem": {
+  "revision": "Supplied Astral TDS v01, 01.06.2026",
+  "source": "Supplied Astral TDS v01, 01.06.2026",
+  "rows": [
+    [
+      "Part A appearance",
+      "Colourless to slightly yellow transparent liquid"
+    ],
+    [
+      "Part B appearance",
+      "Pale yellow to yellow liquid"
+    ],
+    [
+      "Part A viscosity at 25°C",
+      "30,000–40,000 cps · ASTM D2196-05"
+    ],
+    [
+      "Part B viscosity at 25°C",
+      "30,000–40,000 cps · ASTM D2196-05"
+    ],
+    [
+      "Mixing ratio (Part A : Part B)",
+      "100:80 by weight; 100:100 by volume"
+    ],
+    [
+      "Pot life at 25°C (100 g mixture)",
+      "80–100 minutes · ASTM D2471"
+    ],
+    [
+      "Full cure",
+      "24 hours"
+    ],
+    [
+      "Shore D hardness",
+      "70–80 · ASTM D2240"
+    ],
+    [
+      "Lap shear strength at 25°C after 24 hours",
+      "70–120 kg/cm² · ASTM D1002-10"
+    ]
+  ]
+},
   "bondtite-deluxe": {
     "rows": [
       [
