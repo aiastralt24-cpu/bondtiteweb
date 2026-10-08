@@ -33,7 +33,7 @@ export const additionalProducts: ProductSeed[] = [
     "Moisture and chemical resistance"
   ],
   "packTypes": "1.8 kg set",
-  "settingTime": "8 hours (packaging claim)",
+  "settingTime": "8 hours",
   "waterRating": "Moisture resistant; not for continuous wet exposure or immersion",
   "shelfLife": "2 years from manufacture when stored at 2–40°C",
   "storage": "Store in a dry place in the original, properly closed containers at 2–40°C. Close partially emptied containers immediately.",
@@ -61,7 +61,7 @@ export const additionalProducts: ProductSeed[] = [
     },
     {
       "question": "What is the working time and full cure time?",
-      "answer": "The TDS lists an 80–100 minute pot life at 25°C for a 100 g mixture and a full cure time of 24 hours. The packaging states an 8-hour setting time; setting and full cure are different stages."
+      "answer": "The working time for Bondtite Total Gem is 80–100 minutes at 25°C for a 100 g mixture and the full cure time is 24 hours. The packaging states an 8-hour setting time; setting and full cure are different stages."
     },
     {
       "question": "Which pack size is available?",
