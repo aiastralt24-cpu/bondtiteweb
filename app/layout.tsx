@@ -1,6 +1,7 @@
 import { baseUrl } from "@/lib/site";
 import { identityJsonLd, serializeJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
+import { ProductTransition } from "@/components/product-transition";
 import { SiteMotion } from "@/components/site-motion";
 import "@fontsource/archivo/400.css";
 import "@fontsource/archivo/500.css";
@@ -26,6 +27,16 @@ import "./bond-selector.css";
 import "./range-pages.css";
 import "./motion-polish.css";
 import "./policies.css";
+import "./campaign-experience.css";
+import "./home-discovery.css";
+import "./footer-renewed.css";
+import "./home-type-system.css";
+import "./fullscreen-menu.css";
+import "./page-gutters.css";
+import "./hero-header.css";
+import "./dealer-partnership.css";
+import "./product-media.css";
+import "./lead-dashboard.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -44,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeJsonLd(identityJsonLd)}}/><SiteMotion /></body>
+      <body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{__html:serializeJsonLd(identityJsonLd)}}/><SiteMotion /><ProductTransition /></body>
     </html>
   );
 }

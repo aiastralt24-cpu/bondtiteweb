@@ -368,7 +368,7 @@ export const additionalProducts: ProductSeed[] = [
       "Designed for PVC surfaces"
     ],
     "sourceUrl": "https://www.astraladhesives.com/bondtite-pvc-bond.html",
-    "image": "/assets/products/bondtite-pvc-bond-official.jpg",
+    "image": "/assets/products/bondtite-pvc-bond-5kg.png",
     "imageTone": "square",
     "packTypes": "1 kg, 5 kg, 10 kg",
     "steps": [

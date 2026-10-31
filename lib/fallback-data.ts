@@ -1,3 +1,4 @@
+import { homepageFaqs } from "@/lib/homepage-faqs";
 import type { HomepageData } from "@/lib/types";
 
 export const fallbackHomepageData: HomepageData = {
@@ -251,28 +252,7 @@ export const fallbackHomepageData: HomepageData = {
     { value: "2.7 lakh", suffix: "+", label: "Dealers" },
     { value: "27", label: "Products" }
   ],
-  faqs: [
-    {
-      question: "Which Bondtite adhesive should I use for plywood and MDF?",
-      answer:
-        "Use a PVA emulsion for most plywood, MDF and laminate work. Choose a water-resistant grade such as Hydra+ for kitchens, bathrooms and monsoon-prone workshops."
-    },
-    {
-      question: "Are Bondtite PVA products safe indoors?",
-      answer:
-        "Yes. The PVA range is single-component and low odour for enclosed workshop and home environments. Solvent-based products should be used with the ventilation guidance printed on the pack."
-    },
-    {
-      question: "What does D3 water resistance mean?",
-      answer:
-        "D3 describes a water-resistance class for wood adhesive performance. It is useful for interior joinery that may see frequent humidity or occasional water exposure."
-    },
-    {
-      question: "Can one adhesive bond every material?",
-      answer:
-        "No. Wood, metal, plastic, rubber and fabric need different chemistries. The Product advisor helps you shortlist products that list your selected surfaces."
-    }
-  ],
+  faqs: homepageFaqs,
   footer: {
     columns: [
       {

@@ -1,0 +1,3250 @@
+[
+  {
+    "sourceRow": 4,
+    "materials": [
+      "Wood",
+      "Wood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "sourceRow": 5,
+    "materials": [
+      "Wood",
+      "Acrylic"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Acrylic Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 6,
+    "materials": [
+      "Wood",
+      "MDF"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 7,
+    "materials": [
+      "Wood",
+      "Plywood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 8,
+    "materials": [
+      "Wood",
+      "HDHMR"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 9,
+    "materials": [
+      "Wood",
+      "Louvers"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Multifix",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 2
+      }
+    ]
+  },
+  {
+    "sourceRow": 10,
+    "materials": [
+      "Wood",
+      "Laminate"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Heatbond",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 11,
+    "materials": [
+      "Wood",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 12,
+    "materials": [
+      "Acrylic",
+      "MDF"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Acrylic Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 13,
+    "materials": [
+      "Acrylic",
+      "Plywood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Acrylic Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 14,
+    "materials": [
+      "Acrylic",
+      "HDHMR"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Acrylic Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 15,
+    "materials": [
+      "Acrylic",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Acrylic Fix",
+        "priority": 2
+      }
+    ]
+  },
+  {
+    "sourceRow": 16,
+    "materials": [
+      "MDF",
+      "MDF"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 17,
+    "materials": [
+      "MDF",
+      "Plywood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 18,
+    "materials": [
+      "MDF",
+      "HDHMR"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 19,
+    "materials": [
+      "MDF",
+      "Louvers"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Multifix",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 2
+      },
+      {
+        "name": "Zesta All Rounder",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "sourceRow": 20,
+    "materials": [
+      "MDF",
+      "Laminate"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Heatbond",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 21,
+    "materials": [
+      "MDF",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 22,
+    "materials": [
+      "Plywood",
+      "Plywood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 23,
+    "materials": [
+      "Plywood",
+      "HDHMR"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 24,
+    "materials": [
+      "Plywood",
+      "Louvers"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Multifix",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 2
+      },
+      {
+        "name": "Zesta All Rounder",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "sourceRow": 25,
+    "materials": [
+      "Plywood",
+      "Laminate"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Heatbond",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 26,
+    "materials": [
+      "Plywood",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 27,
+    "materials": [
+      "HDHMR",
+      "HDHMR"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 28,
+    "materials": [
+      "HDHMR",
+      "Louvers"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Multifix",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 2
+      },
+      {
+        "name": "Zesta All Rounder",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "sourceRow": 29,
+    "materials": [
+      "HDHMR",
+      "Laminate"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Hydra+",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Heatbond",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Aqua",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Edge D3",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 30,
+    "materials": [
+      "HDHMR",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 31,
+    "materials": [
+      "Laminate",
+      "Laminate"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Multilam",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "sourceRow": 32,
+    "materials": [
+      "Laminate",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 33,
+    "materials": [
+      "Laminate",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 2
+      }
+    ]
+  },
+  {
+    "sourceRow": 34,
+    "materials": [
+      "WPC",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 35,
+    "materials": [
+      "WPC",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 36,
+    "materials": [
+      "WPC",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 37,
+    "materials": [
+      "WPC",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 38,
+    "materials": [
+      "Foam",
+      "Metal"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Standard",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 39,
+    "materials": [
+      "Foam",
+      "Glass"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Standard",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 40,
+    "materials": [
+      "Foam",
+      "Plastics(exclude PE | PP | PTFE | Silicon)"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Standard",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 41,
+    "materials": [
+      "Foam",
+      "Wood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Standard",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 42,
+    "materials": [
+      "Foam",
+      "Acrylic"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      }
+    ]
+  },
+  {
+    "sourceRow": 43,
+    "materials": [
+      "Foam",
+      "MDF"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Standard",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 44,
+    "materials": [
+      "Foam",
+      "Plywood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Standard",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 45,
+    "materials": [
+      "Foam",
+      "HDHMR"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Standard",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 46,
+    "materials": [
+      "Foam",
+      "Louvers"
+    ],
+    "products": [
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 47,
+    "materials": [
+      "Foam",
+      "Laminate"
+    ],
+    "products": [
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "sourceRow": 48,
+    "materials": [
+      "Foam",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 49,
+    "materials": [
+      "Foam",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 50,
+    "materials": [
+      "Foam",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 51,
+    "materials": [
+      "Foam",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 52,
+    "materials": [
+      "Foam",
+      "Foam"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 53,
+    "materials": [
+      "Foam",
+      "Rexine"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 54,
+    "materials": [
+      "Rexine",
+      "Rexine"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 55,
+    "materials": [
+      "Rexine",
+      "Wood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 56,
+    "materials": [
+      "Rexine",
+      "Acrylic"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Standard",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Foambond",
+        "priority": 3
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 57,
+    "materials": [
+      "Rexine",
+      "MDF"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 58,
+    "materials": [
+      "Rexine",
+      "Plywood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 59,
+    "materials": [
+      "Rexine",
+      "HDHMR"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Foambond",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 2
+      },
+      {
+        "name": "Bondgrip Quickgrip SP",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 60,
+    "materials": [
+      "Rexine",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Standard",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Heatbond",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Foambond SR",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 61,
+    "materials": [
+      "Rexine",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Standard",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Heatbond",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Foambond SR",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 62,
+    "materials": [
+      "Rexine",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Standard",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Heatbond",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Foambond SR",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 63,
+    "materials": [
+      "Rexine",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Standard",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Heatbond",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Foambond SR",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 64,
+    "materials": [
+      "Rexine",
+      "Metal"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Standard",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Heatbond",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Foambond SR",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Multibond",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 65,
+    "materials": [
+      "Rexine",
+      "Plastics(exclude PE | PP | PTFE | Silicon)"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Standard SR",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Multibond SR",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Foambond SR",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Quick Spray",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 66,
+    "materials": [
+      "Metal",
+      "Metal"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Uniweld",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 67,
+    "materials": [
+      "Metal",
+      "Glass"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 68,
+    "materials": [
+      "Metal",
+      "Plastics(exclude PE | PP | PTFE | Silicon)"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Uniweld",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 69,
+    "materials": [
+      "Metal",
+      "Wood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite White Paste",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 70,
+    "materials": [
+      "Metal",
+      "Acrylic"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Uniweld",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 71,
+    "materials": [
+      "Metal",
+      "MDF"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Uniweld",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 72,
+    "materials": [
+      "Metal",
+      "Plywood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite White Paste",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 73,
+    "materials": [
+      "Metal",
+      "HDHMR"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 74,
+    "materials": [
+      "Metal",
+      "Louvers"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Heatbond",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 75,
+    "materials": [
+      "Metal",
+      "Laminate"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 76,
+    "materials": [
+      "Metal",
+      "Stone"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Uniweld",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 77,
+    "materials": [
+      "Metal",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 78,
+    "materials": [
+      "Metal",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Uniweld",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 79,
+    "materials": [
+      "Metal",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Uniweld",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 80,
+    "materials": [
+      "Metal",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 81,
+    "materials": [
+      "Glass",
+      "Glass"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 82,
+    "materials": [
+      "Glass",
+      "Plastics(exclude PE | PP | PTFE | Silicon)"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 83,
+    "materials": [
+      "Glass",
+      "Wood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 84,
+    "materials": [
+      "Glass",
+      "Acrylic"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 85,
+    "materials": [
+      "Glass",
+      "MDF"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 86,
+    "materials": [
+      "Glass",
+      "Plywood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 87,
+    "materials": [
+      "Glass",
+      "HDHMR"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 88,
+    "materials": [
+      "Glass",
+      "Louvers"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 89,
+    "materials": [
+      "Glass",
+      "Laminate"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 90,
+    "materials": [
+      "Glass",
+      "Stone"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 91,
+    "materials": [
+      "Glass",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 92,
+    "materials": [
+      "Glass",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 93,
+    "materials": [
+      "Glass",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 94,
+    "materials": [
+      "Glass",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 95,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "Plastics(exclude PE | PP | PTFE | Silicon)"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Uniweld",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 96,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "Wood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 97,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "Acrylic"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 98,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "MDF"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 99,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "Plywood"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 100,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "HDHMR"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 101,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "Louvers"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 102,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "Laminate"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "sourceRow": 103,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "Stone"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 104,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 105,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 106,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 107,
+    "materials": [
+      "Plastics(exclude PE | PP | PTFE | Silicon)",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 108,
+    "materials": [
+      "Wood",
+      "Stone"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 109,
+    "materials": [
+      "Wood",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 110,
+    "materials": [
+      "Wood",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 111,
+    "materials": [
+      "Wood",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 112,
+    "materials": [
+      "Acrylic",
+      "Acrylic"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 113,
+    "materials": [
+      "Acrylic",
+      "Louvers"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "sourceRow": 114,
+    "materials": [
+      "Acrylic",
+      "Laminate"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Acrylic Fix",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 115,
+    "materials": [
+      "Acrylic",
+      "Stone"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 116,
+    "materials": [
+      "Acrylic",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 117,
+    "materials": [
+      "Acrylic",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 118,
+    "materials": [
+      "Acrylic",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 119,
+    "materials": [
+      "MDF",
+      "Stone"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 120,
+    "materials": [
+      "MDF",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 121,
+    "materials": [
+      "MDF",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 122,
+    "materials": [
+      "MDF",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 123,
+    "materials": [
+      "Plywood",
+      "Stone"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite White Paste",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 124,
+    "materials": [
+      "Plywood",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite White Paste",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 125,
+    "materials": [
+      "Plywood",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite White Paste",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 126,
+    "materials": [
+      "Plywood",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite White Paste",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 127,
+    "materials": [
+      "HDHMR",
+      "Stone"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 128,
+    "materials": [
+      "HDHMR",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 129,
+    "materials": [
+      "HDHMR",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 130,
+    "materials": [
+      "HDHMR",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "sourceRow": 131,
+    "materials": [
+      "Louvers",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "sourceRow": 132,
+    "materials": [
+      "Laminate",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      }
+    ]
+  },
+  {
+    "sourceRow": 133,
+    "materials": [
+      "Laminate",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite WPC Fix",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Wood",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 134,
+    "materials": [
+      "Stone",
+      "Stone"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 135,
+    "materials": [
+      "Stone",
+      "WPC"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 136,
+    "materials": [
+      "Stone",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 137,
+    "materials": [
+      "Stone",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 138,
+    "materials": [
+      "Stone",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 139,
+    "materials": [
+      "Concrete",
+      "Concrete"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 140,
+    "materials": [
+      "Concrete",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 141,
+    "materials": [
+      "Concrete",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 142,
+    "materials": [
+      "Ceramics",
+      "Ceramics"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 4
+      }
+    ]
+  },
+  {
+    "sourceRow": 143,
+    "materials": [
+      "Glass- back coated",
+      "Glass- back coated"
+    ],
+    "products": [
+      {
+        "name": "Bondtite Fast & Clear",
+        "priority": 1
+      },
+      {
+        "name": "Bondtite Strong & Clear",
+        "priority": 2
+      },
+      {
+        "name": "Bondtite Super Strength",
+        "priority": 3
+      },
+      {
+        "name": "Bondtite Ultra Strength",
+        "priority": 4
+      }
+    ]
+  }
+]

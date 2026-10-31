@@ -37,11 +37,11 @@ export function MaterialStory() {
   };
   const material = materials[selected];
   return (
-    <section ref={root} className="material-story" aria-labelledby="material-story-title">
+    <section id="material-story" ref={root} className="material-story" aria-labelledby="material-story-title">
       <div className="container material-story__grid">
         <div className="material-story__copy">
           <span className="mono">The craft of a good bond / Hydra+</span>
-          <h2 id="material-story-title">A great finish.<br /><em>Three careful steps.</em></h2>
+          <h2 id="material-story-title" className="home-title">A great finish.<br /><span className="home-title__accent">Three careful steps.</span></h2>
           <p>A closer look at joining laminate and plywood with Bondtite Hydra+.</p>
           <div className="material-story__choices" aria-label="Explore Hydra+ application steps">
             {materials.map((item, index) => (
@@ -52,7 +52,7 @@ export function MaterialStory() {
             <h3>{material.note}</h3>
             <p>{material.detail}</p>
           </div>
-          <noscript>{materials.slice(1).map(item => <p key={item.name}><strong>{item.name}: </strong>{item.detail}</p>)}</noscript>
+          <details className="material-story__all"><summary>Read all three steps</summary>{materials.map(item => <p key={item.name}><strong>{item.name}: </strong>{item.detail}</p>)}</details>
           <Link className="story-link" href="/products/woodworking/bondtite-hydra">Full product guidance </Link>
         </div>
         <div className={`material-story__visual material-story__visual--${material.className}`}>

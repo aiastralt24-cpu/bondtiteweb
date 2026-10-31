@@ -44,7 +44,7 @@ export function ContactDesk({ productName, documentation, products, project, dea
       <div className="enquiry-desk__field"><label htmlFor="enquiry-role">I am a <span>(optional)</span></label><select id="enquiry-role" name="role" defaultValue=""><option value="">Select an option</option>{["Home user", "Contractor / applicator", "Architect / consultant", "Dealer / distributor", "Industrial / OEM"].map(role => <option key={role}>{role}</option>)}</select></div>
 </div></details>
     <div className="enquiry-desk__footer">
-<p className="form-privacy-note">Read how we use your details in our <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy (opens in a new tab)</a>.</p>
+<p className="form-privacy-note">Read how we use your details in our <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
     <label className="enquiry-desk__consent"><input name="consent" type="checkbox" required /> <span>I agree that Bondtite may contact me about this enquiry.</span></label>
     <button className="enquiry-desk__action" type="submit" disabled={busy}>{busy?"Submitting…":"Submit"}</button>
     {error && <p className="enquiry-desk__status" role="alert">{error}</p>}

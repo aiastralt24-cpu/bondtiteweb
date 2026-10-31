@@ -88,6 +88,7 @@ export type Stat = {
 export type Faq = {
   question: string;
   answer: string;
+  links?: Array<{ label: string; href: string }>;
 };
 
 export type FooterColumn = {

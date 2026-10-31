@@ -1,0 +1,25 @@
+/* Shared image geometry at every entry point, within each component's own frame. */
+.product-image--normalized {
+  container-type:size;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+.product-image--normalized .product-image__crop {
+  flex:none;
+  width:min(100%,calc(var(--pack-height,230px) * var(--pack-ratio)));
+}
+@supports (width:1cqw) {
+  .product-image--normalized .product-image__crop {
+    width:min(100cqw,calc(100cqh * var(--pack-ratio)));
+  }
+}
+/* Keep the existing frame sizes; only standardize the pack inside them. */
+.featured-range__visual .product-image--normalized,
+.product-story__related-image .product-image--normalized,
+.application-guide-product__image .product-image--normalized,
+.resource-finder__pack .product-image--normalized {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}

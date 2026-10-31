@@ -1,173 +1,64 @@
 import Link from "next/link";
 import { ProductPack } from "@/components/product-pack";
-import { catalogProducts } from "@/lib/products";
+import { catalogProducts, getProductPath } from "@/lib/products";
 
-const dealerProducts = [
-  "bondtite-hydra",
-  "bondtite-multibond",
-  "bondtite-quik-spray",
-  "bondtite-foambond"
-]
-  .map((slug) => catalogProducts.find((product) => product.slug === slug))
-  .filter(Boolean);
-
-const benefits = [
-  {
-    label: "Range depth",
-    title: "A range for everyday trade",
-    body: "Woodworking, rubber, sprayable, epoxy, stone care and quick-fix formats for daily trade demand."
-  },
-  {
-    label: "Trade pull",
-    title: "Built for working sites",
-    body: "A practical range for carpenters, contractors, fabricators, upholstery teams and repair counters."
-  },
-  {
-    label: "Support",
-    title: "Astral-backed guidance",
-    body: "Product selection, technical documents and customer-care support help dealers sell with clarity."
-  }
-];
-
-const steps = [
-  "Share your location, business type and current adhesive category mix.",
-  "Discuss distribution fit, the relevant product range and local demand with the team.",
-  "Ask about commercial terms, product availability and the next steps for your business."
-];
+const range = [
+  { slug: "bondtite-hydra", job: "Furniture & joinery", copy: "For wood joints, plywood and laminate work." },
+  { slug: "bondtite-multibond", job: "Interior & trade applications", copy: "For flooring, leather, upholstery and HVAC work." },
+  { slug: "bondtite-foambond", job: "Upholstery & foam", copy: "For foam, rexine and wood bonding." },
+  { slug: "bondtite-fast-and-clear", job: "Repairs & assembly", copy: "A two-component epoxy for mixed-material jobs." }
+].flatMap(item => {
+  const product = catalogProducts.find(product => product.slug === item.slug);
+  return product ? [{ ...item, product }] : [];
+});
 
 export function DealerPage() {
-  return (
-    <main id="main-content" tabIndex={-1}>
-      <section className="dealer-hero">
-        <div className="container dealer-hero__grid">
-          <div>
-            <nav className="breadcrumbs" aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
-              <span>Become a dealer</span>
-            </nav>
-            <span className="mono">Partner with Bondtite</span>
-            <h1 className="display">
-              Bring Bondtite to your <span className="accent">trade counter.</span>
-            </h1>
-            <p>
-              Join a dealer network built around practical adhesive demand,
-              fast-moving product formats and Astral-backed customer support.
-            </p>
-            <div className="dealer-hero__actions">
-              <a
-                className="button button--primary"
-                href="/contact?request=dealer"
-              >
-                Apply by email
-              </a>
-              <a className="button button--secondary" href="tel:+917311103331">
-                Call +91-7311103331
-              </a>
-            </div>
+  return <main id="main-content" tabIndex={-1} className="dealer-partnership">
+    <section className="partner-intro">
+      <div className="container">
+        <nav className="partner-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><span aria-current="page">Become a dealer</span></nav>
+        <div className="partner-intro__grid">
+          <div className="partner-intro__copy">
+            <p className="partner-eyebrow">Partner with Bondtite</p>
+            <h1>Good business.<br /><span>A stronger bond.</span></h1>
+            <p className="partner-intro__description">Bring Bondtite to your counter. Explore an adhesive range for the furniture makers, contractors and craftspeople in your market.</p>
+            <div className="partner-actions"><Link className="button button--primary" href="/contact?request=dealer">Enquire about becoming a dealer</Link><a href="#dealer-range" className="partner-text-link">Explore the range</a></div>
+            <p className="partner-intro__note">From Astral. Made for the work around you.</p>
           </div>
-          <div className="dealer-hero__panel">
-            <span className="mono">The Bondtite partnership</span>
-            <div className="dealer-overview">
-              <p><strong>Products for the job</strong>Explore woodworking, epoxy, construction and repair adhesives.</p>
-              <p><strong>Practical guidance</strong>Discuss product selection and request current technical documents.</p>
-              <p><strong>Let’s talk trade</strong>Share your location and business details with Astral customer care.</p>
-            </div>
+          <div className="partner-showcase" aria-label="Bondtite products for your business">
+            <p className="partner-eyebrow">A place on your shelf.<br />A part in their next project.</p>
+            <div className="partner-showcase__packs">{range.slice(0,3).map(({product})=><Link href={getProductPath(product)} key={product.id} aria-label={`Explore ${product.label}`}><ProductPack product={product} normalized priority /></Link>)}</div>
+            <div className="partner-showcase__caption"><strong>Bondtite by Astral</strong><span>Woodworking · Interiors · Repairs</span></div>
           </div>
         </div>
-      </section>
+        <div className="partner-reasons">
+          <div><h2>A range for your market</h2><p>Products for woodworking, upholstery, construction and everyday repairs.</p></div>
+          <div><h2>Clear product guidance</h2><p>Material compatibility, application advice and technical data sheets.</p></div>
+          <div><h2>A conversation with Astral</h2><p>Discuss your location, business and product requirements with our team.</p></div>
+        </div>
+      </div>
+    </section>
 
-      <section className="section dealer-benefits">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <span className="mono">Why partner</span>
-              <h2 className="display section-title">
-                A range dealers can <span className="accent">explain fast.</span>
-              </h2>
-            </div>
-            <p>
-              Bondtite is organized by real buying intent: material, application,
-              site condition and speed.
-            </p>
-          </div>
-          <div className="dealer-benefits__grid">
-            {benefits.map((benefit) => (
-              <article key={benefit.title}>
-                <span className="mono">{benefit.label}</span>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+    <section id="dealer-range" className="partner-range container" aria-labelledby="partner-range-title">
+      <div className="partner-section-head"><div><p className="partner-eyebrow">Products with a purpose</p><h2 id="partner-range-title">For the jobs<br /><span>your customers bring.</span></h2></div><Link className="partner-text-link" href="/products">Explore all products</Link></div>
+      <div className="partner-range__grid">{range.map(({product,job,copy})=><article key={product.id}>
+        <Link href={getProductPath(product)} className="partner-range__visual" aria-label={`Explore ${product.label}`}><ProductPack product={product} normalized /></Link>
+        <div className="partner-range__copy"><p className="partner-eyebrow">{job}</p><h3><Link href={getProductPath(product)}>{product.label}</Link></h3><p>{copy}</p><Link className="partner-text-link" href={getProductPath(product)}>View product</Link></div>
+      </article>)}</div>
+    </section>
 
-      <section className="section dealer-range">
-        <div className="container dealer-range__grid">
-          <div>
-            <span className="mono">Fast movers</span>
-            <h2 className="display section-title">
-              Product families for daily <span className="accent">trade demand.</span>
-            </h2>
-            <p>
-              From Hydra+ for joinery to Foambond for upholstery, the range
-              gives retailers a clear answer for common adhesive jobs.
-            </p>
-          </div>
-          <div className="dealer-product-grid">
-            {dealerProducts.map((product) => (
-              <a href={`/products/${product!.categorySlug}/${product!.slug}`} key={product!.slug}>
-                <ProductPack product={product!} />
-                <span>{product!.label}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section dealer-process">
-        <div className="container dealer-process__grid">
-          <div>
-            <span className="mono">Onboarding</span>
-            <h2 className="display section-title">
-              Simple enquiry, clear <span className="accent">next steps.</span>
-            </h2>
-          </div>
-          <ol>
-            {steps.map((step) => (
-              <li key={step}>
-                <p>{step}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="section dealer-cta">
-        <div className="container dealer-cta__panel">
-          <div>
-            <span className="mono">Dealer enquiry</span>
-            <h2 className="display">
-              Ready to discuss your <span className="accent">market?</span>
-            </h2>
-            <p>
-              Send your business details and the Bondtite team will guide you
-              on fit, range and next steps.
-            </p>
-          </div>
-          <div>
-            <a
-              className="button button--primary"
-              href="/contact?request=dealer"
-            >
-              customercare@astraladhesives.com
-            </a>
-            <a className="dealer-cta__phone" href="tel:+917311103331">
-              +91-7311103331
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+    <section className="partner-start" aria-labelledby="partner-start-title"><div className="container partner-start__grid">
+      <div><p className="partner-eyebrow">Let’s talk business</p><h2 id="partner-start-title">Your next step.<br /><span>A conversation.</span></h2><p className="partner-start__intro">Tell us about your business. The team can discuss the range, availability and dealership requirements for your location.</p>
+        <ol className="partner-steps">
+          <li><h3>Tell us about your business</h3><p>Share your name, business name, city and contact details.</p></li>
+          <li><h3>Discuss your market</h3><p>Let us know the customers you serve and the adhesive categories you stock.</p></li>
+          <li><h3>Explore the possibilities</h3><p>Discuss product availability, commercial terms and the next steps with the team.</p></li>
+        </ol>
+      </div>
+      <aside className="partner-enquiry" aria-labelledby="partner-enquiry-title"><p className="partner-eyebrow">Dealer enquiry</p><h3 id="partner-enquiry-title">Let’s get to<br />know your business.</h3><p>Start with a few details through our dealer enquiry form.</p><Link className="button button--primary" href="/contact?request=dealer">Start your dealer enquiry</Link><span className="partner-enquiry__hint">Opens the contact form with dealer enquiry selected.</span>
+        <div className="partner-enquiry__contact"><span>Prefer to speak to us?</span><a href="tel:+917311103331">+91 73111 03331</a><a href="mailto:customercare@astraladhesives.com">customercare@astraladhesives.com</a></div>
+        <p className="partner-enquiry__fine">Enquiries are reviewed by the team. Availability and appointment are subject to discussion.</p>
+      </aside>
+    </div></section>
+  </main>;
 }

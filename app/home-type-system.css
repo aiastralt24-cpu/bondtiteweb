@@ -1,0 +1,68 @@
+/* Shared homepage type roles. Archivo for headings; blue for one key phrase. */
+:root {
+ --home-heading-size:clamp(32px,3.6vw,52px);
+ --home-heading-leading:1.14;
+ --home-heading-tracking:-.035em;
+ --home-heading-accent:#2d589c;
+}
+.bond-home .home-title.home-title,
+.footer.bond-footer--renewed .bond-footer__intro h2.home-title {
+ font-family:var(--font-body); font-size:var(--home-heading-size);
+ font-weight:600; line-height:var(--home-heading-leading);
+ letter-spacing:var(--home-heading-tracking); color:#0b1a2b;
+ margin:20px 0 24px; max-width:22ch; text-wrap:balance;
+}
+.bond-home .home-title.home-title .home-title__accent,
+.footer.bond-footer--renewed .bond-footer__intro .home-title__accent {
+ color:var(--home-heading-accent); font-weight:inherit; font-style:normal;
+}
+.bond-home .material-story[data-cinematic] h2.home-title { font-size:var(--home-heading-size); line-height:var(--home-heading-leading); }
+.bond-home .application-bento__copy h3,
+.bond-home .featured-range__item h3,
+.bond-home .material-story__description h3,
+.bond-home .story-product > span {
+ font-family:var(--font-body); font-weight:600; font-size:clamp(22px,2vw,28px);
+ line-height:1.25; letter-spacing:-.025em;
+}
+.bond-home .featured-range__item h3 { font-size:clamp(20px,1.8vw,26px); }
+.bond-home .campaign-title__line { font-weight:600; letter-spacing:var(--home-heading-tracking); line-height:1.1; }
+.footer.bond-footer--renewed .bond-footer__intro h2.home-title { margin:0; }
+.bond-home .bond-workshop__heading .home-title { margin-bottom:0; }
+@media(max-width:700px) {
+ .bond-home .home-title.home-title { max-width:22ch; margin:16px 0 20px; }
+ .bond-home .material-story[data-cinematic] h2.home-title { font-size:var(--home-heading-size); }
+}
+
+/* Consistent image-led application cards. */
+.bond-home .application-bento__grid { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:none; gap:20px; }
+.bond-home .application-bento__grid .application-bento__card { min-height:320px; grid-column:auto; grid-row:auto; border:0; background:#102436; }
+.bond-home .application-bento__card .application-bento__scene { inset:0; }
+.bond-home .application-bento__card .application-bento__scene::after { background:linear-gradient(180deg,rgba(7,20,32,0) 20%,rgba(7,20,32,.35) 52%,rgba(7,20,32,.9) 100%); }
+.bond-home .application-bento__card .application-bento__copy { width:100%; padding:28px 80px 28px 28px; min-height:320px; }
+.bond-home .application-bento__card .application-bento__copy h3 { color:#fff; font:600 clamp(22px,2.1vw,30px)/1.2 var(--font-body); letter-spacing:-.025em; max-width:none; margin:0 0 10px; text-wrap:initial; }
+.bond-home .application-bento__card p { color:#e7ecf0; font-size:13px; line-height:1.6; max-width:none; margin:0; }
+.application-bento__arrow { position:absolute; z-index:2; right:26px; bottom:28px; display:grid; place-items:center; width:38px; height:38px; border:1px solid #ffffff65; border-radius:50%; color:#fff; font-size:23px; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+ .bond-home .application-bento__card:hover .application-bento__scene img { transform:scale(1.035); }
+}
+@media(max-width:700px) {
+ .bond-home .application-bento__grid { grid-template-columns:1fr; gap:16px; }
+ .bond-home .application-bento__grid .application-bento__card { min-height:290px; }
+ .bond-home .application-bento__card .application-bento__copy { min-height:290px; padding:24px 65px 24px 22px; }
+ .application-bento__arrow { right:18px; bottom:24px; width:34px; height:34px; }
+ .bond-home .application-bento__card p { font-size:12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .bond-home .application-bento__card .application-bento__scene img { transition:none; transform:none; }
+}
+
+/* A dedicated campaign voice; the remaining site retains Archivo. */
+@font-face { font-family:'Bondtite Campaign'; src:url('/assets/fonts/fraunces/medium.ttf') format('truetype'); font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:'Bondtite Campaign'; src:url('/assets/fonts/fraunces/semibold-italic.ttf') format('truetype'); font-weight:600; font-style:italic; font-display:swap; }
+.bond-home .campaign-hero h1 { max-width:850px; line-height:1; letter-spacing:-.035em; }
+.campaign-title__lead { display:block; font:500 clamp(38px,4.8vw,68px)/1.12 'Bondtite Campaign',Georgia,serif; color:#f6eedb; letter-spacing:-.035em; }
+.campaign-title__signature { display:block; width:fit-content; padding:0 .1em .12em 0; margin-top:4px; font:italic 600 clamp(76px,10vw,144px)/1.05 'Bondtite Campaign',Georgia,serif; letter-spacing:-.055em; color:#ead08a; }
+@media(max-width:700px) {
+ .campaign-title__lead { font-size:clamp(34px,8.4vw,48px); }
+ .campaign-title__signature { font-size:clamp(56px,15vw,100px); margin-top:8px; }
+}

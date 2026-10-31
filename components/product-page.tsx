@@ -54,7 +54,7 @@ export function ProductPage() {
             { slug: "bondtite-deluxe", label: "Build", detail: "Wood adhesives" },
             { slug: "bondtite-fast-and-clear", label: "Repair", detail: "Epoxy adhesives" },
             { slug: "bondtite-quick", label: "Fix", detail: "Instant adhesives" }
-          ].map(item => { const product = catalogProducts.find(product => product.slug === item.slug); return product ? <Link key={item.slug} href={getProductPath(product)} className="range-browser__hero-product" aria-label={`Explore ${product.name}`}><ProductPack product={product} priority /><span className="range-browser__hero-product-label">{item.label}</span><span className="range-browser__hero-product-detail">{item.detail}</span></Link> : null; })}</div>
+          ].map(item => { const product = catalogProducts.find(product => product.slug === item.slug); return product ? <Link key={item.slug} href={getProductPath(product)} className="range-browser__hero-product" aria-label={`Explore ${product.name}`}><ProductPack product={product} priority normalized /><span className="range-browser__hero-product-label">{item.label}</span><span className="range-browser__hero-product-detail">{item.detail}</span></Link> : null; })}</div>
         </div>
     </div></header>
     <div className="container">
@@ -70,7 +70,7 @@ export function ProductPage() {
         {visibleProducts.length === 0 && <div className="range-browser__empty"><h2>No products found.</h2><p>Try another name or material, or clear your filters to see the full range.</p><button className="button" type="button" onClick={clearFilters}>Show all products</button></div>}
         <div ref={resultsMotion} className="range-browser__grid">
           {visibleProducts.map(product => <article className="catalog-card" key={product.id}>
-            <Link className="catalog-card__visual" href={getProductPath(product)} aria-label={`Explore ${product.name}`}><ProductPack product={product} /></Link>
+            <Link className="catalog-card__visual" href={getProductPath(product)} aria-label={`Explore ${product.name}`}><ProductPack product={product} normalized /></Link>
             <div className="catalog-card__body"><span className="catalog-card__meta">{categoryLabels[product.categorySlug]}</span>
             <h2><Link href={getProductPath(product)}>{product.label}</Link></h2>
             <p>{productCardDescription(product)}</p>

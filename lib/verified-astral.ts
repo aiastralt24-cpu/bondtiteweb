@@ -25,15 +25,15 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
   },
   "bondtite-aqua": {
     summary: "BONDTITE AQUA is a single-component, white PVA emulsion adhesive with superior waterproof properties. It is a specially designed woodworking adhesive used in furniture to avoid debonding arising due to changes in weather conditions.",
-    packTypes: "5 kg 20 kg 50 kg 60 kg",
+    packTypes: "125 g, 250 g, 500 g, 5 kg 20 kg 50 kg 60 kg",
     steps: ["Clean both surfaces to be bonded.", "Use ready-to-use product without dilution.", "Apply an even coat, give suitable open time, press surfaces together and wipe excess adhesive with a wet cloth."],
-    features: ["Waterproof up to 7 days and withstands boiling water up to 7 hours", "Low odour", "Single component", "Improved spreadability"],
+    features: ["Waterproof up to 7 days and withstands boiling water up to 7 hours", "Low odour", "Single component", "Excellent spreadability"],
     shelfLife: "Shelf Life: Up to 1.5 Years",
     storage: "Store dry in original, properly closed containers at 2-40°C."
   },
   "bondtite-deluxe": {
     summary: "BONDTITE DELUXE is a single-component, water-resistant PVA emulsion adhesive used for woodworking applications. It is specially designed for bonding wood to wood, ply to decorative laminates, veneer, MDF, particle board and block board.",
-    packTypes: "1 kg 5 kg 10 kg 20 kg 50 kg 60 kg",
+    packTypes: "125 g, 250 g, 500 g, 1 kg 5 kg 10 kg 20 kg 50 kg 60 kg",
     steps: ["Clean both surfaces to be bonded.", "Use ready-to-use product without dilution.", "Apply an even coat first on comparatively non-porous surfaces and then on porous surfaces."],
     features: ["Excellent coverage", "Water-resistant", "Low odour", "Single component", "Shows better ease of application"],
     shelfLife: "Shelf Life: Up to 1.5 Years",
@@ -57,15 +57,15 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
   },
   "bondtite-foambond": {
     summary: "BONDTITE FOAMBOND SR is a synthetic rubber-based contact adhesive specially designed for excellent bonding of sofa, revolving chair foam, rexine, mattresses and upholstery.",
-    packTypes: "100 ml 200 ml 500 ml 25 L",
+    packTypes: "100 ml 200 ml 500 ml 1 L 25 L",
     steps: ["Ensure substrates are clean, dry and free from oil, grease, dust and rust.", "Stir adhesive well before use.", "Apply a thin uniform layer on both substrates, allow solvent evaporation for tack and assemble under uniform pressure."],
-    features: ["Excellent spreadability", "Soft on foam", "Light-coloured", "Quick bonding and drying", "Benzene-free"],
+    features: ["Excellent spreadability", "Soft on foam", "Light-coloured", "Quick bonding and drying"],
     shelfLife: "Shelf Life: Up to 1.5 Years",
     storage: "Store dry in original, properly closed containers at 2-40°C."
   },
   "bondtite-heatbond": {
     summary: "BONDTITE HEATBOND is a solvent-borne synthetic rubber-based adhesive formulated for excellent heat resistance up to 180°C. It has quick grab and strong bonding efficiency for vertical laminates.",
-    packTypes: "100 ml 200 ml 500 ml",
+    packTypes: "100 ml 200 ml 500 ml 1 L",
     steps: ["Ensure substrates are clean, dry and free from oil, grease, dust and rust.", "Stir adhesive well before use.", "Apply a thin uniform layer, allow tack development and assemble with uniform contact pressure."],
     features: ["Fast-setting", "High strength", "Excellent heat resistance", "Superior spreadability"],
     shelfLife: "Shelf Life: Up to 1.5 Years",
@@ -73,15 +73,15 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
   },
   "bondtite-hydra": {
     summary: "BONDTITE HYDRA+ is a single-component premium white PVA emulsion adhesive with fast-setting and superior waterproof properties. It uses anti-bubble, cross-linked technology to avoid debonding due to weather changes.",
-    packTypes: "1 kg 2 kg 5 kg 10 kg 20 kg 50 kg 60 kg",
+    packTypes: "125 g, 250 g, 500 g, 1 kg 2 kg 5 kg 10 kg 20 kg 50 kg 60 kg",
     steps: ["Clean both surfaces to be bonded.", "Use ready-to-use product without dilution.", "Apply an even coat, give suitable open time, press surfaces together and wipe excess adhesive with a wet cloth."],
     features: ["Anti-bubble crosslinked technology", "Fast-setting", "Confirms EN204 to category D3", "Superior spread ability"],
     shelfLife: "Shelf Life: Up to 1.5 Years",
     storage: "Store dry in original, properly closed containers at 2-40°C."
   },
   "bondtite-multibond": {
-    summary: "BONDTITE MULTIBOND SR is a synthetic rubber-based contact adhesive suitable for general purpose bonding with rubber, leather, EVA, rexin, footwear, canvas, galvanised metal sheets, PVC flooring and upholstery foam.",
-    packTypes: "200 ml 500 ml 25 L",
+    summary: "A contact adhesive for carpet and PVC flooring, leather, upholstery, footwear and HVAC applications.",
+    packTypes: "200 ml 500 ml 1 L 25 L",
     steps: ["Ensure substrates are clean, dry and free from oil, grease, dust and rust.", "Stir adhesive well before use.", "Apply a thin uniform layer, allow tack development and assemble under uniform pressure."],
     features: ["Multi-purpose", "Benzene-free", "Quick bonding and drying", "Higher tack retention"],
     shelfLife: "Shelf Life: Up to 1.5 Years",
@@ -104,7 +104,7 @@ export const verifiedAstralDetails: Record<string, VerifiedAstralDetail> = {
     storage: "Store unopened in a cool, dry location at 20-25°C and humidity not more than 50%. Do not freeze."
   },
   "bondtite-quik-spray": {
-    summary: "BONDTITE QUIK SPRAY is a sprayable rubber-based adhesive that gives superior bonding over a variety of surfaces where immediate bond strength with optimum heat resistance is required.",
+    summary: "A sprayable rubber adhesive for laminate, plywood and foam bonding, including DIY applications.",
     packTypes: "200 ml 500 ml",
     steps: ["Shake container well and ensure surfaces are clean.", "Hold the can 8-10 cm away at a 90 degree angle.", "Spray evenly with 50% overlap, leave surfaces for 1-2 minutes or until dry to touch, then apply even pressure."],
     features: ["Bonds foam, metal, wood and other surfaces", "Fast bonding", "No odour", "High temperature resistant up to 120°C", "Easy-to-use"],

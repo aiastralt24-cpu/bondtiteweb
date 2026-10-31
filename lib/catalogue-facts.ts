@@ -140,7 +140,12 @@ export const catalogueFacts: Record<string, Partial<ProductSeed>> = {
       "PVC",
       "Leather",
       "Foam",
-      "Wood"
+      "Wood",
+      "Rubber",
+      "EVA",
+      "Rexine",
+      "Canvas",
+      "Galvanised metal"
     ],
     "chemistry": "Synthetic rubber",
     "steps": [
@@ -151,9 +156,9 @@ export const catalogueFacts: Record<string, Partial<ProductSeed>> = {
     ],
     "applications": [
       "Carpet and PVC flooring",
-      "AC ducting",
-      "Footwear",
-      "Upholstery"
+      "HVAC and AC ducting",
+      "Upholstery",
+      "Footwear"
     ]
   },
   "bondtite-quik-spray": {
@@ -168,7 +173,8 @@ export const catalogueFacts: Record<string, Partial<ProductSeed>> = {
     "applications": [
       "Laminate-to-plywood bonding",
       "Wardrobe interiors",
-      "Foam bonding"
+      "Foam bonding",
+      "DIY applications"
     ]
   },
   "bondtite-acrylic-fix": {
@@ -177,6 +183,7 @@ export const catalogueFacts: Record<string, Partial<ProductSeed>> = {
       "Plywood",
       "MDF",
       "HDHMR",
+      "Blockboard",
       "WPC"
     ],
     "chemistry": "Hybrid adhesive",
@@ -450,6 +457,7 @@ export const catalogueFacts: Record<string, Partial<ProductSeed>> = {
     "chemistry": "Methyl methacrylate (MMA)"
   },
   "bondtite-pvc-bond": {
+    "substrates": ["PVC", "Plywood", "MDF", "HDHMR", "Particleboard", "Charcoal sheet", "Louvers"],
     "chemistry": "PVC bonding adhesive"
   },
   "bondtite-quick-spot-on": {

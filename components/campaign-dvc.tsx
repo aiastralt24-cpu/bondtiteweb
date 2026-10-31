@@ -1,36 +1,51 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
 
-export function CampaignDvc() {
+import { useEffect, useId, useRef, useState } from 'react';
+import Link from 'next/link';
+import { campaign } from '@/lib/campaign';
+
+/** The full film downloads only after an explicit play action. */
+export function CampaignDvc({ className = '' }: { className?: string }) {
+  const dialog = useRef<HTMLDialogElement>(null);
   const video = useRef<HTMLVideoElement>(null);
-  const [started, setStarted] = useState(false);
-  const attempted = useRef(false);
+  const opener = useRef<HTMLAnchorElement>(null);
+  const [failed, setFailed] = useState(false);
+  const titleId = useId();
   useEffect(() => {
-    const element = video.current;
-    if (!element || !("IntersectionObserver" in window)) return;
-    const preference = matchMedia('(prefers-reduced-motion: reduce)');
-    let timer: ReturnType<typeof setTimeout> | undefined;
-    let disposed = false, visible = false;
-    function pause() { clearTimeout(timer); element?.pause(); }
-    function visibility() { if(document.hidden) pause(); }
-    function reduced() { if(preference.matches) pause(); }
-    const observer = new IntersectionObserver(([entry]) => {
-      clearTimeout(timer);
-      visible=entry.isIntersecting && entry.intersectionRatio>=0.3;
-      if(!visible){pause();return;}
-      if(attempted.current||preference.matches||document.hidden)return;
-      timer=setTimeout(async()=>{
-        if(disposed||!visible||document.hidden||preference.matches||attempted.current)return;
-        attempted.current=true;element.muted=true;
-        try { await element.play(); if(disposed||!visible||document.hidden||preference.matches){element.pause();return;}setStarted(true); }
-        catch { /* Manual play remains available when autoplay is blocked. */ }
-      },2500);
-    },{threshold:[0,0.3]});
-    observer.observe(element);
-    document.addEventListener('visibilitychange',visibility);
-    preference.addEventListener('change',reduced);
-    return ()=>{disposed=true;pause();observer.disconnect();document.removeEventListener('visibilitychange',visibility);preference.removeEventListener('change',reduced);};
-  },[]);
-  async function play(){attempted.current=true;if(video.current)video.current.muted=false;setStarted(true);try{await video.current?.play();}catch{setStarted(false);}}
-  return <section className="bond-film" aria-label="Bondtite campaign film"><div className="container"><div className="bond-film__heading"><span className="mono">The Bondtite story</span><h2>A bond worth watching.</h2><p>Featuring Ranbir Kapoor.</p></div><div className="bond-film__player"><video ref={video} controls={started} playsInline preload="none" poster="/assets/campaign/ranbir-slider-image.png" aria-label="Bondtite campaign film with Ranbir Kapoor"><source src="/assets/campaign/ranbir-kapoor-bondtite.mp4" type="video/mp4"/></video>{!started&&<button className="bond-film__play" onClick={play} type="button"><span aria-hidden="true">▶</span>Play the film</button>}<noscript><a className="bond-film__fallback" href="/assets/campaign/ranbir-kapoor-bondtite.mp4">Watch the campaign film</a></noscript></div></div></section>;
+    const element = dialog.current;
+    const film = video.current;
+    return () => { film?.pause(); element?.close(); };
+  }, []);
+
+  function close() {
+    video.current?.pause();
+    dialog.current?.close();
+  }
+  function reset() {
+    const film = video.current;
+    if (film) { film.pause(); film.removeAttribute('src'); film.load(); }
+    opener.current?.focus({ preventScroll: true });
+  }
+  async function open(event: React.MouseEvent<HTMLAnchorElement>) {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0 || !dialog.current?.showModal) return;
+    event.preventDefault();
+    setFailed(false);
+    dialog.current.showModal();
+    const film = video.current;
+    if (!film) return;
+    film.src = campaign.film;
+    film.currentTime = 0;
+    try { await film.play(); } catch { /* Native play controls remain available. */ }
+  }
+  return <>
+    <a ref={opener} className={`campaign-watch ${className}`} href={campaign.film} onClick={open} aria-haspopup="dialog"><span className="campaign-watch__icon" aria-hidden="true">▶</span><span>Watch the film<small>{campaign.featuring}</small></span><span aria-hidden="true">↗</span></a>
+    <dialog ref={dialog} className="campaign-dialog" aria-labelledby={titleId} onClose={reset} onCancel={close} onClick={event => { if (event.target === event.currentTarget) close(); }}>
+      <div className="campaign-dialog__bar"><h2 id={titleId}>{campaign.eyebrow}</h2><button type="button" onClick={close} aria-label="Close film">Close <span aria-hidden="true">×</span></button></div>
+      <video ref={video} controls playsInline preload="none" poster={campaign.poster} aria-label={campaign.title} onError={() => setFailed(true)}>
+        {campaign.captions && <track kind="captions" src={campaign.captions} srcLang="en" label="English" default />}
+      </video>
+      {failed && <p className="campaign-dialog__error">The film could not load. <a href={campaign.film}>Open the video directly</a>.</p>}
+      <div className="campaign-dialog__footer"><span>{campaign.featuring} · Bondtite by Astral</span><Link href="/products/woodworking/bondtite-hydra">Explore Hydra+ ↗</Link></div>
+    </dialog>
+  </>;
 }

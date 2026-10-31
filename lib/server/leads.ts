@@ -5,7 +5,7 @@ import path from 'node:path';
 import { randomUUID, createHash } from 'node:crypto';
 
 export type LeadInput = { name:string; mobile:string; email?:string; city?:string; role?:string; topic:string; product?:string; message:string; source:'contact'|'tds'|'dealer'; form_name?:string; source_page?:string };
-export type Lead = LeadInput & { id:string; created_at:string; status:string; notes:string; assignee:string; follow_up:string; version:number };
+export type Lead = LeadInput & { id:string; created_at:string; consent_at:string; status:string; notes:string; assignee:string; follow_up:string; version:number };
 let connection:DatabaseSync|undefined;
 export function db() {
   if (connection) return connection;
@@ -65,12 +65,13 @@ export function listLeads(search='',status='',page=1,pageSize=25,due=false) {
 export function audit(id:string,actor:string,action:string,detail='') {
   db().prepare('INSERT INTO lead_audit(lead_id,actor,action,detail,created_at) VALUES(?,?,?,?,?)').run(id,actor,action,detail,new Date().toISOString());
 }
-export function history(id:string) { return db().prepare('SELECT * FROM lead_audit WHERE lead_id=? ORDER BY id DESC LIMIT 15').all(id) as {actor:string;action:string;detail:string;created_at:string}[]; }
+export function history(id:string) { return db().prepare('SELECT * FROM lead_audit WHERE lead_id=? ORDER BY id DESC').all(id) as {actor:string;action:string;detail:string;created_at:string}[]; }
 export function updateLead(id:string,status:string,notes:string,assignee:string,followUp:string,version:number,actor:string) {
   const database=db();database.exec('BEGIN IMMEDIATE');
   try {
+    const previous=database.prepare('SELECT status,notes,assignee,follow_up FROM leads WHERE id=?').get(id);
     const result=database.prepare('UPDATE leads SET status=?,notes=?,assignee=?,follow_up=?,version=version+1 WHERE id=? AND version=?').run(status,notes,assignee,followUp,id,version);
-    if(result.changes) audit(id,actor,'updated',JSON.stringify({status,assignee,followUp,notesChanged:true}));
+    if(result.changes) audit(id,actor,'updated',JSON.stringify({before:previous,after:{status,notes,assignee,follow_up:followUp}}));
     database.exec('COMMIT');return result.changes;
   } catch(error) {database.exec('ROLLBACK');throw error;}
 }

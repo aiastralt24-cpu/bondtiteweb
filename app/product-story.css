@@ -238,3 +238,17 @@
 .total-gem-carton { width:100%; text-align:center; }
 .total-gem-carton summary { color:var(--palette-blue); cursor:pointer; font-size:14px; padding:12px; }
 .total-gem-carton img { display:block; margin:16px auto 0; }
+
+.product-split__visual .product-image--normalized {
+  --pack-height:320px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  height:var(--pack-height);
+  width:360px;
+  max-width:80%;
+  filter:drop-shadow(0 10px 12px #0a162014);
+}
+@media(max-width:700px) {
+  .product-split__visual .product-image--normalized { --pack-height:240px; width:280px; }
+}

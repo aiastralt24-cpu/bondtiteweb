@@ -46,7 +46,7 @@ export function TdsDownload({ productName, productSlug }: { productName: string;
         <label className="enquiry-trap" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
         <label htmlFor="tds-name">Full name <span>*</span></label><input id="tds-name" name="name" autoComplete="name" required minLength={2} maxLength={100} pattern=".*\S.*" />
         <label htmlFor="tds-mobile">Mobile number <span>*</span></label><input id="tds-mobile" name="mobile" type="tel" autoComplete="tel" placeholder="+91 98765 43210" required pattern="\+?[0-9\s\(\)\-]{7,25}" maxLength={25} />
-<p className="form-privacy-note">Read how we use your details in our <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy (opens in a new tab)</a>.</p>
+<p className="form-privacy-note">Read how we use your details in our <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
         <label className="tds-dialog__consent"><input name="consent" type="checkbox" required /><span>I agree to the use of these details to process this TDS download.</span></label>
         <button className="button button--primary" type="submit" disabled={busy}>{busy ? "Preparing download…" : "Submit & download"}</button>
         {error && <p role="alert">{error}</p>}

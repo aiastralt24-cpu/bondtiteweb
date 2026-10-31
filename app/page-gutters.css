@@ -1,0 +1,20 @@
+/* Shared homepage and navigation edges: 80px desktop, 40px tablet, 20px phone. */
+:root { --page-gutter:80px; --page-content-width:1440px; }
+@media(max-width:1000px) { :root { --page-gutter:40px; } }
+@media(max-width:700px) { :root { --page-gutter:20px; } }
+.bond-home .container,
+.footer.bond-footer--renewed > .container,
+.site-menu .site-menu__shell {
+ width:min(var(--page-content-width),calc(100% - var(--page-gutter) * 2));
+ max-width:var(--page-content-width); margin-inline:auto;
+}
+body:has(.campaign-hero) .header--hero {
+ left:max(var(--page-gutter),calc((100% - var(--page-content-width)) / 2));
+ right:max(var(--page-gutter),calc((100% - var(--page-content-width)) / 2));
+ width:auto;
+}
+body:has(.campaign-hero) .header--hero .header__inner { width:100%; padding-inline:0; }
+.bond-home .campaign-hero__bottom { padding-right:0; }
+@media(max-width:900px) {
+ .site-menu .site-menu__panel { padding-left:0; padding-right:0; }
+}

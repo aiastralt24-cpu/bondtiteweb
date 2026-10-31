@@ -12,7 +12,7 @@ export function SiteMotion() {
     const active = new Set<Animation>();
     let observer: IntersectionObserver | undefined;
     const targets = Array.from(document.querySelectorAll<HTMLElement>(
-      ".range-intro > div, .range-intro__aside, .range-section-heading, .range-product-card, .range-guidance > div, .range-questions > div:first-child, .product-split__visual, .product-split__content, .related-products__header, .application-browser__intro, .application-choice, [data-reveal], .job-list__row, .listing-card, .resource-row, .fit-panel, .catalog-card, .section-head, .job-section__intro, .featured-range__head, .finder__copy, .recommendation, .bond-resources__grid > div, .bond-film__heading, .index-hero__grid > div, .category-hero__grid > div, .product-detail-hero__grid > div, .product-hero__grid > div"
+      ".range-intro > div, .range-intro__aside, .range-section-heading, .range-product-card, .range-guidance > div, .range-questions > div:first-child, .product-split__content, .related-products__header, .application-browser__intro, .application-choice, [data-reveal], .job-list__row, .listing-card, .resource-row, .fit-panel, .catalog-card, .section-head, .job-section__intro, .featured-range__head, .finder__copy, .recommendation, .bond-resources__grid > div, .bond-film__heading, .index-hero__grid > div, .category-hero__grid > div, .product-detail-hero__grid > div, .product-hero__grid > div"
     )).filter(element => !element.parentElement?.closest("[data-reveal]"));
 
     function stop() {

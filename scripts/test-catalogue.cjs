@@ -4,7 +4,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const ts=require('typescript');
 // Load the same TypeScript data used by the rendered catalogue.
-require.extensions['.ts']=(module,file)=>module._compile(ts.transpileModule(fs.readFileSync(file,'utf8').replace(/@\//g,process.cwd()+'/'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,file);
+require.extensions['.ts']=(module,file)=>module._compile(ts.transpileModule(fs.readFileSync(file,'utf8').replace(/@\//g,process.cwd()+'/'),{compilerOptions:{module:ts.ModuleKind.CommonJS,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText,file);
 const {catalogProducts,getProductsByCategory}=require('../lib/products.ts');
 const {matchesMaterial,matchesProductQuery}=require('../lib/product-search.ts');
 const {advise,inferJob}=require('../lib/advisor-rules.ts');
@@ -53,3 +53,23 @@ console.log('PASS: four application pages, valid groups, contextual descriptions
 
 assert.equal(get("bondtite-total-gem").packTypes,"1.8 kg set");
 assert.ok(hasDownloadableTds("bondtite-total-gem"));
+
+// Every material in a source recommendation must also appear on its product page.
+const selectorRows=require('../lib/product-selector-data.json');
+const {selectorProductSlug,matchingProducts}=require('../lib/product-selector.ts');
+const {normalizeMaterial}=require('../lib/product-materials.ts');
+for(const row of selectorRows){
+ for(const recommendation of row.products){
+  const product=get(selectorProductSlug(recommendation.name));
+  if(product) for(const material of row.materials) assert.ok(product.substrates.includes(normalizeMaterial(material)),product.slug+' missing '+material);
+ }
+ assert.deepEqual(matchingProducts(...row.materials),matchingProducts(...[...row.materials].reverse()));
+}
+for(const product of catalogProducts){
+ assert.equal(new Set(product.substrates).size,product.substrates.length);
+ assert.ok(product.substrates.length || product.slug==='bondtite-quick-art-and-craft-glue');
+}
+const uses=get('bondtite-multibond').applications;
+assert.ok(uses.indexOf('Upholstery')<uses.indexOf('Footwear'));
+assert.ok(get('bondtite-acrylic-fix').substrates.includes('Blockboard'));
+console.log('PASS: all catalogue products covered, selector materials reconciled, pair direction preserved and upholstery order corrected.');

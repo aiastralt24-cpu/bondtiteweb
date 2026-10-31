@@ -1,27 +1,19 @@
-import Link from "next/link";
-import Image from "next/image";
-import type { HeroData } from "@/lib/types";
+import Image from 'next/image';
+import { HeroVideo } from '@/components/hero-video';
 
-export function Hero({ hero }: { hero: HeroData }) {
-  return (
-    <section className="bond-hero" id="top">
-      <div className="container bond-hero__grid">
-        <div className="bond-hero__copy">
-          <h1>{hero.titleBefore}<span>{hero.titleAccent}</span>{hero.titleAfter}</h1>
-          <p>From the first fix to the final finish. Adhesives for furniture, fabrication and everyday repairs.</p>
-          <div className="bond-hero__actions">
-            <a className="button button--primary" href="/product-advisor">Product advisor </a>
-            <Link className="bond-hero__secondary" href="/products">Explore the range </Link>
-          </div>
-        </div>
-        <div className="bond-hero__stage" aria-label="Bondtite adhesive range">
-          <span className="bond-hero__ring" aria-hidden="true" />
-          <Image className="bond-hero__pack bond-hero__pack--left" src="/assets/products/bondtite-fast-and-clear-pack.png" alt="Bondtite Fast and Clear epoxy adhesive" width={1600} height={935} priority />
-          <Image className="bond-hero__pack bond-hero__pack--main" src="/assets/products/bondtite-hydra-pack.png" alt="Bondtite Hydra+ wood adhesive" width={450} height={560} priority />
-          <Image className="bond-hero__pack bond-hero__pack--right" src="/assets/products/bondtite-quick.png" alt="Bondtite Quick instant adhesive" width={490} height={490} priority />
-          <div className="bond-hero__caption"><span>Different materials. One Bondtite family.</span><span>BY ASTRAL</span></div>
-        </div>
+export function Hero({ discoveryHref = "#applications" }: { discoveryHref?: string }) {
+  return <section className="campaign-hero" aria-labelledby="campaign-title" id="top">
+    <HeroVideo />
+    <div className="campaign-hero__shade" />
+    <div className="container campaign-hero__grid">
+      <div className="campaign-hero__copy">
+        <h1 id="campaign-title" className="campaign-title--artwork"><span className="campaign-mark">
+          <span className="campaign-mark__line campaign-mark__line--top"><Image src="/assets/brand/lakdi-ka-chumbak.png" alt="Lakdi ka Chumbak" width={4901} height={1534} sizes="(max-width: 700px) 90vw, 620px" priority /></span>
+          <span className="campaign-mark__line campaign-mark__line--bottom" aria-hidden="true"><Image src="/assets/brand/lakdi-ka-chumbak.png" alt="" width={4901} height={1534} sizes="(max-width: 700px) 90vw, 620px" priority /></span>
+        </span></h1>
       </div>
-    </section>
-  );
+
+    </div>
+    <div className="container campaign-hero__bottom"><a href={discoveryHref}>Discover your bond <span aria-hidden="true">↓</span></a></div>
+  </section>;
 }

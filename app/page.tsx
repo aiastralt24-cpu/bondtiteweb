@@ -1,7 +1,7 @@
 import { withSeo } from "@/lib/seo";
+import { HomeKnowledge } from "@/components/home-knowledge";
 import { MaterialStory } from "@/components/material-story";
 import { Applications } from "@/components/applications";
-import { CampaignDvc } from "@/components/campaign-dvc";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
@@ -18,11 +18,11 @@ export default async function Home() {
     <>
       <Header navigation={data.navigation} cta={headerCta} variant="heroOverlay" />
       <main id="main-content" tabIndex={-1} className="bond-home">
-        <Hero hero={data.hero} />
+        <Hero />
         <Applications />
-        <CampaignDvc />
         <MaterialStory />
         <FeaturedRange />
+        <HomeKnowledge faqs={data.faqs} />
       </main>
       <Footer footer={data.footer} />
     </>

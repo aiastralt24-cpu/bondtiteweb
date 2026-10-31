@@ -1,5 +1,6 @@
 import { isProductVisible } from './product-visibility';
 import { catalogueFacts } from './catalogue-facts';
+import { productMaterials } from './product-materials';
 import { additionalProducts } from "@/lib/additional-products";
 import type { Product } from "@/lib/types";
 import { verifiedAstralDetails } from "@/lib/verified-astral";
@@ -279,7 +280,8 @@ const sourceProducts: ProductSeed[] = [
     name: "BONDTITE HEATBOND",
     categorySlug: "woodworking",
     sourceUrl: "https://www.astraladhesives.com/bondtite-heatbond.html",
-    image: "/assets/products/bondtite-heatbond.png",
+    // Current 1 L pack from the Astral product gallery (reviewed 2026-10-30).
+    image: "/assets/products/bondtite-heatbond-current.png",
     imageTone: "square",
     summary: "Heatbond is listed under Bondtite woodworking products.",
     substrates: ["Wood", "Heat-exposed workflows"]
@@ -968,7 +970,7 @@ export const catalogProducts: CatalogProduct[] = sourceProducts.filter(seed => i
   const slug = slugify(product.name);
   const verified = {...verifiedAstralDetails[slugify(product.name)], ...facts};
   const category = categoryLabel(product.categorySlug);
-  const substrates = product.substrates ?? productCategories.find((item) => item.slug === product.categorySlug)?.bestFor ?? [];
+  const substrates = productMaterials(slug, product.substrates ?? []);
   return {
     id: slug,
     slug,

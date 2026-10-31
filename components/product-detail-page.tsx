@@ -17,7 +17,7 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
   const enquiry = `/contact?product=${product.slug}`;
   const relatedSummaries: Record<string, string> = { "bondtite-deluxe": "Water-resistant PVA for everyday woodwork.", "bondtite-aqua": "Waterproof PVA for furniture and joinery.", "bondtite-edge-d3": "D3 wood adhesive with cross-linked technology." };
   const related = catalogProducts.filter(item => item.categorySlug === product.categorySlug && item.id !== product.id).slice(0, 3);
-  const features = hydra ? ["Fast-setting", "Anti-bubble cross-linked technology", "Formaldehyde-free"] : product.features;
+  const features = product.features;
   const technical = productSpecifications[product.slug];
   const specs = [
     ["Category", category.label],
@@ -43,17 +43,17 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
   const benefits = hydra ? [
     { title: "Fast-setting", text: "A formulation that supports productive woodworking." },
     { title: "Anti-bubble technology", text: "Helps reduce debonding caused by changes in weather." },
-    { title: "Easy to work with", text: "Formaldehyde-free, with high coverage and easy spreading." }
+    { title: "Easy to work with", text: "High coverage and easy spreading." }
   ] : features.map(title => ({title:title.replace("Confirms EN204 to category D3", "Conforms to EN 204, class D3"),text:""}));
   const uses = hydra ? ["Kitchen furniture", "Bathroom furniture", "Balcony furniture"] : product.applications;
-  const materials = hydra ? ["Wood", "Plywood", "Laminates", "Veneers", "Particleboard", "Blockboard", "Hardboard", "MDF"] : product.substrates;
+  const materials = product.substrates;
   const packs = formatPackSizes(product.packTypes);
   const storage = specs.find(([label]) => label === "Storage")?.[1];
 
   return <main id="main-content" tabIndex={-1} className="product-story product-story--split">
     <nav className="container hydra-breadcrumbs breadcrumbs" aria-label="Breadcrumb"><Link href="/products">Products</Link><Link href={`/products/${category.slug}`}>{category.label}</Link><span aria-current="page">{product.label}</span></nav>
     <section className="product-split container" aria-labelledby="product-title">
-      <div className="product-split__visual"><ProductPack product={product} priority />{totalGem&&<details className="total-gem-carton"><summary>View the 1.8 kg carton</summary><Image src="/assets/products/bondtite-total-gem-carton.png" alt="Bondtite Total Gem 1.8 kg outer carton" width={420} height={328} style={{maxWidth:"100%",height:"auto"}}/></details>}</div>
+      <div className="product-split__visual"><ProductPack product={product} priority normalized />{totalGem&&<details className="total-gem-carton"><summary>View the 1.8 kg carton</summary><Image src="/assets/products/bondtite-total-gem-carton.png" alt="Bondtite Total Gem 1.8 kg outer carton" width={420} height={328} style={{maxWidth:"100%",height:"auto"}}/></details>}</div>
       <div className="product-split__content">
         <span className="mono">Bondtite · {hydra ? "Wood adhesive" : category.label}</span>
         <h1 id="product-title">{hydra ? <>Hydra<span>+</span></> : product.label}</h1>
@@ -85,6 +85,7 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
               <h3>{hydra ? ["Kitchen","Bathroom","Balcony"][index] : use}</h3>{hydra&&<span>{use}</span>}
             </li>)}</ul>
             {materials.length > 0 && <div className="hydra-compatible"><h3>Compatible materials</h3><ul>{materials.map(material=><li key={material}>{material}</li>)}</ul></div>}
+            {product.slug === "bondtite-quick-art-and-craft-glue" && <div className="hydra-compatible"><h3>Compatible surfaces</h3><p>Porous and non-porous craft surfaces. Contact us to confirm suitability for your specific materials.</p></div>}
             {hydra&&<Link className="hydra-application-link" href="/applications/furniture-and-joinery"><span>Explore furniture & joinery</span></Link>}
           </div>
         </section>

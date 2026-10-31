@@ -1,0 +1,306 @@
+{
+  "/assets/products/bondtite-deluxe.png": {
+    "width": 490,
+    "height": 490,
+    "left": 85,
+    "top": 34,
+    "cropWidth": 320,
+    "cropHeight": 423
+  },
+  "/assets/products/bondtite-aqua.png": {
+    "width": 1214,
+    "height": 1600,
+    "left": 0,
+    "top": 0,
+    "cropWidth": 1214,
+    "cropHeight": 1599
+  },
+  "/assets/products/bondtite-hydra-pack.png": {
+    "width": 1241,
+    "height": 1600,
+    "left": 14,
+    "top": 8,
+    "cropWidth": 1212,
+    "cropHeight": 1584
+  },
+  "/assets/products/bondtite-edge-d3.png": {
+    "width": 1498,
+    "height": 1600,
+    "left": 81,
+    "top": 106,
+    "cropWidth": 1334,
+    "cropHeight": 1405
+  },
+  "/assets/products/bondtite-heatbond-current.png": {
+    "width": 500,
+    "height": 500,
+    "left": 97,
+    "top": 47,
+    "cropWidth": 306,
+    "cropHeight": 406
+  },
+  "/assets/products/bondtite-foambond.png": {
+    "width": 1211,
+    "height": 1600,
+    "left": 115,
+    "top": 138,
+    "cropWidth": 990,
+    "cropHeight": 1342
+  },
+  "/assets/products/bondtite-multibond.png": {
+    "width": 1366,
+    "height": 1600,
+    "left": 200,
+    "top": 149,
+    "cropWidth": 966,
+    "cropHeight": 1322
+  },
+  "/assets/products/bondtite-quik-spray.png": {
+    "width": 388,
+    "height": 1600,
+    "left": 7,
+    "top": 11,
+    "cropWidth": 371,
+    "cropHeight": 1575
+  },
+  "/assets/products/bondtite-acrylic-fix.png": {
+    "width": 1600,
+    "height": 407,
+    "left": 86,
+    "top": 39,
+    "cropWidth": 1451,
+    "cropHeight": 324
+  },
+  "/assets/products/bondtite-wpc-fix.png": {
+    "width": 3001,
+    "height": 1057,
+    "left": 173,
+    "top": 207,
+    "cropWidth": 2655,
+    "cropHeight": 594
+  },
+  "/assets/products/bondtite-multifix-pack.png": {
+    "width": 433,
+    "height": 1600,
+    "left": 114,
+    "top": 48,
+    "cropWidth": 213,
+    "cropHeight": 1499
+  },
+  "/assets/products/bondtite-fast-and-clear-pack.png": {
+    "width": 1600,
+    "height": 935,
+    "left": 120,
+    "top": 196,
+    "cropWidth": 1289,
+    "cropHeight": 578
+  },
+  "/assets/products/bondtite-pro-pack.png": {
+    "width": 1600,
+    "height": 935,
+    "left": 120,
+    "top": 196,
+    "cropWidth": 1289,
+    "cropHeight": 578
+  },
+  "/assets/products/bondtite-super-strength.png": {
+    "width": 1600,
+    "height": 935,
+    "left": 120,
+    "top": 196,
+    "cropWidth": 1289,
+    "cropHeight": 578
+  },
+  "/assets/products/bondtite-strong-and-clear-pack.png": {
+    "width": 1600,
+    "height": 1315,
+    "left": 101,
+    "top": 173,
+    "cropWidth": 1254,
+    "cropHeight": 1049
+  },
+  "/assets/products/bondtite-rapid-pack.png": {
+    "width": 1600,
+    "height": 935,
+    "left": 120,
+    "top": 196,
+    "cropWidth": 1289,
+    "cropHeight": 578
+  },
+  "/assets/products/bondtite-quick.png": {
+    "width": 490,
+    "height": 490,
+    "left": 104,
+    "top": 171,
+    "cropWidth": 300,
+    "cropHeight": 170
+  },
+  "/assets/products/bondtite-quick-spot-on.jpg": {
+    "width": 1500,
+    "height": 1500,
+    "left": 272,
+    "top": 97,
+    "cropWidth": 1133,
+    "cropHeight": 1305
+  },
+  "/assets/products/bondtite-quick-gel-adhesive.jpg": {
+    "width": 1500,
+    "height": 1500,
+    "left": 339,
+    "top": 141,
+    "cropWidth": 1002,
+    "cropHeight": 1222
+  },
+  "/assets/products/bondtite-quick-art-craft-glue.jpg": {
+    "width": 1500,
+    "height": 1500,
+    "left": 321,
+    "top": 122,
+    "cropWidth": 1071,
+    "cropHeight": 1255
+  },
+  "/assets/products/bondtite-quick-ultra-glue-brush-nozzle.jpg": {
+    "width": 1500,
+    "height": 1500,
+    "left": 300,
+    "top": 125,
+    "cropWidth": 964,
+    "cropHeight": 1251
+  },
+  "/assets/products/bondtite-quick-instant-adhesive.jpg": {
+    "width": 490,
+    "height": 490,
+    "left": 78,
+    "top": 28,
+    "cropWidth": 362,
+    "cropHeight": 434
+  },
+  "/assets/products/bondtite-total-gem-jar.png": {
+    "width": 2291,
+    "height": 2135,
+    "left": 162,
+    "top": 134,
+    "cropWidth": 1947,
+    "cropHeight": 1860
+  },
+  "/assets/products/bondtite-metallic-official.png": {
+    "width": 500,
+    "height": 500,
+    "left": 76,
+    "top": 180,
+    "cropWidth": 331,
+    "cropHeight": 149
+  },
+  "/assets/products/bondtite-white-paste-official.png": {
+    "width": 500,
+    "height": 500,
+    "left": 74,
+    "top": 179,
+    "cropWidth": 334,
+    "cropHeight": 151
+  },
+  "/assets/products/bondtite-wood-official.jpg": {
+    "width": 500,
+    "height": 500,
+    "left": 14,
+    "top": 162,
+    "cropWidth": 423,
+    "cropHeight": 184
+  },
+  "/assets/products/clearbond-official.png": {
+    "width": 500,
+    "height": 500,
+    "left": 97,
+    "top": 47,
+    "cropWidth": 306,
+    "cropHeight": 406
+  },
+  "/assets/products/bondtite-total-official.png": {
+    "width": 500,
+    "height": 500,
+    "left": 145,
+    "top": 70,
+    "cropWidth": 210,
+    "cropHeight": 358
+  },
+  "/assets/products/bondtite-uniweld-official.png": {
+    "width": 490,
+    "height": 490,
+    "left": 71,
+    "top": 162,
+    "cropWidth": 361,
+    "cropHeight": 177
+  },
+  "/assets/products/bondtite-pvc-bond-5kg.png": {
+    "width": 3302,
+    "height": 3689,
+    "left": 279,
+    "top": 53,
+    "cropWidth": 2746,
+    "cropHeight": 3576
+  },
+  "/assets/products/bondtite-viscoclear-official.png": {
+    "width": 1000,
+    "height": 1000,
+    "left": 78,
+    "top": 216,
+    "cropWidth": 863,
+    "cropHeight": 612
+  },
+  "/assets/products/bondtite-rhiomet-official.png": {
+    "width": 1000,
+    "height": 1000,
+    "left": 159,
+    "top": 133,
+    "cropWidth": 691,
+    "cropHeight": 740
+  },
+  "/assets/products/bondtite-zoro-official.png": {
+    "width": 1000,
+    "height": 1000,
+    "left": 126,
+    "top": 138,
+    "cropWidth": 759,
+    "cropHeight": 728
+  },
+  "/assets/products/bondtite-ast-fr1203-ast-fh7203-official.png": {
+    "width": 1000,
+    "height": 1000,
+    "left": 45,
+    "top": 156,
+    "cropWidth": 890,
+    "cropHeight": 699
+  },
+  "/assets/products/bondtite-mma-999a-mma-999b-official.png": {
+    "width": 1000,
+    "height": 1000,
+    "left": 149,
+    "top": 138,
+    "cropWidth": 682,
+    "cropHeight": 759
+  },
+  "/assets/products/bondtite-ast-fr1201-ast-fh7201-official.png": {
+    "width": 1000,
+    "height": 1000,
+    "left": 44,
+    "top": 157,
+    "cropWidth": 891,
+    "cropHeight": 698
+  },
+  "/assets/products/bondtite-ast-fr1202-ast-fh7601-official.png": {
+    "width": 1000,
+    "height": 1000,
+    "left": 60,
+    "top": 163,
+    "cropWidth": 865,
+    "cropHeight": 702
+  },
+  "/assets/products/bondtite-ast-fr4202-ast-fh-4102-official.png": {
+    "width": 1000,
+    "height": 1000,
+    "left": 34,
+    "top": 170,
+    "cropWidth": 904,
+    "cropHeight": 681
+  }
+}

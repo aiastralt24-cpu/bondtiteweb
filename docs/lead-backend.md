@@ -2,7 +2,7 @@
 
 ## What is implemented
 
-- Contact, dealer and Hydra TDS submissions commit to SQLite before success is returned.
+- Contact, dealer and all available product TDS submissions commit to SQLite before success is returned.
 - Atomic idempotency keys preserve the same reference on retries for 24 hours. Identical content is coalesced for one hour, including concurrent requests.
 - Bounded request-body reads, input validation, consent checks, same-origin checks and hidden bot fields.
 - Database-backed global, client and phone submission limits; persistent login limits. Restarting the application does not reset limits.
@@ -79,3 +79,22 @@ The inbox is the lead destination. Email/CRM notifications, MFA gateway, offsite
 ## Lead origin
 
 Each new lead records the server receipt timestamp (displayed in IST), form name and submitting page URL. Form names are assigned by the endpoint; the page comes from the browser with a same-site Referer fallback. Only same-site URLs are stored; query strings and fragments are removed so project details in contact URLs are not duplicated into attribution. This identifies the page containing the submitted form, not the visitor's full browsing journey. Page attribution is browser-reported, not proof of origin. Old leads without captured page data show “Not recorded for this lead”. CSV exports include `created_at` (UTC), `form_name` and `source_page`.
+
+## Verified collection paths
+
+- All eight contact enquiry types submit to `/api/leads` and persist before returning a reference. Dealer enquiries use the `dealer` source and `Dealer enquiry form` label.
+- TDS requests submit to `/api/tds`, persist the product and consent timestamp, and then return the registered PDF.
+- The protected inbox at `/admin/leads` provides search, follow-up tracking and CSV export.
+- `npm run test:leads` exercises every enquiry type and every registered TDS with an isolated disposable database, including backend failures and backup recovery. It does not create test leads in the live local inbox.
+
+Local persistence is configured and verified. Cloud deployment, email notifications and CRM delivery are not configured by these checks.
+
+## Lead workspace and reporting
+
+`/admin/leads` includes a paginated inbox (20 leads per page), search, enquiry type, status, owner, received-date range and due-follow-up filters. Dates used in filters and follow-ups are UTC; receipt and activity timestamps display in IST. Dashboard counts and both CSV downloads use the same filters across all matching records, not just the current page. Daily intake shows the latest 14 dates with matching enquiries, omitting dates with zero enquiries.
+
+Open a lead to change its status, assign an active staff account, schedule a follow-up or record internal notes. Updates save without leaving the filtered view. Concurrent edits return a conflict instead of overwriting another person's changes. Activity history records the actor, timestamp and before/after values for new edits; older audit entries retain only the information originally recorded.
+
+Use **Export leads CSV** for individual records, **Report CSV** for aggregate counts and filter metadata, or **Print / save PDF** for the summary dashboard. Exports are dated and logged. The print view includes the generated timestamp, applied filter scope, headline counts and source/status/product breakdowns; daily intake is available in the report CSV. Reports are live until exported; download a snapshot for each review meeting.
+
+Authorized staff can return using their own accounts provisioned through `npm run leads:admin`. The database persists locally; it is not a shared hosted service until the application is deployed on the persistent server described above. Existing scheduled backup tooling remains necessary for recovery.

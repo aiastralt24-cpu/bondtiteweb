@@ -151,3 +151,42 @@
 @media(max-width:760px) { .range-browser__intro { grid-template-columns:1fr; padding:36px 0; gap:32px; } .range-browser__intro h1 { font-size:clamp(58px,10vw,78px); } .range-browser__intro p { max-width:420px; } .range-browser__showcase { padding:24px 20px; } .range-browser__hero-product .product-image { height:170px; } }
 @media(max-width:400px) { .range-browser__hero-product .product-image { height:140px; } .range-browser__hero-product-label { font-size:27px; } .range-browser__hero-product-detail { font-size:9px; } }
 @media(prefers-reduced-motion:reduce) { .range-browser__hero-product .product-image { transition:none; } }
+
+/* A common stage and baseline; source-image padding is compensated in ProductPack. */
+.range-browser .catalog-card__visual { height:280px; min-height:280px; padding:30px 24px; }
+.range-browser .catalog-card__visual .product-image--normalized,
+.range-product-card__image .product-image--normalized,
+.range-browser__hero-product .product-image--normalized {
+  --pack-height:220px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  width:100%;
+  max-width:100%;
+  height:var(--pack-height);
+  filter:drop-shadow(0 10px 12px #0a162014);
+}
+.product-image--normalized .product-image__crop {
+  position:relative;
+  display:block;
+  width:min(100%, calc(var(--pack-height) * var(--pack-ratio)));
+  aspect-ratio:var(--pack-ratio);
+  overflow:hidden;
+}
+.product-image--normalized .product-image__crop img {
+  position:absolute;
+  max-width:none;
+  object-fit:fill;
+}
+.range-product-card__image .product-image--normalized { --pack-height:205px; }
+.range-browser__hero-product .product-image--normalized { --pack-height:180px; }
+@media(max-width:1000px) {
+  .range-browser__hero-product .product-image--normalized { --pack-height:150px; }
+}
+@media(max-width:760px) {
+  .range-browser .catalog-card__visual { padding:30px 18px; }
+}
+@media(max-width:480px) {
+  .range-product-card__image .product-image--normalized { --pack-height:180px; }
+  .range-browser__hero-product .product-image--normalized { --pack-height:130px; }
+}

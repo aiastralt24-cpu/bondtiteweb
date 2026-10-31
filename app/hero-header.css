@@ -1,0 +1,120 @@
+/* Campaign navigation: one transparent composition, then a compact reading header. */
+body:has(.campaign-hero) .header--hero {
+  top:0; left:0; right:0; width:100%; transform:none;
+  background:transparent; border:0; border-radius:0; box-shadow:none; backdrop-filter:none;
+  transition:background-color 220ms ease, box-shadow 220ms ease;
+}
+body:has(.campaign-hero) .header--hero::before {
+  content:""; position:absolute; inset:0 0 auto; height:170px; pointer-events:none;
+  background:linear-gradient(180deg,rgba(3,15,23,.62),rgba(3,15,23,.2) 55%,transparent);
+  opacity:1; transition:opacity 220ms ease;
+}
+body:has(.campaign-hero) .header--hero .header__inner {
+  position:relative; width:min(var(--page-content-width),calc(100% - var(--page-gutter) * 2));
+  max-width:var(--page-content-width); min-height:100px; margin-inline:auto; padding:0;
+  transition:min-height 220ms ease;
+}
+body:has(.campaign-hero) .header--hero .header__capsule {
+  padding:0; min-height:0; background:transparent; border:0; box-shadow:none;
+}
+body:has(.campaign-hero) .header--hero .wordmark { width:160px; }
+body:has(.campaign-hero) .header--transparent .wordmark img { filter:brightness(0) invert(1); }
+body:has(.campaign-hero) .header--hero .header__tools { gap:12px; }
+body:has(.campaign-hero) .header--hero .header__tools > :is(.header__advisor-icon,.menu-toggle) {
+  display:flex; align-items:center; justify-content:center;
+  width:50px; height:50px; min-height:50px; padding:0; border-radius:50%;
+  color:#fff; background:rgba(8,24,36,.22); border:1px solid #ffffff50;
+  box-shadow:none; transition:background-color 180ms ease,border-color 180ms ease;
+}
+body:has(.campaign-hero) .header--hero .header__tools > :is(.header__advisor-icon,.menu-toggle):hover {
+  background:rgba(8,24,36,.5); border-color:#ffffffa0;
+}
+body:has(.campaign-hero) .header--hero .header__tools > :is(.header__advisor-icon,.menu-toggle):focus-visible {
+  outline:2px solid #e8c878; outline-offset:5px;
+}
+body:has(.campaign-hero) .header--scrolled { background:#faf9f6; box-shadow:0 1px 0 #10243612; }
+body:has(.campaign-hero) .header--scrolled::before { opacity:0; }
+body:has(.campaign-hero) .header--scrolled .header__inner { min-height:76px; }
+body:has(.campaign-hero) .header--scrolled .wordmark img { filter:none; }
+body:has(.campaign-hero) .header--scrolled .header__tools > :is(.header__advisor-icon,.menu-toggle) {
+  color:#102436; border-color:#10243625; background:transparent;
+}
+body:has(.campaign-hero) .header--scrolled .header__tools > :is(.header__advisor-icon,.menu-toggle):hover { background:#1024360a; }
+@media(max-width:700px) {
+  body:has(.campaign-hero) .header--hero .header__inner { min-height:84px; }
+  body:has(.campaign-hero) .header--scrolled .header__inner { min-height:72px; }
+  body:has(.campaign-hero) .header--hero .wordmark { width:128px; }
+  body:has(.campaign-hero) .header--hero .header__tools { gap:10px; }
+  body:has(.campaign-hero) .header--hero .header__tools > :is(.header__advisor-icon,.menu-toggle) { width:48px; height:48px; min-height:48px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body:has(.campaign-hero) .header--hero,
+  body:has(.campaign-hero) .header--hero::before,
+  body:has(.campaign-hero) .header--hero .header__inner,
+  body:has(.campaign-hero) .header--hero .header__tools > :is(.header__advisor-icon,.menu-toggle) { transition:none; }
+}
+
+/* Use the supplied brand artwork without recolouring it. */
+.header .wordmark { position:relative; }
+.header .brand-logo--white { position:absolute; inset:0; width:100%; height:auto; visibility:hidden; }
+body:has(.campaign-hero) .header--hero .wordmark img { filter:none; }
+body:has(.campaign-hero) .header--transparent .brand-logo--blue { visibility:hidden; }
+body:has(.campaign-hero) .header--transparent .brand-logo--white { visibility:visible; }
+.bond-footer--renewed .wordmark img { filter:none; }
+.bond-home .campaign-hero h1.campaign-title--artwork {
+  width:min(620px,100%); max-width:none; margin:0; padding:0; line-height:0;
+}
+.campaign-title--artwork img { display:block; width:100%; height:auto; }
+@media(max-width:700px) {
+  .bond-home .campaign-hero h1.campaign-title--artwork { width:min(480px,100%); }
+}
+
+/* Shared navigation on every route; the campaign only changes its colour state. */
+.header.header--unified:not(.header--hero) {
+  background:#faf9f6; border:0; box-shadow:0 1px 0 #10243612; backdrop-filter:none;
+}
+.header.header--unified .header__inner {
+  width:min(var(--page-content-width),calc(100% - var(--page-gutter) * 2));
+  max-width:var(--page-content-width); min-height:76px; margin-inline:auto; padding:0;
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+}
+.header.header--unified .header__capsule { display:flex; align-items:center; padding:0; }
+.header.header--unified .wordmark { width:160px; flex-shrink:0; }
+.header.header--unified .header__tools { display:flex; align-items:center; gap:12px; }
+.header.header--unified .header__tools > :is(.header__advisor-icon,.menu-toggle) {
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  width:50px; height:50px; min-height:50px; padding:0; border-radius:50%;
+  color:#102436; background:transparent; border:1px solid #10243625; box-shadow:none;
+}
+.header.header--unified .header__advisor-icon svg { width:21px; height:21px; }
+.header.header--unified .menu-toggle>span { display:none; }
+.header.header--unified .header__tools > :is(.header__advisor-icon,.menu-toggle):hover { background:#1024360a; }
+.header.header--unified .header__tools > :is(.header__advisor-icon,.menu-toggle):focus-visible { outline:2px solid #2d589c; outline-offset:5px; }
+@media(max-width:700px) {
+  .header.header--unified .header__inner { min-height:72px; gap:16px; }
+  .header.header--unified .wordmark { width:128px; }
+  .header.header--unified .header__tools { gap:10px; }
+  .header.header--unified .header__tools > :is(.header__advisor-icon,.menu-toggle) { width:48px; height:48px; min-height:48px; }
+}
+
+/* Two complementary windows preserve the supplied artwork, including its TM.
+   The stepped seam passes through transparency between the overlapping lines. */
+.bond-home .campaign-hero__copy > h1.campaign-title--artwork { animation:none; }
+.campaign-mark { display:block; position:relative; aspect-ratio:4901 / 1534; }
+.campaign-mark__line { display:block; position:absolute; inset:0; }
+.campaign-mark__line--top { clip-path:polygon(0 0,100% 0,100% 38%,84.2% 38%,84.2% 46%,23% 46%,23% 38%,0 38%); }
+.campaign-mark__line--bottom { clip-path:polygon(0 38%,23% 38%,23% 46%,84.2% 46%,84.2% 38%,100% 38%,100% 100%,0 100%); }
+@media(prefers-reduced-motion:no-preference) {
+  .campaign-mark__line--top { animation:campaign-magnet-top 1100ms 100ms both; }
+  .campaign-mark__line--bottom { animation:campaign-magnet-bottom 1100ms 100ms both; }
+}
+@keyframes campaign-magnet-top {
+  0% { transform:translate3d(0,-12px,0); opacity:0; animation-timing-function:cubic-bezier(.22,.75,.3,1); }
+  72% { transform:translate3d(0,.7px,0); opacity:1; animation-timing-function:ease-out; }
+  100% { transform:translate3d(0,0,0); opacity:1; }
+}
+@keyframes campaign-magnet-bottom {
+  0% { transform:translate3d(0,16px,0); opacity:0; animation-timing-function:cubic-bezier(.22,.75,.3,1); }
+  72% { transform:translate3d(0,-.7px,0); opacity:1; animation-timing-function:ease-out; }
+  100% { transform:translate3d(0,0,0); opacity:1; }
+}

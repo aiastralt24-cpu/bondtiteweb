@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { FullscreenMenu } from "@/components/fullscreen-menu";
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { Cta, NavItem } from "@/lib/types";
 
 export function Header({
-  navigation,
   cta,
   variant = "default"
 }: {
@@ -16,8 +15,6 @@ export function Header({
   cta: Cta;
   variant?: "default" | "heroOverlay";
 }) {
-  const pathname = usePathname();
-  const isCurrent = (href: string) => pathname === href || pathname.startsWith(href + "/");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
@@ -29,17 +26,23 @@ export function Header({
     }
 
     const updateHeaderState = () => {
-      setIsScrolled(window.scrollY > 16);
+      const hero = document.querySelector('.campaign-hero');
+      setIsScrolled(hero ? hero.getBoundingClientRect().bottom <= 104 : window.scrollY > 80);
     };
 
     updateHeaderState();
     window.addEventListener("scroll", updateHeaderState, { passive: true });
+    window.addEventListener("resize", updateHeaderState);
 
-    return () => window.removeEventListener("scroll", updateHeaderState);
+    return () => {
+      window.removeEventListener("scroll", updateHeaderState);
+      window.removeEventListener("resize", updateHeaderState);
+    };
   }, [isHeroOverlay]);
 
   const headerClassName = [
     "header",
+    "header--unified",
     isHeroOverlay ? "header--hero" : "",
     isHeroOverlay && !isScrolled && !isMenuOpen ? "header--transparent" : "",
     isHeroOverlay && (isScrolled || isMenuOpen) ? "header--scrolled" : "",
@@ -52,64 +55,36 @@ export function Header({
     <header className={headerClassName} onKeyDown={(event) => { if (event.key === "Escape" && isMenuOpen) { setIsMenuOpen(false); menuButton.current?.focus(); } }}>
       <a className="skip-content" href="#main-content" onClick={event=>{const main=document.querySelector('main');if(main){event.preventDefault();main.id='main-content';main.tabIndex=-1;main.focus();main.scrollIntoView({block:'start',behavior:'instant'});}}}>Skip to content</a>
       <div className="container header__inner">
+        <div className="header__capsule">
         <Link className="wordmark" href="/" aria-label="Bondtite by Astral home">
           <Image
-            src="/assets/bondtite-logo-positive.png"
+            className="brand-logo--blue"
+            src="/assets/brand/bondtite-blue.png"
             alt="Bondtite Adhesives"
-            width={2154}
-            height={543}
+            width={3601}
+            height={1174}
             priority
           />
+          {isHeroOverlay && <Image className="brand-logo--white" src="/assets/brand/bondtite-white.png" alt="" aria-hidden="true" width={3601} height={1174} priority />}
         </Link>
-        <nav className="nav" aria-label="Primary navigation">
-          {navigation.filter(item => !item.href.startsWith("/resources")).map((item) => (
-            <Link key={item.href} href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        <a className="button button--primary" href={cta.href}>
-          {cta.label}
-        </a>
+        </div>
+        <div className="header__tools">
+        <Link className="header__advisor-icon" href={cta.href} aria-label={cta.label} title={cta.label}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 5 5" /></svg></Link>
         <button
           className="menu-toggle"
           ref={menuButton}
           type="button"
+          aria-label={isMenuOpen ? "Close menu" : "Menu"}
           aria-expanded={isMenuOpen}
-          aria-controls="mobile-navigation"
+          aria-controls="site-menu"
           onClick={() => setIsMenuOpen((current) => !current)}
         >
           <span>{isMenuOpen ? "Close" : "Menu"}</span>
           <i aria-hidden="true" />
         </button>
+        </div>
       </div>
-      <div
-        className="mobile-nav"
-        id="mobile-navigation"
-        data-open={isMenuOpen}
-        aria-hidden={!isMenuOpen}
-        inert={!isMenuOpen}
-      >
-        <div className="mobile-nav__clip"><nav className="container mobile-nav__inner" aria-label="Mobile navigation">
-          {navigation.filter(item => !item.href.startsWith("/resources")).map((item) => (
-            <Link
-              aria-current={isCurrent(item.href) ? "page" : undefined}
-              key={item.href}
-              href={item.href}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <a
-            className="button button--primary"
-            href={cta.href}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {cta.label}
-          </a>
-        </nav></div>
-      </div>
+      <FullscreenMenu open={isMenuOpen} onClose={() => { setIsMenuOpen(false); }} />
     </header>
   );
 }

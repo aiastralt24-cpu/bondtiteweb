@@ -29,7 +29,7 @@ export default async function BecomeADealerRoute() {
       <Header navigation={mainNavigation} cta={headerCta} />
       <DealerPage />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(dealerJsonLd) }} />
-      <Footer footer={data.footer} />
+      <Footer footer={data.footer} showContact={false} />
     </>
   );
 }

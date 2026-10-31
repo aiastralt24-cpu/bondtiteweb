@@ -31,6 +31,19 @@ try{
   const simultaneous=await Promise.all([request('/api/leads',base,{'Idempotency-Key':randomUUID()}),request('/api/leads',base,{'Idempotency-Key':randomUUID()})]);
   for(const response of simultaneous)assert.equal((await response.json()).id,id);
   assert.equal(database.prepare('SELECT count(*) AS n FROM leads').get().n,1);
+  // Every enquiry option must persist its details and be classified correctly.
+  const topics=['Technical support','Project / specification enquiry','Dealer / distributor enquiry','Product availability','Technical document request','Complaint / product issue','General enquiry'];
+  for(const [index,topic] of topics.entries()) {
+    const payload={...base,topic,mobile:String(9876400000+index),city:'Test city',role:'Dealer / distributor',product:'BONDTITE HYDRA+',message:'Isolated enquiry persistence check: '+topic};
+    const response=await request('/api/leads',payload,{'Idempotency-Key':randomUUID()});
+    assert.equal(response.status,201,topic);
+    const {id:reference}=await response.json();
+    const saved=database.prepare('SELECT * FROM leads WHERE id=?').get(reference);
+    for(const field of ['name','mobile','email','city','role','topic','product','message'])assert.equal(saved[field],payload[field],topic+' '+field);
+    assert.equal(saved.source,topic==='Dealer / distributor enquiry'?'dealer':'contact');
+    assert.equal(saved.form_name,topic==='Dealer / distributor enquiry'?'Dealer enquiry form':'Contact form');
+    assert.ok(saved.consent_at);
+  }
   assert.equal((await request('/api/leads',{...base,message:'Different'}, {'Idempotency-Key':key})).status,409);
   const tds={name:'Document test',source_page:origin+'/products/woodworking/bondtite-hydra',mobile:'9999999902',product:'bondtite-hydra',consent:true};
   const pdf=await request('/api/tds',tds,{'Idempotency-Key':randomUUID()});assert.equal(pdf.status,200);assert.equal(Buffer.from(await pdf.arrayBuffer()).subarray(0,4).toString(),'%PDF');
@@ -62,7 +75,17 @@ try{
   assert.equal(database.prepare('SELECT status FROM leads WHERE id=?').get(id).status,'qualified');
   assert.equal(database.prepare("SELECT actor FROM lead_audit WHERE lead_id=? AND action='updated'").get(id).actor,'tester');
   const csv=await fetch(origin+'/api/admin/leads/export',{headers:{Cookie:cookie}});assert.equal(csv.status,200);const exported=await csv.text();assert.ok(exported.includes("'=HYPERLINK"),'CSV formula neutralized');assert.ok(exported.includes('source_page'));assert.ok(exported.includes(origin+'/contact'));
-  const inbox=await fetch(origin+'/admin/leads',{headers:{Cookie:cookie}});assert.ok((await inbox.text()).includes('Activity history'));
+  const filtered=await fetch(origin+'/api/admin/leads/export?source=dealer',{headers:{Cookie:cookie}});
+  const filteredText=await filtered.text();assert.equal(filtered.status,200);assert.ok(filteredText.includes('Dealer enquiry form'));assert.ok(!filteredText.includes('TDS download form'));
+  const report=await fetch(origin+'/api/admin/leads/export?report=1&status=qualified&assignee=tester',{headers:{Cookie:cookie}});
+  assert.equal(report.status,200);assert.ok((await report.text()).includes('"Total leads","1"'));
+  assert.equal((await fetch(origin+'/api/admin/leads/export?report=1')).status,401);
+  const empty=await fetch(origin+'/api/admin/leads/export?from=2099-01-01',{headers:{Cookie:cookie}});assert.equal((await empty.text()).trim().split('\r\n').length,1);
+  const jsonUpdate=await fetch(origin+'/api/admin/leads',{method:'POST',headers:{...auth,Accept:'application/json'},body:new URLSearchParams({...update,version:'1',notes:'Second recorded conversation'})});
+  assert.equal(jsonUpdate.status,200);assert.equal((await jsonUpdate.json()).saved,true);
+  const auditDetail=JSON.parse(database.prepare("SELECT detail FROM lead_audit WHERE lead_id=? AND action='updated' ORDER BY id DESC LIMIT 1").get(id).detail);
+  assert.equal(auditDetail.before.notes,'Follow up tomorrow');assert.equal(auditDetail.after.notes,'Second recorded conversation');
+  const inbox=await fetch(origin+'/admin/leads',{headers:{Cookie:cookie}});const inboxHtml=await inbox.text();assert.equal(inbox.status,200);assert.ok(inboxHtml.includes('Activity history'));assert.ok(!inboxHtml.includes('Only plain objects'));assert.ok(inboxHtml.includes('Lead workspace'));
   database.exec("CREATE TRIGGER simulate_failure BEFORE INSERT ON leads BEGIN SELECT RAISE(FAIL, 'test unavailable'); END;");
   assert.equal((await request('/api/leads',{...base,mobile:'9999999903',message:'Failure test'})).status,503);
   database.exec('DROP TRIGGER simulate_failure');
