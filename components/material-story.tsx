@@ -18,6 +18,7 @@ export function MaterialStory() {
   const [selected, setSelected] = useState(0);
   const root = useRef<HTMLElement>(null);
   const trigger = useRef<ScrollTrigger | null>(null);
+  const refreshScenes = useRef<() => void>(() => {});
   const setup = useCallback((motion: typeof gsap, _plugin: typeof ScrollTrigger, element: HTMLElement) => {
     const timeline = motion.timeline({ scrollTrigger: {
       refreshPriority: 2, trigger: element, pin: element.querySelector(".material-story__grid"), start: "top 80px",
@@ -27,7 +28,8 @@ export function MaterialStory() {
     timeline.addLabel("prepare", 0).fromTo(element.querySelector(".material-story__watermark"), { y: 20 }, { y: -20, duration: 2, ease: "none" }, 0)
       .addLabel("apply", 1).addLabel("press", 2);
     trigger.current = timeline.scrollTrigger ?? null;
-    return () => { trigger.current = null; };
+    refreshScenes.current = () => _plugin.refresh();
+    return () => { trigger.current = null; refreshScenes.current = () => {}; };
   }, []);
   useCinematicScene(root, setup);
   const choose = (index: number) => {
@@ -52,8 +54,6 @@ export function MaterialStory() {
             <h3>{material.note}</h3>
             <p>{material.detail}</p>
           </div>
-          <details className="material-story__all"><summary>Read all three steps</summary>{materials.map(item => <p key={item.name}><strong>{item.name}: </strong>{item.detail}</p>)}</details>
-          <Link className="story-link" href="/products/woodworking/bondtite-hydra">Full product guidance </Link>
         </div>
         <div className={`material-story__visual material-story__visual--${material.className}`}>
           <span className="material-story__watermark" aria-hidden="true">HYDRA+</span>
@@ -66,6 +66,13 @@ export function MaterialStory() {
           <div className="story-product"><Image src="/assets/products/bondtite-hydra-pack.png" alt="Bondtite Hydra+ wood adhesive" width={240} height={300} sizes="(max-width: 700px) 140px, 220px" /><span>Bondtite Hydra+<small>Woodworking adhesive</small></span></div>
           <div className="material-story__caption"><span>{material.name}</span><span>Illustrative application sequence</span></div>
         </div>
+      </div>
+      <div className="container material-story__guide">
+        <details className="material-story__all" onToggle={() => refreshScenes.current()}>
+          <summary>Read all three steps</summary>
+          <ol className="material-story__instructions">{materials.map(item => <li key={item.name}><h3>{item.name}</h3><p>{item.detail}</p></li>)}</ol>
+        </details>
+        <Link className="story-link" href="/products/woodworking/bondtite-hydra">Full product guidance</Link>
       </div>
     </section>
   );
