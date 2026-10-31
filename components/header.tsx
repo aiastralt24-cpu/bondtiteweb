@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useHeroBrandMotion } from "@/components/use-hero-brand-motion";
 import { FullscreenMenu } from "@/components/fullscreen-menu";
 
 import Image from "next/image";
@@ -19,6 +20,8 @@ export function Header({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const isHeroOverlay = variant === "heroOverlay";
+  const headerRef = useRef<HTMLElement>(null);
+  useHeroBrandMotion(headerRef, isHeroOverlay, isMenuOpen);
 
   useEffect(() => {
     if (!isHeroOverlay) {
@@ -52,7 +55,7 @@ export function Header({
     .join(" ");
 
   return (
-    <header className={headerClassName} onKeyDown={(event) => { if (event.key === "Escape" && isMenuOpen) { setIsMenuOpen(false); menuButton.current?.focus(); } }}>
+    <header ref={headerRef} className={headerClassName} onKeyDown={(event) => { if (event.key === "Escape" && isMenuOpen) { setIsMenuOpen(false); menuButton.current?.focus(); } }}>
       <a className="skip-content" href="#main-content" onClick={event=>{const main=document.querySelector('main');if(main){event.preventDefault();main.id='main-content';main.tabIndex=-1;main.focus();main.scrollIntoView({block:'start',behavior:'instant'});}}}>Skip to content</a>
       <div className="container header__inner">
         <div className="header__capsule">

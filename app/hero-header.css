@@ -66,7 +66,7 @@ body:has(.campaign-hero) .header--transparent .brand-logo--white { visibility:vi
 }
 .campaign-title--artwork img { display:block; width:100%; height:auto; }
 @media(max-width:700px) {
-  .bond-home .campaign-hero h1.campaign-title--artwork { width:min(480px,100%); }
+  .bond-home .campaign-hero h1.campaign-title--artwork { width:min(240px,50%); }
 }
 
 /* Shared navigation on every route; the campaign only changes its colour state. */
@@ -118,3 +118,27 @@ body:has(.campaign-hero) .header--transparent .brand-logo--white { visibility:vi
   72% { transform:translate3d(0,-.7px,0); opacity:1; animation-timing-function:ease-out; }
   100% { transform:translate3d(0,0,0); opacity:1; }
 }
+
+/* Desktop campaign lockup balances the brand at the upper-left. */
+@media(min-width:701px) {
+  .bond-home .campaign-hero h1.campaign-title--artwork {
+    width:min(280px,24vw); margin-left:auto;
+  }
+  .bond-home .campaign-hero__shade {
+    background:linear-gradient(270deg,rgba(5,17,29,.78) 0%,rgba(5,17,29,.48) 42%,rgba(5,17,29,.16) 100%),linear-gradient(0deg,rgba(5,17,29,.72),transparent 48%);
+  }
+}
+
+/* The hero slot supplies geometry; the actual header home link travels to it. */
+.campaign-hero__brand { width:120px; aspect-ratio:3601 / 1174; margin:0 80px 14px auto; visibility:hidden; }
+.campaign-hero__brand img { display:block; width:100%; height:auto; }
+.header[data-brand-motion] .wordmark { transform-origin:top left; transition:none; }
+body:has(.header[data-brand-motion="fade"]) .campaign-hero__brand { visibility:visible; }
+@media(min-width:701px) and (max-width:1166px) {
+  .campaign-hero__brand { width:10.3vw; margin-right:6.85vw; }
+}
+@media(max-width:700px) {
+  .campaign-hero__brand { width:80px; margin:0 0 11px; }
+}
+
+.bond-home .campaign-hero__shade { opacity:.5; }

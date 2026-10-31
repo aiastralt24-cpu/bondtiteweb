@@ -7,6 +7,7 @@ export function Hero({ discoveryHref = "#applications" }: { discoveryHref?: stri
     <div className="campaign-hero__shade" />
     <div className="container campaign-hero__grid">
       <div className="campaign-hero__copy">
+        <div className="campaign-hero__brand" aria-hidden="true"><Image src="/assets/brand/bondtite-white.png" alt="" width={3601} height={1174} sizes="280px" priority /></div>
         <h1 id="campaign-title" className="campaign-title--artwork"><span className="campaign-mark">
           <span className="campaign-mark__line campaign-mark__line--top"><Image src="/assets/brand/lakdi-ka-chumbak.png" alt="Lakdi ka Chumbak" width={4901} height={1534} sizes="(max-width: 700px) 90vw, 620px" priority /></span>
           <span className="campaign-mark__line campaign-mark__line--bottom" aria-hidden="true"><Image src="/assets/brand/lakdi-ka-chumbak.png" alt="" width={4901} height={1534} sizes="(max-width: 700px) 90vw, 620px" priority /></span>
