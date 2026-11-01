@@ -127,8 +127,8 @@
 .bond-guide .advisor-chip-group { padding:0; margin:0; border:0; background:transparent; min-width:0; }
 .bond-guide .advisor-chip-group legend { padding:0; margin-bottom:16px; font-size:13px; font-weight:600; }
 .advisor-chip-list { display:flex; flex-wrap:wrap; gap:9px; }
-.bond-guide .advisor-chip { position:relative; display:block; margin:0; cursor:pointer; }
-.advisor-chip input { position:absolute; width:1px; height:1px; opacity:0; }
+.advisor-chip { position:relative; display:block; margin:0; cursor:pointer; }
+.advisor-chip input { position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; z-index:1; cursor:pointer; }
 .advisor-chip>span { display:flex; align-items:center; gap:8px; min-height:44px; padding:10px 16px; border:1px solid var(--palette-border); border-radius:24px; font-size:13px; line-height:1.4; background:var(--palette-white); color:var(--palette-ink); transition:background .15s,border-color .15s; }
 .advisor-chip:hover>span { border-color:var(--palette-blue); }
 .advisor-chip input:checked+span { color:var(--palette-white); background:var(--palette-blue); border-color:var(--palette-blue); }

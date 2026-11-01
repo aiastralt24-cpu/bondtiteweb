@@ -347,3 +347,29 @@ body:has(.campaign-hero) .header--hero .header__tools > .header__advisor-icon:ho
  .bond-home .material-story__grid { padding-block:40px 20px; }
  .bond-home .material-story__visual { margin-bottom:0; }
 }
+
+/* Keep the mobile scroll scene and its controls visible together. */
+@media(max-width:700px) {
+ .bond-home .material-story__copy { padding:0; }
+ .bond-home .material-story__description { min-height:140px; }
+ .bond-home .material-story__visual { min-height:300px; margin:0; }
+ .bond-home .material-story__visual .story-product { width:30%; bottom:48px; }
+ .bond-home .material-story__visual .story-product img { width:90px; height:115px; }
+ .bond-home .material-story__visual .story-product span { font-size:16px; }
+ .bond-home .material-story__visual .bond-assembly { inset:60px 0 100px 30%; }
+ .bond-home .material-story__visual .material-story__watermark { font-size:64px; }
+ .bond-home .material-story[data-cinematic] .material-story__grid { padding-block:16px; gap:0; background:var(--home-surface-beige,#f0ece2); }
+ .bond-home .material-story[data-cinematic] .material-story__copy > .mono { font-size:8px; }
+ .bond-home .material-story[data-cinematic] h2.home-title { font-size:28px; margin:10px 0; }
+ .bond-home .material-story[data-cinematic] .material-story__copy > p { font-size:13px; line-height:1.5; margin:0 0 12px; }
+ .bond-home .material-story[data-cinematic] .material-story__choices { margin:12px 0; gap:8px; }
+ .bond-home .material-story[data-cinematic] .material-story__choices button { min-height:44px; padding:10px 16px; font-size:13px; }
+ .bond-home .material-story[data-cinematic] .material-story__description { min-height:120px; }
+ .bond-home .material-story[data-cinematic] .material-story__description h3 { font-size:17px; margin:0 0 8px; }
+ .bond-home .material-story[data-cinematic] .material-story__description p { font-size:13px; line-height:1.55; margin:0; }
+ .bond-home .material-story[data-cinematic] .material-story__visual { height:230px; min-height:230px; }
+ .bond-home .material-story[data-cinematic] .material-story__visual .story-product { bottom:36px; gap:4px; }
+ .bond-home .material-story[data-cinematic] .material-story__visual .story-product img { height:90px; width:70px; }
+ .bond-home .material-story[data-cinematic] .material-story__visual .story-product span { font-size:13px; }
+ .bond-home .material-story[data-cinematic] .material-story__visual .bond-assembly { inset:50px 0 75px 30%; }
+}

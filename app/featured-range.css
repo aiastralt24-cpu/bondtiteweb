@@ -49,3 +49,7 @@
  .bond-home .featured-range__item .featured-range__link { transition:none; }
  .bond-home .featured-range__item:hover .product-image { transform:none; }
 }
+
+@media(max-width:700px) {
+ .bond-home .featured-range__item .featured-range__link { min-height:44px; }
+}

@@ -7,7 +7,7 @@ import type { ScrollTrigger as Trigger } from "gsap/ScrollTrigger";
 type SceneSetup = (gsap: typeof Gsap, ScrollTrigger: typeof Trigger, element: HTMLElement) => void | (() => void);
 
 /** One lifecycle for desktop scenes, including the site's manual motion preference. */
-export function useCinematicScene(ref: RefObject<HTMLElement | null>, setup: SceneSetup) {
+export function useCinematicScene(ref: RefObject<HTMLElement | null>, setup: SceneSetup, mobile = false) {
   useEffect(() => {
     let disposed = false;
     let teardown: (() => void) | undefined;
@@ -22,7 +22,7 @@ export function useCinematicScene(ref: RefObject<HTMLElement | null>, setup: Sce
         teardown?.();
         if (document.documentElement.dataset.motion === "reduced") return;
         const media = gsap.matchMedia();
-        media.add("(min-width: 1024px) and (min-height: 760px) and (prefers-reduced-motion: no-preference)", () => {
+        media.add(mobile ? "(min-width: 1024px) and (min-height: 760px) and (prefers-reduced-motion: no-preference), (max-width: 700px) and (min-height: 700px) and (prefers-reduced-motion: no-preference)" : "(min-width: 1024px) and (min-height: 760px) and (prefers-reduced-motion: no-preference)", () => {
           element.dataset.cinematic = "true";
           const cleanup = setup(gsap, ScrollTrigger, element);
           const refresh = () => { ScrollTrigger.sort(); ScrollTrigger.refresh(); };
@@ -45,5 +45,5 @@ export function useCinematicScene(ref: RefObject<HTMLElement | null>, setup: Sce
       observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-motion"] });
     }).catch(() => { /* The static experience remains available if the enhancement fails to load. */ });
     return () => { disposed = true; observer.disconnect(); teardown?.(); };
-  }, [ref, setup]);
+  }, [ref, setup, mobile]);
 }

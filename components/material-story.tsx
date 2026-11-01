@@ -32,7 +32,7 @@ export function MaterialStory({ pinOffset = 80, scrollDriven = true, showGuide =
     refreshScenes.current = () => _plugin.refresh();
     return () => { trigger.current = null; refreshScenes.current = () => {}; };
   }, [pinOffset, scrollDriven]);
-  useCinematicScene(root, setup);
+  useCinematicScene(root, setup, scrollDriven);
   const choose = (index: number) => {
     setSelected(index);
     const scene = trigger.current;

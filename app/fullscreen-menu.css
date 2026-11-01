@@ -59,3 +59,8 @@ html:has(.site-menu[open]) { overflow:hidden; }
 }
 @media(prefers-reduced-motion:reduce) { .site-menu,.site-menu * { animation:none !important; transition:none !important; } }
 @media(min-width:901px) and (max-width:1100px) { .site-menu__body { min-height:700px; } }
+
+@media(max-width:900px) {
+ .site-menu__top { position:sticky; top:0; z-index:2; background:#f5f3ec; }
+ .site-menu { overscroll-behavior:contain; }
+}

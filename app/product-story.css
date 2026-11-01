@@ -252,3 +252,9 @@
 @media(max-width:700px) {
   .product-split__visual .product-image--normalized { --pack-height:240px; width:280px; }
 }
+
+@media(max-width:700px) {
+ .product-story--split .product-section-nav { top:72px; }
+ .product-story--split .product-section-nav a { min-height:44px; }
+ .product-story--split section[id] { scroll-margin-top:152px; }
+}
