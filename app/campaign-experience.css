@@ -307,3 +307,41 @@ body:has(.campaign-hero) .header--hero .header__tools > .header__advisor-icon:ho
   .material-story__instructions { grid-template-columns:1fr; gap:24px; }
   .material-story__guide { padding-bottom:32px; }
 }
+
+/* A single guidance panel connects the instructions and the product details. */
+.material-story__guide-panel { position:relative; background:#faf9f6; border:1px solid #dcd7cc; border-radius:6px; }
+.material-story__guide-panel .material-story__all { border:0; }
+.material-story__guide-panel .material-story__all summary {
+ display:flex; align-items:center; gap:16px; width:auto; min-height:100px;
+ padding:22px 220px 22px 26px; list-style:none; text-decoration:none; color:var(--ink);
+}
+.material-story__guide-panel summary::-webkit-details-marker { display:none; }
+.material-story__guide-panel summary strong { display:block; font-size:16px; font-weight:600; line-height:1.5; }
+.material-story__guide-panel summary small { display:block; margin-top:3px; color:var(--ink-quiet); font-size:13px; font-weight:400; line-height:1.6; }
+.material-story__guide-toggle { display:grid; place-items:center; width:34px; height:34px; flex-shrink:0; border:1px solid #c9d1db; border-radius:50%; color:var(--blue); font-size:23px; font-weight:400; }
+.material-story__guide-toggle::after { content:'+'; }
+.material-story__all[open] .material-story__guide-toggle::after { content:'−'; }
+.material-story__guide-panel summary:hover strong { color:var(--blue); }
+.material-story__guide-panel .material-story__instructions { margin:0 26px; padding:26px 0; border-top:1px solid var(--line); }
+.material-story__guide-panel .material-story__instructions li { border-left:0; padding:0; }
+.material-story__guide-panel .material-story__instructions li + li { padding-left:24px; border-left:1px solid var(--line); }
+.material-story__product-link { position:absolute; right:26px; top:28px; padding:12px 18px; border:1px solid var(--blue); border-radius:3px; color:var(--blue); text-decoration:none; font-size:13px; line-height:1.5; font-weight:600; }
+.material-story__product-link:hover { background:var(--blue); color:#fff; text-decoration:none; }
+.material-story__guide-panel :is(summary,a):focus-visible { outline:2px solid var(--blue); outline-offset:4px; }
+@media(max-width:700px) {
+ .material-story__guide-panel .material-story__all summary { min-height:0; padding:22px 20px; gap:12px; }
+ .material-story__guide-panel .material-story__instructions { margin-inline:20px; padding-block:22px; }
+ .material-story__guide-panel .material-story__instructions li + li { border-left:0; border-top:1px solid var(--line); padding:20px 0 0; }
+ .material-story__product-link { position:static; display:inline-block; margin:0 20px 20px 66px; min-height:44px; }
+}
+.material-story__guide { scroll-margin-top:110px; }
+
+/* Let the illustration set the scene height instead of leaving a viewport-sized tail. */
+.bond-home .material-story__grid { min-height:0; padding-block:48px 24px; }
+.bond-home .material-story__copy { padding-block:0; }
+.bond-home .material-story[data-cinematic] .material-story__grid { height:auto; max-height:none; }
+.bond-home .material-story[data-cinematic] .material-story__copy { padding-block:0; }
+@media(max-width:700px) {
+ .bond-home .material-story__grid { padding-block:40px 20px; }
+ .bond-home .material-story__visual { margin-bottom:0; }
+}

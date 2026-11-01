@@ -1,0 +1,57 @@
+/* Alternate two quiet surfaces; reserve the dark section for the footer. */
+.bond-home {
+  --home-surface-white:#faf9f6;
+  --home-surface-beige:#f0ece2;
+}
+.bond-home .application-bento,
+.bond-home .featured-range,
+.bond-home .home-questions { background:var(--home-surface-white); }
+.bond-home .home-questions { border-top:0; }
+.bond-home .material-story,
+.bond-home .bond-workshop { background:var(--home-surface-beige); }
+.bond-home .featured-range__visual {
+  background:#fff;
+  border:1px solid var(--line);
+}
+
+/* Keep the technical card light, with the same blue accents as other sections. */
+.bond-home .bond-workshop__technical {
+  background:#faf9f6;
+  color:var(--ink);
+}
+.bond-home .bond-workshop__technical h3 { color:var(--ink); }
+.bond-home .bond-workshop__technical > p { color:var(--ink-quiet); }
+.bond-home .bond-workshop__technical-top,
+.bond-home .bond-workshop__technical-top .mono { color:var(--blue); }
+.bond-home .bond-workshop__technical li { color:var(--ink-quiet); border-color:var(--line); }
+.bond-home .bond-workshop__download { background:var(--blue); color:#fff; }
+.bond-home .bond-workshop__download:hover { background:#21457f; }
+.bond-home .bond-workshop__support {
+  background:transparent;
+  border-bottom:1px solid var(--line);
+  padding-inline:0;
+}
+.bond-home .bond-workshop__scene-copy .mono { color:#fff; }
+.bond-home .bond-workshop a:focus-visible { outline-color:var(--blue); }
+
+/* Let the invitation run edge to edge before the navy footer directory. */
+body:has(.bond-home) .footer.bond-footer--renewed { padding-top:0; }
+body:has(.bond-home) .bond-footer--renewed .bond-footer__intro {
+  position:relative;
+  isolation:isolate;
+  background:#f0ece2;
+  padding:64px 0;
+}
+body:has(.bond-home) .bond-footer__intro::before {
+  content:'';
+  position:absolute;
+  inset:0 calc(-1 * var(--page-gutter));
+  z-index:-1;
+  background:#f0ece2;
+}
+@media(min-width:1600px) {
+  body:has(.bond-home) .bond-footer__intro::before { inset-inline:calc((var(--page-content-width) - 100vw) / 2); }
+}
+@media(max-width:700px) {
+  body:has(.bond-home) .bond-footer--renewed .bond-footer__intro { padding-block:44px; }
+}

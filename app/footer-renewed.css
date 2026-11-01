@@ -53,3 +53,51 @@
 }
 @media(prefers-reduced-motion:reduce) { .footer.bond-footer--renewed a { transition:none; } }
 .bond-footer--renewed .bond-footer__intro { scroll-margin-top:110px; }
+
+/* A compact directory with a consistent reading scale and grouped help links. */
+.footer.bond-footer--renewed .bond-footer__contact { padding:32px 0; }
+.footer.bond-footer--renewed .bond-footer__contact span { color:#aebdcc; font-size:12px; letter-spacing:0; }
+.footer.bond-footer--renewed .bond-footer__contact a { font-size:15px; line-height:1.5; }
+.footer.bond-footer--renewed .bond-footer__directory { grid-template-columns:1.35fr repeat(3,1fr); gap:clamp(24px,4vw,64px); padding:44px 0; }
+.footer.bond-footer--renewed .bond-footer__brand p { font-size:14px; line-height:1.65; margin:20px 0; max-width:29ch; }
+.footer.bond-footer--renewed nav h3 { font-size:12px; font-weight:600; letter-spacing:.1em; margin-bottom:14px; }
+.footer.bond-footer--renewed .bond-footer__directory nav a { font-size:14px; padding:9px 0; color:#c6d1dc; }
+.footer.bond-footer--renewed .bond-footer__directory nav a:hover { color:#fff; }
+.bond-footer__quick-links { display:flex; flex-wrap:wrap; gap:8px; max-width:320px; }
+.footer.bond-footer--renewed .bond-footer__quick-links a { display:inline-flex; align-items:center; min-height:40px; padding:9px 12px; border:1px solid #ffffff35; border-radius:4px; color:#e8edf2; font-size:12px; line-height:1.4; text-decoration:none; transition:background 180ms,border-color 180ms; }
+.footer.bond-footer--renewed .bond-footer__quick-links a:hover { background:#ffffff0d; border-color:#ffffff70; }
+.footer.bond-footer--renewed .bond-footer__bottom { padding:22px 0; font-size:12px; }
+.footer.bond-footer--renewed .bond-footer__policies { display:flex; flex-wrap:wrap; gap:10px 24px; }
+.footer.bond-footer--renewed .bond-footer__policies a { font-size:12px; }
+@media(max-width:700px) {
+ .footer.bond-footer--renewed .bond-footer__contact { padding:12px 0; }
+ .footer.bond-footer--renewed .bond-footer__contact a { font-size:14px; }
+ .footer.bond-footer--renewed .bond-footer__directory { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 20px; padding:32px 0; }
+ .footer.bond-footer--renewed .bond-footer__directory nav a { min-height:44px; padding:12px 0; }
+ .footer.bond-footer--renewed .bond-footer__quick-links a { min-height:44px; }
+ .footer.bond-footer--renewed .bond-footer__policies { gap:4px 20px; }
+}
+
+/* Edge-to-edge closing wordmark, with a slim utility row above. */
+.footer.bond-footer--renewed .footer-strip {
+ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
+ gap:0 24px; padding:18px 0; border-bottom:1px solid #ffffff30;
+}
+.footer.bond-footer--renewed .footer-strip a { color:#d5dfe8; font-size:13px; padding:12px 0; min-height:44px; }
+.footer.bond-footer--renewed .footer-strip a:last-child { color:#e8c878; }
+.footer.bond-footer--renewed .footer-strip a:hover { color:#fff; }
+.footer-signoff__brand {
+ width:calc(100vw - 32px); margin-left:calc((100% - 100vw) / 2 + 16px);
+ padding:18px 0 12px;
+}
+.footer-signoff__brand > a { display:block; width:100%; }
+/* Display the horizontal brand mark from the supplied lockup, above its descriptor. */
+.footer-signoff__wordmark { display:block; position:relative; aspect-ratio:3601 / 835; overflow:hidden; }
+.footer-signoff__wordmark img { position:absolute; top:0; left:0; display:block; width:100%; height:auto; max-width:none; }
+.footer.bond-footer--renewed .bond-footer__bottom { border-top:0; padding:16px 0 22px; }
+@media(max-width:700px) {
+ .footer.bond-footer--renewed .footer-strip { justify-content:flex-start; gap:0 24px; padding:14px 0; }
+ .footer.bond-footer--renewed .footer-strip a { font-size:12px; }
+ .footer-signoff__brand { width:calc(100vw - 20px); margin-left:calc((100% - 100vw) / 2 + 10px); padding:20px 0 12px; }
+ .footer.bond-footer--renewed .bond-footer__bottom { padding:12px 0 20px; }
+}

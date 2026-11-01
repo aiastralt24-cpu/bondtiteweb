@@ -90,7 +90,7 @@ export function ProductTransition() {
     const task = pending.current;
     if (!task) return;
     if (task.path !== pathname) { clear.current(); return; }
-    const pack = document.querySelector<HTMLElement>('main .product-split__visual [data-product-pack]');
+    const pack = document.querySelector<HTMLElement>('main .product-split__visual [data-product-pack], main .hydra-editorial-hero__pack [data-product-pack]');
     const target = pack?.querySelector<HTMLElement>('.product-image__crop');
     const image = target?.querySelector('img');
     if (!target || !image || pack?.dataset.productPack !== task.id) { clear.current(); return; }

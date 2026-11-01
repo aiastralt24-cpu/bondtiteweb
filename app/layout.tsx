@@ -37,6 +37,8 @@ import "./hero-header.css";
 import "./dealer-partnership.css";
 import "./product-media.css";
 import "./lead-dashboard.css";
+import "./home-section-surfaces.css";
+import "./hydra-editorial.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

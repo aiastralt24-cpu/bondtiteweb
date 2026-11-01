@@ -14,14 +14,15 @@ const materials = [
   { name: "Press", note: "Bring it together. Keep it under pressure.", detail: "Join while the adhesive is still wet on both surfaces. Maintain pressure until it dries completely, and wipe away excess with a wet cloth.", className: "press" }
 ];
 
-export function MaterialStory() {
+export function MaterialStory({ pinOffset = 80, scrollDriven = true, showGuide = true }: { pinOffset?: number; scrollDriven?: boolean; showGuide?: boolean }) {
   const [selected, setSelected] = useState(0);
   const root = useRef<HTMLElement>(null);
   const trigger = useRef<ScrollTrigger | null>(null);
   const refreshScenes = useRef<() => void>(() => {});
   const setup = useCallback((motion: typeof gsap, _plugin: typeof ScrollTrigger, element: HTMLElement) => {
+    if (!scrollDriven) return;
     const timeline = motion.timeline({ scrollTrigger: {
-      refreshPriority: 2, trigger: element, pin: element.querySelector(".material-story__grid"), start: "top 80px",
+      refreshPriority: 2, trigger: element, pin: element.querySelector(".material-story__grid"), start: `top ${pinOffset}px`,
       end: () => "+=" + window.innerHeight * 1.2, scrub: 0.35, invalidateOnRefresh: true,
       onUpdate: scene => setSelected(Math.round(scene.progress * 2))
     }});
@@ -30,7 +31,7 @@ export function MaterialStory() {
     trigger.current = timeline.scrollTrigger ?? null;
     refreshScenes.current = () => _plugin.refresh();
     return () => { trigger.current = null; refreshScenes.current = () => {}; };
-  }, []);
+  }, [pinOffset, scrollDriven]);
   useCinematicScene(root, setup);
   const choose = (index: number) => {
     setSelected(index);
@@ -67,13 +68,15 @@ export function MaterialStory() {
           <div className="material-story__caption"><span>{material.name}</span><span>Illustrative application sequence</span></div>
         </div>
       </div>
-      <div className="container material-story__guide">
+      {showGuide && <div className="container material-story__guide" id="hydra-application-guide">
+        <div className="material-story__guide-panel">
         <details className="material-story__all" onToggle={() => refreshScenes.current()}>
-          <summary>Read all three steps</summary>
+          <summary><span className="material-story__guide-toggle" aria-hidden="true" /><span><strong>Application guide</strong><small>Prepare, apply and press — all three steps.</small></span></summary>
           <ol className="material-story__instructions">{materials.map(item => <li key={item.name}><h3>{item.name}</h3><p>{item.detail}</p></li>)}</ol>
         </details>
-        <Link className="story-link" href="/products/woodworking/bondtite-hydra">Full product guidance</Link>
-      </div>
+        <Link className="material-story__product-link" href="/products/woodworking/bondtite-hydra">Explore Hydra+</Link>
+        </div>
+      </div>}
     </section>
   );
 }

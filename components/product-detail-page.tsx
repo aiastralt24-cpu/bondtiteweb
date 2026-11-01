@@ -56,7 +56,7 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
       <div className="product-split__visual"><ProductPack product={product} priority normalized />{totalGem&&<details className="total-gem-carton"><summary>View the 1.8 kg carton</summary><Image src="/assets/products/bondtite-total-gem-carton.png" alt="Bondtite Total Gem 1.8 kg outer carton" width={420} height={328} style={{maxWidth:"100%",height:"auto"}}/></details>}</div>
       <div className="product-split__content">
         <span className="mono">Bondtite · {hydra ? "Wood adhesive" : category.label}</span>
-        <h1 id="product-title">{hydra ? <>Hydra<span>+</span></> : product.label}</h1>
+        <h1 id="product-title">{product.label}</h1>
         <p className="product-split__intro">{hydra ? "Fast-setting PVA wood adhesive with anti-bubble, cross-linked technology for furniture and joinery." : productCardDescription(product)}</p>
         <div className="hydra-actions"><Link className="button button--primary" href={enquiry}>Enquire about this product</Link>{hasDownloadableTds(product.slug) ? <TdsDownload productName={product.label} productSlug={product.slug} /> : <Link className="button hydra-tds-button" href={`${enquiry}&request=technical-documentation`}>Request TDS / SDS</Link>}</div>
       </div>
@@ -80,13 +80,12 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
         <section className="product-story__section hydra-applications-section" id="product-applications">
           <div className="hydra-applications-heading hydra-section-heading"><h2>Applications</h2><p>{hydra ? <>For furniture in spaces <br/>exposed to moisture.</> : "Where to use it and what it bonds."}</p></div>
           <div className="hydra-applications">
-            <ul className={`hydra-use-cases${hydra ? "" : " product-use-cases"}`}>{uses.map((use,index)=><li key={`${index}-${use}`}>
-              {hydra ? <svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"><path d={["M3 10h26v17H3V10Zm0 6h26M12 10v17M20 10v17M6 13h3m6 7h2m6 0h2M6 10V6h7v4M18 10V5a3 3 0 0 1 6 0v2","M5 16h22l-2 11H7L5 16Zm5 0v-5h12v5M12 8V5h8v3M11 22h10M10 27v2m12-2v2","M4 5h24v12H4V5Zm4 12v10m8-10v10m8-10v10M3 27h26M7 21h18M9 5v12m14-12V5"][index]}/></svg> : <span className="product-use-case-number" aria-hidden="true">{String(index+1).padStart(2,"0")}</span>}
-              <h3>{hydra ? ["Kitchen","Bathroom","Balcony"][index] : use}</h3>{hydra&&<span>{use}</span>}
+            <ul className="hydra-use-cases product-use-cases">{uses.map((use,index)=><li key={`${index}-${use}`}>
+              <span className="product-use-case-number" aria-hidden="true">{String(index+1).padStart(2,"0")}</span>
+              <h3>{use}</h3>
             </li>)}</ul>
             {materials.length > 0 && <div className="hydra-compatible"><h3>Compatible materials</h3><ul>{materials.map(material=><li key={material}>{material}</li>)}</ul></div>}
             {product.slug === "bondtite-quick-art-and-craft-glue" && <div className="hydra-compatible"><h3>Compatible surfaces</h3><p>Porous and non-porous craft surfaces. Contact us to confirm suitability for your specific materials.</p></div>}
-            {hydra&&<Link className="hydra-application-link" href="/applications/furniture-and-joinery"><span>Explore furniture & joinery</span></Link>}
           </div>
         </section>
         <section className="product-story__section" id="how-to-use">
@@ -105,7 +104,7 @@ export function ProductDetailPage({ category, product }: { category: ProductCate
         </section>
       </ProductPanelStack>
       <section className="product-story__section" id="product-questions"><h2>Common questions</h2><div className="product-story__faqs">{product.faqs.map(faq=><details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
-      {related.length>0&&<section className="product-story__related" aria-labelledby="related-products-title"><header className="related-products__header"><div><span className="mono">Related products</span><h2 id="related-products-title">Explore the range.</h2></div><Link href={`/products/${category.slug}`}>View the range</Link></header><div className="product-story__related-grid">{related.map(item=><article key={item.id}><Link className="related-product" href={getProductPath(item)}><div className="product-story__related-image"><ProductPack product={item}/></div><div className="related-product__copy"><span className="related-product__brand">Bondtite</span><h3>{item.label}</h3><p>{relatedSummaries[item.slug]??productCardDescription(item)}</p><span className="related-product__action">View product</span></div></Link></article>)}</div></section>}
+      {related.length>0&&<section className="product-story__related" aria-labelledby="related-products-title"><header className="related-products__header"><div><span className="mono">Related products</span><h2 id="related-products-title">Explore the range.</h2></div><Link href={`/products/${category.slug}`}>View the range</Link></header><div className="product-story__related-grid">{related.map(item=><article key={item.id}><Link className="related-product" href={getProductPath(item)}><div className="product-story__related-image"><ProductPack product={item}/></div><div className="related-product__copy"><span className="related-product__brand">Bondtite</span><h3>{item.label}</h3><p>{relatedSummaries[item.slug]??productCardDescription(item)}</p><span className="related-product__action">View product{hydra && <span aria-hidden="true">↗</span>}</span></div></Link></article>)}</div></section>}
     </div>
   </main>;
 }

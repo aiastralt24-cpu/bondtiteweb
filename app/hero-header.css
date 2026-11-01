@@ -142,3 +142,26 @@ body:has(.header[data-brand-motion="fade"]) .campaign-hero__brand { visibility:v
 }
 
 .bond-home .campaign-hero__shade { opacity:.5; }
+
+/* The film appears through a large infinity-shaped opening before expanding. */
+.hero-film-mask { position:absolute; inset:0; width:100%; height:100%; z-index:-1; pointer-events:none; overflow:visible; }
+.hero-film-mask__opening { transform-origin:500px 252px; transform:scale(1); transition:transform 1250ms cubic-bezier(.76,0,.24,1); }
+.hero-film-mask--ready .hero-film-mask__opening { transform:scale(45); }
+.hero-film-mask--ready { visibility:hidden; transition:visibility 0s 1250ms; }
+.hero-film-intro { position:absolute; z-index:3; left:50%; top:62%; transform:translate(-50%,-50%); display:grid; justify-items:center; gap:24px; color:#f7f6f2; pointer-events:none; text-align:center; width:min(440px,80%); transition:opacity 180ms ease,visibility 180ms; }
+.hero-film-intro--ready { opacity:0; visibility:hidden; }
+.hero-film-mask__outline { transition:opacity 180ms ease; }
+.hero-film-mask--ready .hero-film-mask__outline { opacity:0; }
+.hero-film-intro span { font:400 11px/1.5 var(--font-body); letter-spacing:.08em; }
+.hero-film-intro button { pointer-events:auto; background:transparent; border:1px solid #ffffff70; color:white; border-radius:30px; padding:12px 20px; font:500 13px var(--font-body); cursor:pointer; }
+.hero-film-intro button:focus-visible { outline:2px solid #e8c878; outline-offset:4px; }
+@media(prefers-reduced-motion:no-preference) {
+  .hero-film-mask--loading .hero-film-mask__outline { animation:bond-intro-pulse 1400ms ease-in-out infinite alternate; }
+}
+@keyframes bond-intro-pulse { from { opacity:.35; } to { opacity:1; } }
+@media(prefers-reduced-motion:reduce) {
+  .hero-film-mask__opening { transition:none; }
+  .hero-film-mask--ready { opacity:0; transition:opacity 180ms ease,visibility 0s 180ms; }
+  .hero-film-mask--ready .hero-film-mask__opening { transform:none; }
+  .hero-film-intro { transition:none; }
+}

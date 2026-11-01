@@ -1,0 +1,53 @@
+/* Optical sizing keeps tall jars and horizontal packs balanced in this grid. */
+.bond-home .featured-range__item .featured-range__visual {
+  height:260px;
+  margin-bottom:22px;
+}
+.bond-home .featured-range__visual::after { display:none; }
+.bond-home .featured-range__item .product-image {
+  width:86%;
+  height:190px;
+  filter:drop-shadow(0 10px 10px #0b1a2b14);
+  transition:transform 220ms ease;
+}
+.bond-home .featured-range__item[data-product="bondtite-hydra"] .product-image {
+  width:66%;
+  height:190px;
+}
+.bond-home .featured-range__item[data-product="bondtite-quick"] .product-image { width:82%; }
+.bond-home .featured-range__item h3 {
+  font-size:clamp(18px,1.5vw,22px);
+  line-height:1.25;
+  min-height:2.5em;
+  margin:12px 0 10px;
+  letter-spacing:-.025em;
+}
+.bond-home .featured-range__item p { margin:0 0 24px; }
+.bond-home .featured-range__item .featured-range__link {
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  font-size:14px;
+  transition:color 180ms ease,border-color 180ms ease;
+}
+.bond-home .featured-range__item:focus-visible {
+  outline:2px solid var(--blue);
+  outline-offset:7px;
+}
+.bond-home .featured-range__item:focus-visible .featured-range__link { color:var(--blue); border-color:var(--blue); }
+@media(hover:hover) {
+  .bond-home .featured-range__item:hover .product-image { transform:translateY(-4px); }
+  .bond-home .featured-range__item:hover .featured-range__link { color:var(--blue); border-color:var(--blue); }
+}
+@media(max-width:700px) {
+  .bond-home .featured-range__item .featured-range__visual { height:185px; margin-bottom:18px; }
+  .bond-home .featured-range__item .product-image { height:145px; }
+  .bond-home .featured-range__item[data-product="bondtite-hydra"] .product-image { height:140px; }
+  .bond-home .featured-range__item h3 { font-size:18px; }
+  .bond-home .featured-range__item .featured-range__link { font-size:13px; gap:8px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .bond-home .featured-range__item .product-image,
+  .bond-home .featured-range__item .featured-range__link { transition:none; }
+  .bond-home .featured-range__item:hover .product-image { transform:none; }
+}
