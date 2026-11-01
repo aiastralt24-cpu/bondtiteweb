@@ -1,9 +1,10 @@
 "use client";
 
 import {isUsablePhone} from "@/lib/phone";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 
 export function TdsDownload({ productName, productSlug }: { productName: string; productSlug: string }) {
+  const id = useId();
   const submission = useRef({payload:"",key:""});
   const dialog = useRef<HTMLDialogElement>(null);
   const successClose = useRef<HTMLButtonElement>(null);
@@ -33,19 +34,19 @@ export function TdsDownload({ productName, productSlug }: { productName: string;
   }
   return <>
     <button className="button hydra-tds-button" type="button" onClick={() => { setError(""); dialog.current?.showModal(); }}>Download TDS </button>
-    <dialog ref={dialog} className="tds-dialog" aria-labelledby="tds-title" aria-describedby="tds-description">
+    <dialog ref={dialog} className="tds-dialog" aria-labelledby={`${id}-title`} aria-describedby={`${id}-description`}>
       <button className="tds-dialog__close" type="button" aria-label="Close TDS form" onClick={() => dialog.current?.close()}>×</button>
       <span className="mono">Technical data sheet</span>
-      <h2 id="tds-title">{downloadUrl ? "Your TDS is ready." : `Get the ${productName} TDS.`}</h2>
-      <p id="tds-description">{downloadUrl ? "Your details have been saved. The download has been requested in your browser." : "Enter your details to download the official technical data sheet."}</p>
+      <h2 id={`${id}-title`}>{downloadUrl ? "Your TDS is ready." : `Get the ${productName} TDS.`}</h2>
+      <p id={`${id}-description`}>{downloadUrl ? "Your details have been saved. The download has been requested in your browser." : "Enter your details to download the official technical data sheet."}</p>
       {downloadUrl ? <div className="tds-dialog__success">
         <p role="status">Thank you. You can now close this window.</p>
         <button ref={successClose} className="button button--primary" type="button" onClick={() => dialog.current?.close()}>Close</button>
         <p>Need the file? <a href={downloadUrl} download={`${productSlug}-tds.pdf`}>Download again</a></p>
       </div> : <form onSubmit={submit}>
         <label className="enquiry-trap" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
-        <label htmlFor="tds-name">Full name <span>*</span></label><input id="tds-name" name="name" autoComplete="name" required minLength={2} maxLength={100} pattern=".*\S.*" />
-        <label htmlFor="tds-mobile">Mobile number <span>*</span></label><input id="tds-mobile" name="mobile" type="tel" autoComplete="tel" placeholder="+91 98765 43210" required pattern="\+?[0-9\s\(\)\-]{7,25}" maxLength={25} />
+        <label htmlFor={`${id}-name`}>Full name <span>*</span></label><input id={`${id}-name`} name="name" autoComplete="name" required minLength={2} maxLength={100} pattern=".*\S.*" />
+        <label htmlFor={`${id}-mobile`}>Mobile number <span>*</span></label><input id={`${id}-mobile`} name="mobile" type="tel" autoComplete="tel" placeholder="+91 98765 43210" required pattern="\+?[0-9\s\(\)\-]{7,25}" maxLength={25} />
 <p className="form-privacy-note">Read how we use your details in our <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
         <label className="tds-dialog__consent"><input name="consent" type="checkbox" required /><span>I agree to the use of these details to process this TDS download.</span></label>
         <button className="button button--primary" type="submit" disabled={busy}>{busy ? "Preparing download…" : "Submit & download"}</button>
