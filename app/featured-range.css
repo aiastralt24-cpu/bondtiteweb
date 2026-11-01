@@ -1,53 +1,51 @@
-/* Optical sizing keeps tall jars and horizontal packs balanced in this grid. */
+/* One quiet surface connects the pack, product name, and action. */
+.bond-home .featured-range__grid { gap:20px; }
+.bond-home .featured-range__item { padding:24px; background:#f0ece2; }
 .bond-home .featured-range__item .featured-range__visual {
-  height:260px;
-  margin-bottom:22px;
+  height:210px; margin:0 0 28px; background:transparent; border:0;
 }
 .bond-home .featured-range__visual::after { display:none; }
-.bond-home .featured-range__item .product-image {
-  width:86%;
-  height:190px;
-  filter:drop-shadow(0 10px 10px #0b1a2b14);
+.bond-home .featured-range__item .featured-range__visual > .product-image {
+  position:relative; inset:auto; width:100%; height:170px;
+  filter:drop-shadow(0 8px 8px #0b1a2b12);
   transition:transform 220ms ease;
 }
-.bond-home .featured-range__item[data-product="bondtite-hydra"] .product-image {
-  width:66%;
-  height:190px;
-}
-.bond-home .featured-range__item[data-product="bondtite-quick"] .product-image { width:82%; }
+.bond-home .featured-range__item[data-product="bondtite-hydra"] .featured-range__visual > .product-image { width:70%; height:170px; }
+.bond-home .featured-range__item[data-product="bondtite-quick"] .featured-range__visual > .product-image { width:94%; }
+.bond-home .featured-range__item > .mono { font-size:9px; letter-spacing:.09em; color:var(--blue); }
 .bond-home .featured-range__item h3 {
-  font-size:clamp(18px,1.5vw,22px);
-  line-height:1.25;
-  min-height:2.5em;
-  margin:12px 0 10px;
-  letter-spacing:-.025em;
+  font:600 clamp(23px,2vw,28px)/1.2 var(--font-body);
+  min-height:0; margin:10px 0 12px; letter-spacing:-.035em; text-transform:none;
 }
-.bond-home .featured-range__item p { margin:0 0 24px; }
+.bond-home .featured-range__item p { font-size:13px; line-height:1.6; margin:0 0 28px; }
 .bond-home .featured-range__item .featured-range__link {
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  font-size:14px;
-  transition:color 180ms ease,border-color 180ms ease;
+  display:flex; align-items:center; justify-content:space-between; width:100%;
+  gap:12px; font-size:13px; font-weight:500;
+  border-bottom:0; border-top:1px solid #d9d4c9; padding:16px 0 0;
+  transition:color 180ms ease;
 }
-.bond-home .featured-range__item:focus-visible {
-  outline:2px solid var(--blue);
-  outline-offset:7px;
-}
-.bond-home .featured-range__item:focus-visible .featured-range__link { color:var(--blue); border-color:var(--blue); }
+.bond-home .featured-range__item:focus-visible { outline:2px solid var(--blue); outline-offset:4px; }
+.bond-home .featured-range__item:focus-visible .featured-range__link { color:var(--blue); }
 @media(hover:hover) {
-  .bond-home .featured-range__item:hover .product-image { transform:translateY(-4px); }
-  .bond-home .featured-range__item:hover .featured-range__link { color:var(--blue); border-color:var(--blue); }
+ .bond-home .featured-range__item:hover .product-image { transform:translateY(-4px); }
+ .bond-home .featured-range__item:hover .featured-range__link { color:var(--blue); }
+}
+@media(max-width:1100px) and (min-width:701px) {
+ .bond-home .featured-range__grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media(max-width:700px) {
-  .bond-home .featured-range__item .featured-range__visual { height:185px; margin-bottom:18px; }
-  .bond-home .featured-range__item .product-image { height:145px; }
-  .bond-home .featured-range__item[data-product="bondtite-hydra"] .product-image { height:140px; }
-  .bond-home .featured-range__item h3 { font-size:18px; }
-  .bond-home .featured-range__item .featured-range__link { font-size:13px; gap:8px; }
+ .bond-home .featured-range__grid { gap:16px; }
+ .bond-home .featured-range__item { padding:18px 14px; }
+ .bond-home .featured-range__item .featured-range__visual { height:150px; margin-bottom:20px; }
+ .bond-home .featured-range__item .featured-range__visual > .product-image,
+ .bond-home .featured-range__item[data-product="bondtite-hydra"] .featured-range__visual > .product-image { height:125px; }
+ .bond-home .featured-range__item h3 { font-size:21px; }
+ .bond-home .featured-range__item p { font-size:12px; margin-bottom:20px; }
+ .bond-home .featured-range__item .featured-range__link { font-size:12px; }
 }
+@media(max-width:380px) { .bond-home .featured-range__grid { grid-template-columns:1fr; } }
 @media(prefers-reduced-motion:reduce) {
-  .bond-home .featured-range__item .product-image,
-  .bond-home .featured-range__item .featured-range__link { transition:none; }
-  .bond-home .featured-range__item:hover .product-image { transform:none; }
+ .bond-home .featured-range__item .product-image,
+ .bond-home .featured-range__item .featured-range__link { transition:none; }
+ .bond-home .featured-range__item:hover .product-image { transform:none; }
 }

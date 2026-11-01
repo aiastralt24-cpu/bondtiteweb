@@ -71,7 +71,7 @@ export function MaterialStory({ pinOffset = 80, scrollDriven = true, showGuide =
       {showGuide && <div className="container material-story__guide" id="hydra-application-guide">
         <div className="material-story__guide-panel">
         <details className="material-story__all" onToggle={() => refreshScenes.current()}>
-          <summary><span className="material-story__guide-toggle" aria-hidden="true" /><span><strong>Application guide</strong><small>Prepare, apply and press — all three steps.</small></span></summary>
+          <summary><span className="material-story__guide-toggle" aria-hidden="true" /><span><strong>Application guide</strong><small>Step-by-step guidance for preparing, applying and pressing.</small></span></summary>
           <ol className="material-story__instructions">{materials.map(item => <li key={item.name}><h3>{item.name}</h3><p>{item.detail}</p></li>)}</ol>
         </details>
         <Link className="material-story__product-link" href="/products/woodworking/bondtite-hydra">Explore Hydra+</Link>
