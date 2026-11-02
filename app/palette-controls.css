@@ -13,8 +13,9 @@ body .button--primary:hover,
 .enquiry-desk__action:hover,
 .bond-film__play:hover,
 .product-quick-actions a:last-child:hover {
-  background:var(--palette-navy); color:var(--palette-white); border-color:var(--palette-navy);
+  background:var(--palette-blue); color:var(--palette-white); border-color:var(--palette-blue);
 }
+body .button--primary:hover, .bond-footer .bond-footer__start a:hover { box-shadow:inset 0 0 0 2px var(--palette-white); }
 input,select,textarea { accent-color:var(--palette-blue); }
 .contact-studio { background:var(--palette-paper); }
 .enquiry-desk__field :is(input,select,textarea) {

@@ -14,7 +14,7 @@
 .brand-hero__image img { object-fit:contain; object-position:center bottom; }
 .brand-hero__visual figcaption { display:flex; justify-content:space-between; gap:16px; padding-top:16px; font-size:12px; color:var(--palette-ink); }
 .brand-hero__visual figcaption span { color:var(--palette-muted); }
-.brand-statement { background:var(--palette-navy); color:var(--palette-white); padding-block:64px; scroll-margin-top:100px; }
+.brand-statement { background:var(--palette-blue); color:var(--palette-white); padding-block:64px; scroll-margin-top:100px; }
 .brand-statement__content { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,7vw,110px); align-items:start; }
 .brand-statement .mono { color:var(--palette-gold); }
 .brand-statement h2 { font-size:clamp(40px,4.2vw,62px); line-height:1.08; max-width:14ch; margin:24px 0 0; }

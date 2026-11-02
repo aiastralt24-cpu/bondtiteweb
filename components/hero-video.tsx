@@ -75,7 +75,7 @@ export function HeroVideo() {
         <rect x="-2000" y="-2000" width="5000" height="5000" fill="white" />
         <path className="hero-film-mask__opening" d={bondOutline} fill="none" stroke="black" strokeWidth="34" strokeLinejoin="miter" />
       </mask></defs>
-      <rect x="-2000" y="-2000" width="5000" height="5000" fill="#0b2338" mask={`url(#${maskId})`} />
+      <rect x="-2000" y="-2000" width="5000" height="5000" fill="#2854a1" mask={`url(#${maskId})`} />
       <path className="hero-film-mask__outline" d={bondOutline} fill="none" stroke="#f7f6f2" strokeWidth="3" strokeLinejoin="miter" />
     </svg>
     <div className={`hero-film-intro hero-film-intro--${state}`} aria-hidden={state === 'ready' ? true : undefined}>

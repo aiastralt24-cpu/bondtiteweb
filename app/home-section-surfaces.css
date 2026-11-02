@@ -25,7 +25,7 @@
 .bond-home .bond-workshop__technical-top .mono { color:var(--blue); }
 .bond-home .bond-workshop__technical li { color:var(--ink-quiet); border-color:var(--line); }
 .bond-home .bond-workshop__download { background:var(--blue); color:#fff; }
-.bond-home .bond-workshop__download:hover { background:#21457f; }
+.bond-home .bond-workshop__download:hover { background:var(--palette-blue); }
 .bond-home .bond-workshop__support {
   background:transparent;
   border-bottom:1px solid var(--line);
@@ -34,7 +34,7 @@
 .bond-home .bond-workshop__scene-copy .mono { color:#fff; }
 .bond-home .bond-workshop a:focus-visible { outline-color:var(--blue); }
 
-/* Let the invitation run edge to edge before the navy footer directory. */
+/* Let the invitation run edge to edge before the brand-blue footer directory. */
 body:has(.bond-home) .footer.bond-footer--renewed { padding-top:0; }
 body:has(.bond-home) .bond-footer--renewed .bond-footer__intro {
   position:relative;

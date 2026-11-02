@@ -1,3 +1,5 @@
+import { InstantProductPage } from "@/components/instant-product-page";
+import { instantStories } from "@/lib/instant-products";
 import Image from 'next/image';
 import {productSpecifications} from '@/lib/product-specifications';
 import { ProductPanelStack } from "@/components/product-panel-stack";
@@ -10,6 +12,7 @@ import { catalogProducts, getProductPath, type CatalogProduct, type ProductCateg
 import { formatPackSizes, productCardDescription } from "@/lib/product-format";
 
 export function ProductDetailPage({ category, product }: { category: ProductCategory; product: CatalogProduct }) {
+  if (instantStories[product.slug]) return <InstantProductPage product={product} category={category} />;
   const totalGem = product.slug === "bondtite-total-gem";
   const hydra = product.slug === "bondtite-hydra";
   // Official Astral TDS, version 02 (01.04.2024):

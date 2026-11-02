@@ -1,0 +1,132 @@
+{
+  "craft": [
+    {
+      "src": "/assets/instant/craft-original-01.webp",
+      "label": "Product pack",
+      "alt": "Quick Art & Craft 10 g retail pack"
+    },
+    {
+      "src": "/assets/instant/craft-original-05.webp",
+      "label": "Application detail",
+      "alt": "Quick Art & Craft used on a decorative paper project"
+    },
+    {
+      "src": "/assets/instant/craft-original-08.webp",
+      "label": "Features",
+      "alt": "Quick Art & Craft formula and application features"
+    },
+    {
+      "src": "/assets/instant/craft-original-09.webp",
+      "label": "How to use",
+      "alt": "Quick Art & Craft illustrated application instructions"
+    },
+    {
+      "src": "/assets/instant/craft-original-02.webp",
+      "label": "Pack instructions",
+      "alt": "Quick Art & Craft reverse packaging and instructions"
+    }
+  ],
+  "gel": [
+    {
+      "src": "/assets/instant/gel-original-01.webp",
+      "label": "Product pack",
+      "alt": "Quick Gel 3 g retail pack"
+    },
+    {
+      "src": "/assets/instant/gel-original-05.webp",
+      "label": "Application detail",
+      "alt": "Quick Gel applied to a headphone repair"
+    },
+    {
+      "src": "/assets/instant/gel-original-03.webp",
+      "label": "Features",
+      "alt": "Quick Gel thicker non-drip formula"
+    },
+    {
+      "src": "/assets/instant/gel-original-07.webp",
+      "label": "Wood repairs",
+      "alt": "Quick Gel application on a wooden toy"
+    },
+    {
+      "src": "/assets/instant/gel-original-02.webp",
+      "label": "Pack instructions",
+      "alt": "Quick Gel reverse packaging and instructions"
+    }
+  ],
+  "instant": [
+    {
+      "src": "/assets/instant/instant-original-2.webp",
+      "label": "Product pack",
+      "alt": "Quick Instant 3 g retail pack"
+    },
+    {
+      "src": "/assets/instant/instant-original-5.webp",
+      "label": "Application detail",
+      "alt": "Quick Instant precision nozzle used on a wooden frame"
+    },
+    {
+      "src": "/assets/instant/instant-original-4.webp",
+      "label": "Features",
+      "alt": "Quick Instant nozzle and multi-material features"
+    },
+    {
+      "src": "/assets/instant/instant-original-3.webp",
+      "label": "Pack instructions",
+      "alt": "Quick Instant reverse packaging and instructions"
+    }
+  ],
+  "spot-on": [
+    {
+      "src": "/assets/instant/spot-on-original-01.webp",
+      "label": "Product pack",
+      "alt": "Quick Spot-On 10 g retail pack"
+    },
+    {
+      "src": "/assets/instant/spot-on-original-06.webp",
+      "label": "Application detail",
+      "alt": "Quick Spot-On extended nozzle used on spectacle frames"
+    },
+    {
+      "src": "/assets/instant/spot-on-original-05.webp",
+      "label": "Features",
+      "alt": "Quick Spot-On precision nozzle and cap features"
+    },
+    {
+      "src": "/assets/instant/spot-on-original-07.webp",
+      "label": "How to use",
+      "alt": "Quick Spot-On illustrated application instructions"
+    },
+    {
+      "src": "/assets/instant/spot-on-original-02.webp",
+      "label": "Pack instructions",
+      "alt": "Quick Spot-On reverse packaging and instructions"
+    }
+  ],
+  "ultra": [
+    {
+      "src": "/assets/instant/ultra-original-01.webp",
+      "label": "Product pack",
+      "alt": "Quick Ultra Glue 15 g retail pack"
+    },
+    {
+      "src": "/assets/instant/ultra-original-06.webp",
+      "label": "Application detail",
+      "alt": "Quick Ultra Glue brush used on a belt repair"
+    },
+    {
+      "src": "/assets/instant/ultra-original-05.webp",
+      "label": "Precision nozzle",
+      "alt": "Quick Ultra Glue nozzle used for a clock repair"
+    },
+    {
+      "src": "/assets/instant/ultra-original-how-to-use.webp",
+      "label": "How to use",
+      "alt": "Quick Ultra Glue brush and nozzle application instructions"
+    },
+    {
+      "src": "/assets/instant/ultra-original-09.webp",
+      "label": "Pack instructions",
+      "alt": "Quick Ultra Glue reverse packaging and instructions"
+    }
+  ]
+}

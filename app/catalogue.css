@@ -31,7 +31,7 @@
 .range-browser__compare span { color: var(--palette-on-dark); margin-top: 4px; overflow-wrap: anywhere; }
 .range-browser__compare button:not(.button) { background: none; color: white; border: 0; min-height: 44px; cursor: pointer; }
 .range-browser__dialog { width: min(1000px, calc(100% - 32px)); max-height: 85dvh; padding: 28px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
-.range-browser__dialog::backdrop { background: #071b30b3; }
+.range-browser__dialog::backdrop { background: #202020b3; }
 .range-browser__dialog-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
 .range-browser__dialog-head h2 { font-size: 40px; margin: 0; }
 .range-browser__table { overflow-x: auto; }
@@ -134,9 +134,9 @@
 .range-browser__intro h1 { font-size:clamp(58px,6.3vw,94px); margin:26px 0 22px; line-height:1; }
 .range-browser__intro h1 span { color:var(--palette-blue); }
 .range-browser__intro p { max-width:410px; font-size:15px; }
-.range-browser__browse { display:inline-flex; gap:30px; align-items:center; margin-top:28px; padding:10px 0; border-bottom:1px solid var(--palette-blue); font-size:13px; font-weight:600; color:var(--palette-navy); }
+.range-browser__browse { display:inline-flex; gap:30px; align-items:center; margin-top:28px; padding:10px 0; border-bottom:1px solid var(--palette-blue); font-size:13px; font-weight:600; color:var(--palette-blue); }
 .range-browser__browse span { font-size:20px; }
-.range-browser__showcase { align-self:stretch; display:flex; flex-direction:column; justify-content:center; padding:30px 24px 28px; background:var(--palette-navy); color:white; min-width:0; }
+.range-browser__showcase { align-self:stretch; display:flex; flex-direction:column; justify-content:center; padding:30px 24px 28px; background:var(--palette-blue); color:white; min-width:0; }
 .range-browser__showcase-caption { font-size:13px; letter-spacing:.06em; color:var(--palette-on-dark); border-bottom:1px solid #ffffff35; padding-bottom:20px; }
 .range-browser__lineup { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; padding-top:26px; }
 .range-browser__hero-product { display:flex; flex-direction:column; min-width:0; }
@@ -164,7 +164,7 @@
   width:100%;
   max-width:100%;
   height:var(--pack-height);
-  filter:drop-shadow(0 10px 12px #0a162014);
+  filter:drop-shadow(0 10px 12px #20202014);
 }
 .product-image--normalized .product-image__crop {
   position:relative;

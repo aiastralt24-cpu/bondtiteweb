@@ -542,6 +542,7 @@ export const catalogueFacts: Record<string, Partial<ProductSeed>> = {
     "shelfLife": "12 months from manufacture; use within 45 days of opening.",
     "steps": [
       "Clean and dry both surfaces.",
+      "Apply the required amount of adhesive to one surface.",
       "Join and press the surfaces together for a few seconds.",
       "Adjust alignment within 20 seconds if repositioning is needed."
     ],

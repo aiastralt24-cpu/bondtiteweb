@@ -106,16 +106,16 @@
 /* A visual introduction to each route, with the entire card as one target. */
 .advisor-entry { gap:24px; }
 .advisor-entry>button { padding:0; overflow:hidden; display:flex; flex-direction:column; transition:border-color .2s,box-shadow .2s; }
-.advisor-entry>button:hover { background:var(--palette-white); box-shadow:0 8px 28px #0a244310; }
+.advisor-entry>button:hover { background:var(--palette-white); box-shadow:0 8px 28px #20202010; }
 .advisor-entry__art { width:100%; position:relative; background:var(--palette-ivory); padding:24px 28px 18px; min-height:220px; }
-.advisor-entry__art--materials { background:var(--palette-navy); }
+.advisor-entry__art--materials { background:var(--palette-blue); }
 .advisor-entry__art-label { display:block; font-size:10px; letter-spacing:.16em; color:var(--palette-muted); }
 .advisor-entry__art svg { display:block; width:min(100%,320px); height:150px; margin:0 auto; stroke:var(--palette-blue); stroke-width:1.5; stroke-linejoin:round; }
 .advisor-entry__art--materials svg { stroke:var(--palette-gold); }
 .advisor-entry__art--materials .advisor-entry__art-label,.advisor-entry__art--materials .advisor-entry__art-caption { color:var(--palette-on-dark); }
 .advisor-entry__measure { stroke-dasharray:3 4; opacity:.55; }
 .advisor-entry__art-caption { display:block; text-align:center; font-size:11px; color:var(--palette-muted); }
-.advisor-entry__upper { fill:var(--palette-navy); }
+.advisor-entry__upper { fill:var(--palette-blue); }
 .advisor-entry__body { padding:28px; display:flex; flex-direction:column; flex:1; width:100%; }
 .advisor-entry__eyebrow { font-size:11px; color:var(--palette-muted); }
 .advisor-entry .advisor-entry__body h2 { margin:12px 0; font-size:40px; line-height:1.1; }
@@ -162,7 +162,7 @@
 .advisor-pairing__panel-heading h2 { font-family:var(--font-body); font-size:25px; letter-spacing:-.03em; line-height:1.2; margin:8px 0 0; }
 .advisor-pairing__panel .advisor-chip-group legend { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
 .advisor-pairing__join { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:grid; place-items:center; background:var(--palette-white); width:32px; height:32px; border:1px solid var(--palette-border); border-radius:50%; color:var(--palette-muted); z-index:1; }
-.advisor-pairing__summary { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; background:var(--palette-navy); color:var(--palette-white); padding:18px 32px; }
+.advisor-pairing__summary { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; background:var(--palette-blue); color:var(--palette-white); padding:18px 32px; }
 .advisor-pairing__summary>span { color:var(--palette-on-dark); font-size:12px; }
 .advisor-pairing__summary strong { font-size:16px; font-weight:500; }
 .advisor-pairing__summary strong>span { color:var(--palette-gold); padding:0 12px; }

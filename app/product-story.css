@@ -50,14 +50,14 @@
   .product-story :is(section,h3)[id] { scroll-margin-top: 96px; }
 }
 
-.tds-dialog { width:min(480px,calc(100% - 32px)); max-height:90dvh; margin:auto; overflow:auto; border:0; padding:36px; color:var(--palette-navy); background:var(--palette-paper); box-shadow:0 20px 80px #061a3540; }
-.tds-dialog::backdrop { background:#071b30b3; }
-.tds-dialog__close { position:absolute; top:10px; right:10px; width:40px; height:40px; border:0; background:transparent; color:var(--palette-navy); font-size:26px; cursor:pointer; }
+.tds-dialog { width:min(480px,calc(100% - 32px)); max-height:90dvh; margin:auto; overflow:auto; border:0; padding:36px; color:var(--palette-blue); background:var(--palette-paper); box-shadow:0 20px 80px #20202040; }
+.tds-dialog::backdrop { background:#202020b3; }
+.tds-dialog__close { position:absolute; top:10px; right:10px; width:40px; height:40px; border:0; background:transparent; color:var(--palette-blue); font-size:26px; cursor:pointer; }
 .tds-dialog>.mono { font-size:10px; color:var(--palette-blue); }
 .product-story .tds-dialog h2 { font-size:36px; margin:16px 0 12px; line-height:1.1; }
 .tds-dialog p { font-size:13px; line-height:1.7; margin:0 0 22px; }
 .tds-dialog form>label:not(.tds-dialog__consent) { display:block; font-size:13px; margin:18px 0 8px; }
-.tds-dialog form>input { appearance:none; box-sizing:border-box; width:100%; height:52px; border:1px solid var(--palette-border); border-radius:2px; padding:12px; background:white; color:var(--palette-navy); font:400 16px var(--font-body); }
+.tds-dialog form>input { appearance:none; box-sizing:border-box; width:100%; height:52px; border:1px solid var(--palette-border); border-radius:2px; padding:12px; background:white; color:var(--palette-blue); font:400 16px var(--font-body); }
 .tds-dialog__consent { display:flex; gap:10px; align-items:flex-start; margin:22px 0; font-size:12px; line-height:1.6; }
 .tds-dialog__consent input { flex:none; width:18px; height:18px; margin:1px 0 0; accent-color:var(--palette-blue); }
 .tds-dialog form>.button { width:100%; justify-content:space-between; min-height:52px; }
@@ -101,12 +101,12 @@
 .product-split__visual .product-image { width:320px; max-width:80%; height:360px; }
 .product-split__content { min-width:0; }
 .product-split__content>.mono { color:var(--palette-blue); font-size:10px; letter-spacing:.12em; }
-.product-split h1 { font-size:clamp(72px,8vw,108px); line-height:1; letter-spacing:-.035em; margin:22px 0 24px; color:var(--palette-navy); }
+.product-split h1 { font-size:clamp(72px,8vw,108px); line-height:1; letter-spacing:-.035em; margin:22px 0 24px; color:var(--palette-blue); }
 .product-split h1>span { color:var(--palette-blue); }
 .product-split__intro { font-size:18px; line-height:1.7; max-width:480px; margin:0; color:var(--palette-muted); }
 .hydra-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:32px; }
 .hydra-actions .button { min-height:52px; padding:14px 20px; gap:20px; font-size:13px; }
-.hydra-actions .hydra-tds-button { background:transparent; border:1px solid var(--palette-navy); color:var(--palette-navy); }
+.hydra-actions .hydra-tds-button { background:transparent; border:1px solid var(--palette-blue); color:var(--palette-blue); }
 .hydra-actions .hydra-tds-button:hover { background:var(--palette-ivory); }
 .product-story--split .product-section-nav .container { justify-content:center; gap:36px; }
 .product-story--split .product-story__section { grid-template-columns:1fr 2fr; gap:64px; padding:48px 0; }
@@ -148,12 +148,12 @@
 .hydra-benefit-list>li:last-child { border-bottom:0; }
 .hydra-benefit-icon { display:grid; place-items:center; width:40px; height:40px; flex:none; background:var(--palette-ivory); border-radius:50%; color:var(--palette-blue); }
 .hydra-benefit-icon svg { width:21px; height:21px; }
-.product-story--split .hydra-benefit-list h3 { font:600 16px/1.4 var(--font-body); margin:0 0 6px; color:var(--palette-navy); }
+.product-story--split .hydra-benefit-list h3 { font:600 16px/1.4 var(--font-body); margin:0 0 6px; color:var(--palette-blue); }
 .product-story--split .hydra-benefit-list p { font-size:14px; line-height:1.65; margin:0; color:var(--palette-muted); }
 .product-story--split .hydra-pack-sizes { margin-top:8px; padding:22px 24px; background:var(--palette-ivory); }
 .product-story--split .hydra-pack-sizes h3 { font:500 12px/1.5 var(--font-body); color:var(--palette-muted); margin:0 0 14px; }
 .hydra-pack-sizes ul { display:flex; flex-wrap:wrap; gap:10px 0; list-style:none; margin:0; padding:0; }
-.hydra-pack-sizes li { font:500 14px/1.5 var(--font-body); color:var(--palette-navy); padding:0 16px; border-left:1px solid var(--palette-border); white-space:nowrap; }
+.hydra-pack-sizes li { font:500 14px/1.5 var(--font-body); color:var(--palette-blue); padding:0 16px; border-left:1px solid var(--palette-border); white-space:nowrap; }
 .hydra-pack-sizes li:first-child { padding-left:0; border-left:0; }
 @media(max-width:700px) { .product-story--split .hydra-overview-heading p br { display:none; } .hydra-benefit-list>li { gap:14px; } .product-story--split .hydra-pack-sizes { padding:20px; } .hydra-pack-sizes ul { gap:10px; } .hydra-pack-sizes li,.hydra-pack-sizes li:first-child { padding:0 10px 0 0; border:0; } }
 
@@ -164,7 +164,7 @@
 .hydra-use-cases>li { padding:24px; min-width:0; }
 .hydra-use-cases>li+li { border-left:1px solid var(--palette-border); }
 .hydra-use-cases svg { display:block; width:38px; height:38px; margin-bottom:22px; color:var(--palette-blue); }
-.product-story--split .hydra-use-cases h3 { font:600 15px/1.4 var(--font-body); margin:0 0 6px; color:var(--palette-navy); }
+.product-story--split .hydra-use-cases h3 { font:600 15px/1.4 var(--font-body); margin:0 0 6px; color:var(--palette-blue); }
 .hydra-use-cases>li>span { font-size:12px; line-height:1.5; color:var(--palette-muted); }
 .product-story--split .hydra-compatible h3 { font:500 12px/1.5 var(--font-body); color:var(--palette-muted); margin:0 0 14px; }
 .hydra-compatible ul { list-style:none; display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; }
@@ -185,7 +185,7 @@
 .hydra-stepper>li:not(:last-child)::after { content:""; position:absolute; width:1px; top:48px; bottom:8px; left:19px; background:var(--palette-border); }
 .hydra-stepper>li:last-child { padding-bottom:0; }
 .hydra-stepper__number { display:grid; place-items:center; width:40px; height:40px; border:1px solid var(--palette-border); border-radius:50%; background:var(--palette-ivory); color:var(--palette-blue); font:500 12px/1 var(--font-body); }
-.product-story--split .hydra-stepper h3 { font:600 16px/1.4 var(--font-body); margin:2px 0 8px; color:var(--palette-navy); }
+.product-story--split .hydra-stepper h3 { font:600 16px/1.4 var(--font-body); margin:2px 0 8px; color:var(--palette-blue); }
 .product-story--split .hydra-stepper p { font-size:14px; line-height:1.7; color:var(--palette-muted); margin:0; max-width:640px; }
 .hydra-technical { min-width:0; }
 .hydra-spec-table { border-collapse:collapse; width:100%; text-align:left; table-layout:fixed; }
@@ -193,11 +193,11 @@
 .hydra-spec-table thead th { background:var(--palette-ivory); color:var(--palette-blue); font-size:11px; text-transform:uppercase; letter-spacing:.08em; font-weight:600; }
 .hydra-spec-table th:first-child { width:38%; }
 .hydra-spec-table tbody th { color:var(--palette-muted); }
-.hydra-spec-table td { color:var(--palette-navy); font-weight:500; }
+.hydra-spec-table td { color:var(--palette-blue); font-weight:500; }
 .hydra-spec-table tbody tr:nth-child(even) { background:var(--palette-ivory); }
 .hydra-technical-notes { margin-top:20px; }
 .hydra-technical-notes details { border-bottom:1px solid var(--palette-border); }
-.hydra-technical-notes summary { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:18px 0; list-style:none; cursor:pointer; font:500 13px/1.5 var(--font-body); color:var(--palette-navy); }
+.hydra-technical-notes summary { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:18px 0; list-style:none; cursor:pointer; font:500 13px/1.5 var(--font-body); color:var(--palette-blue); }
 .hydra-technical-notes summary::-webkit-details-marker { display:none; }
 .hydra-technical-notes summary::after { content:"+"; font-size:20px; font-weight:400; color:var(--palette-blue); }
 .hydra-technical-notes details[open]>summary::after { content:"−"; }
@@ -219,7 +219,7 @@
 .product-story--split .product-panel-stack>.product-story__section { margin:0 0 24px; padding:36px; border:1px solid var(--palette-border); background:#fff; border-radius:3px; grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:48px; }
 .product-panel-stack>.product-story__section:last-child { margin-bottom:0; }
 @media(min-width:1000px) and (min-height:850px) and (prefers-reduced-motion:no-preference) {
- .product-panel-stack[data-stacking=true]>.product-story__section[data-fits-stack=true] { position:sticky; top:var(--panel-top,176px); z-index:var(--panel-order,1); box-shadow:0 -5px 22px #17325308; }
+ .product-panel-stack[data-stacking=true]>.product-story__section[data-fits-stack=true] { position:sticky; top:var(--panel-top,176px); z-index:var(--panel-order,1); box-shadow:0 -5px 22px #20202008; }
  .product-panel-stack[data-stacking=true]>.product-story__section:focus-within { z-index:5; }
 }
 @media(max-width:999px) { .product-story--split .product-panel-stack>.product-story__section { padding:28px; gap:28px; } }
@@ -247,7 +247,7 @@
   height:var(--pack-height);
   width:360px;
   max-width:80%;
-  filter:drop-shadow(0 10px 12px #0a162014);
+  filter:drop-shadow(0 10px 12px #20202014);
 }
 @media(max-width:700px) {
   .product-split__visual .product-image--normalized { --pack-height:240px; width:280px; }

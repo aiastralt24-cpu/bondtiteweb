@@ -1,0 +1,168 @@
+{
+  "ultra": {
+    "listing": "https://www.amazon.in/dp/B0FG38J6VC",
+    "reviewed": "2026-11-02",
+    "assets": {
+      "poster": "https://m.media-amazon.com/images/I/51AWqhmVh6L.jpg",
+      "detail": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/faba004f-4496-416e-b91f-d19b9a395185.__CR0,0,300,300_PT0_SX300_V1___.jpg"
+    },
+    "video": "Brand video visible on listing; streamed download unavailable. Link to listing until an original file is supplied.",
+    "originals": {
+      "archive": "Amazon Products PDPs.zip",
+      "files": [
+        {
+          "file": "Ultra Glue Brush & Nozzle/MNTD_BRUSH-&-NOZZLE_2000X2000-PX-01.jpg",
+          "output": "ultra-original-01.webp"
+        },
+        {
+          "file": "Ultra Glue Brush & Nozzle/MNTD_BRUSH-&-NOZZLE_2000X2000-PX-06.jpg",
+          "output": "ultra-original-06.webp"
+        },
+        {
+          "file": "Ultra Glue Brush & Nozzle/MNTD_BRUSH-&-NOZZLE_2000X2000-PX-05.jpg",
+          "output": "ultra-original-05.webp"
+        },
+        {
+          "file": "Ultra Glue Brush & Nozzle/MNTD_BRUSH-&-NOZZLE_2000X2000-PX-HOW-TO-USE.jpg",
+          "output": "ultra-original-how-to-use.webp"
+        },
+        {
+          "file": "Ultra Glue Brush & Nozzle/MNTD_BRUSH-&-NOZZLE_2000X2000-PX-09.jpg",
+          "output": "ultra-original-09.webp"
+        }
+      ]
+    }
+  },
+  "instant": {
+    "listing": "https://www.amazon.in/dp/B0FL7BF3F2",
+    "reviewed": "2026-11-02",
+    "assets": {
+      "poster": "https://m.media-amazon.com/images/I/51XivihflBL.jpg",
+      "detail": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/784378df-7cd1-4a21-995a-7938b0114e7d.__CR0,0,300,300_PT0_SX300_V1___.jpg"
+    },
+    "video": "Brand video visible on listing; streamed download unavailable. Link to listing until an original file is supplied.",
+    "originals": {
+      "archive": "Amazon Products PDPs.zip",
+      "files": [
+        {
+          "file": "BT Quick Instant_3g/MNTD_BTQUICK_INSTANT_ADHESIVE_3g_2000X2000-PX-2.jpg",
+          "output": "instant-original-2.webp"
+        },
+        {
+          "file": "BT Quick Instant_3g/MNTD_BTQUICK_INSTANT_ADHESIVE_3g_2000X2000-PX-5.jpg",
+          "output": "instant-original-5.webp"
+        },
+        {
+          "file": "BT Quick Instant_3g/MNTD_BTQUICK_INSTANT_ADHESIVE_3g_2000X2000-PX-4.jpg",
+          "output": "instant-original-4.webp"
+        },
+        {
+          "file": "BT Quick Instant_3g/MNTD_BTQUICK_INSTANT_ADHESIVE_3g_2000X2000-PX-3.jpg",
+          "output": "instant-original-3.webp"
+        }
+      ]
+    }
+  },
+  "spot-on": {
+    "listing": "https://www.amazon.in/dp/B0FG36CJ1R",
+    "reviewed": "2026-11-02",
+    "assets": {
+      "poster": "https://m.media-amazon.com/images/I/61ORx34EwbL.jpg",
+      "detail": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/aec436dc-891a-478f-8215-ea449afb0291.__CR0,0,300,300_PT0_SX300_V1___.jpg"
+    },
+    "video": "Brand video visible on listing; streamed download unavailable. Link to listing until an original file is supplied.",
+    "originals": {
+      "archive": "Amazon Products PDPs.zip",
+      "files": [
+        {
+          "file": "Spot On/MNTD_SPOTON_2000X2000-PX-01.jpg",
+          "output": "spot-on-original-01.webp"
+        },
+        {
+          "file": "Spot On/MNTD_SPOTON_2000X2000-PX-06.jpg",
+          "output": "spot-on-original-06.webp"
+        },
+        {
+          "file": "Spot On/MNTD_SPOTON_2000X2000-PX-05.jpg",
+          "output": "spot-on-original-05.webp"
+        },
+        {
+          "file": "Spot On/MNTD_SPOTON_2000X2000-PX-07.jpg",
+          "output": "spot-on-original-07.webp"
+        },
+        {
+          "file": "Spot On/MNTD_SPOTON_2000X2000-PX-02.jpg",
+          "output": "spot-on-original-02.webp"
+        }
+      ]
+    }
+  },
+  "gel": {
+    "listing": "https://www.amazon.in/dp/B0FL7BF84P",
+    "reviewed": "2026-11-02",
+    "assets": {
+      "poster": "https://m.media-amazon.com/images/I/51dl5j7hM2L.jpg",
+      "detail": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/5b202180-54a5-4f09-a560-66ddcc3f6aba.__CR0,0,300,300_PT0_SX300_V1___.jpg"
+    },
+    "video": "Brand video visible on listing; streamed download unavailable. Link to listing until an original file is supplied.",
+    "originals": {
+      "archive": "Amazon Products PDPs.zip",
+      "files": [
+        {
+          "file": "BT Quick Gel/MNTD_BTQUICK_GEL_3g_2000X2000-PX-01.jpg",
+          "output": "gel-original-01.webp"
+        },
+        {
+          "file": "BT Quick Gel/MNTD_BTQUICK_GEL_3g_2000X2000-PX-05.jpg",
+          "output": "gel-original-05.webp"
+        },
+        {
+          "file": "BT Quick Gel/MNTD_BTQUICK_GEL_3g_2000X2000-PX-03.jpg",
+          "output": "gel-original-03.webp"
+        },
+        {
+          "file": "BT Quick Gel/MNTD_BTQUICK_GEL_3g_2000X2000-PX-07.jpg",
+          "output": "gel-original-07.webp"
+        },
+        {
+          "file": "BT Quick Gel/MNTD_BTQUICK_GEL_3g_2000X2000-PX-02.jpg",
+          "output": "gel-original-02.webp"
+        }
+      ]
+    }
+  },
+  "craft": {
+    "listing": "https://www.amazon.in/dp/B0FG3CD2B4",
+    "reviewed": "2026-11-02",
+    "assets": {
+      "poster": "https://m.media-amazon.com/images/I/61rhU3JDu8L.jpg",
+      "detail": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/0ca1ed6e-3482-444e-929c-19388b2b6039.__CR0,0,300,300_PT0_SX300_V1___.jpg"
+    },
+    "video": "Brand video visible on listing; streamed download unavailable. Link to listing until an original file is supplied.",
+    "originals": {
+      "archive": "Amazon Products PDPs.zip",
+      "files": [
+        {
+          "file": "Art & Craft/MNTD_ART&CRAFT_2000X2000-PX-01.jpg",
+          "output": "craft-original-01.webp"
+        },
+        {
+          "file": "Art & Craft/MNTD_ART&CRAFT_2000X2000-PX-05.jpg",
+          "output": "craft-original-05.webp"
+        },
+        {
+          "file": "Art & Craft/MNTD_ART&CRAFT_2000X2000-PX-08.jpg",
+          "output": "craft-original-08.webp"
+        },
+        {
+          "file": "Art & Craft/MNTD_ART&CRAFT_2000X2000-PX-09.jpg",
+          "output": "craft-original-09.webp"
+        },
+        {
+          "file": "Art & Craft/MNTD_ART&CRAFT_2000X2000-PX-02.jpg",
+          "output": "craft-original-02.webp"
+        }
+      ]
+    }
+  }
+}

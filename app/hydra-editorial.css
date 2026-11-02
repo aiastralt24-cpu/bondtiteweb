@@ -33,7 +33,7 @@
 .hydra-editorial #how-to-use .home-title__accent { color:var(--blue); }
 .hydra-editorial #how-to-use .material-story__product-link { display:none; }
 .hydra-editorial #how-to-use > .hydra-stepper { padding:0 32px 40px; }
-.hydra-enquiry-bar { position:fixed; bottom:0; left:0; right:0; z-index:90; background:#fff; border-top:1px solid var(--line); padding:12px 0 max(12px,env(safe-area-inset-bottom)); box-shadow:0 -8px 30px #10243609; }
+.hydra-enquiry-bar { position:fixed; bottom:0; left:0; right:0; z-index:90; background:#fff; border-top:1px solid var(--line); padding:12px 0 max(12px,env(safe-area-inset-bottom)); box-shadow:0 -8px 30px #20202009; }
 .hydra-enquiry-bar > div { display:flex; align-items:center; justify-content:space-between; gap:20px; }
 .hydra-enquiry-bar strong { font-size:14px; }
 .hydra-enquiry-bar small { display:block; font-size:11px; color:var(--ink-quiet); margin-top:4px; }
@@ -90,7 +90,7 @@
 .hydra-editorial .hydra-editorial-hero { padding-bottom:40px; gap:48px; }
 .hydra-editorial .hydra-editorial-hero__stage { min-height:480px; }
 .hydra-editorial .hydra-editorial-hero__pack { height:365px; width:75%; }
-.hydra-editorial .hydra-editorial-hero__pack .product-image { filter:drop-shadow(0 14px 16px #10243618); }
+.hydra-editorial .hydra-editorial-hero__pack .product-image { filter:drop-shadow(0 14px 16px #20202018); }
 .hydra-editorial .hydra-pack-picker > div { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; max-width:440px; }
 .hydra-editorial .hydra-pack-picker label span { min-width:0; padding:11px 8px; }
 .hydra-editorial #product-uses { padding-block:32px; }
@@ -120,7 +120,7 @@
 .hydra-editorial .related-products__header h2 { font-size:clamp(30px,3vw,40px); }
 .hydra-editorial .related-product h3 { font:600 22px/1.25 var(--font-body); letter-spacing:-.025em; }
 .hydra-editorial .product-story__related-image { height:200px; margin-bottom:24px; }
-.hydra-editorial .product-story__related-image .product-image { height:175px; width:190px; filter:drop-shadow(0 10px 10px #10243612); transition:transform 220ms ease; }
+.hydra-editorial .product-story__related-image .product-image { height:175px; width:190px; filter:drop-shadow(0 10px 10px #20202012); transition:transform 220ms ease; }
 .hydra-editorial .related-product__brand { color:var(--blue); }
 @media(hover:hover) {
  .hydra-editorial .related-product:hover .product-image { transform:translateY(-4px); }

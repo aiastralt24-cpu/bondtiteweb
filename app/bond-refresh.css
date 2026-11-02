@@ -13,7 +13,7 @@ body:has(.bond-home) .header--transparent .wordmark img { filter: brightness(0) 
 .bond-hero h1 span { color: var(--palette-gold); }
 .bond-hero__copy p { color: var(--palette-on-dark); max-width: 400px; font-size: 18px; line-height: 1.65; margin: 30px 0; }
 .bond-hero__actions { display: flex; align-items: center; gap: 28px; }
-.bond-hero__actions .button { background: var(--palette-gold); color: var(--palette-navy); gap: 36px; border: 0; padding: 16px 22px; }
+.bond-hero__actions .button { background: var(--palette-gold); color: var(--palette-blue); gap: 36px; border: 0; padding: 16px 22px; }
 .bond-hero__secondary { font-size: 14px; border-bottom: 1px solid #ffffff60; padding: 12px 0; }
 .bond-hero__secondary span { margin-left: 20px; }
 .bond-hero__stage { height: 540px; position: relative; }

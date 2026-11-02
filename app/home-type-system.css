@@ -3,13 +3,13 @@
  --home-heading-size:clamp(32px,3.6vw,52px);
  --home-heading-leading:1.14;
  --home-heading-tracking:-.035em;
- --home-heading-accent:#2d589c;
+ --home-heading-accent:var(--palette-blue);
 }
 .bond-home .home-title.home-title,
 .footer.bond-footer--renewed .bond-footer__intro h2.home-title {
  font-family:var(--font-body); font-size:var(--home-heading-size);
  font-weight:600; line-height:var(--home-heading-leading);
- letter-spacing:var(--home-heading-tracking); color:#0b1a2b;
+ letter-spacing:var(--home-heading-tracking); color:var(--palette-blue);
  margin:20px 0 24px; max-width:22ch; text-wrap:balance;
 }
 .bond-home .home-title.home-title .home-title__accent,
@@ -35,9 +35,9 @@
 
 /* Consistent image-led application cards. */
 .bond-home .application-bento__grid { grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:none; gap:20px; }
-.bond-home .application-bento__grid .application-bento__card { min-height:320px; grid-column:auto; grid-row:auto; border:0; background:#102436; }
+.bond-home .application-bento__grid .application-bento__card { min-height:320px; grid-column:auto; grid-row:auto; border:0; background:var(--palette-blue); }
 .bond-home .application-bento__card .application-bento__scene { inset:0; }
-.bond-home .application-bento__card .application-bento__scene::after { background:linear-gradient(180deg,rgba(7,20,32,0) 20%,rgba(7,20,32,.35) 52%,rgba(7,20,32,.9) 100%); }
+.bond-home .application-bento__card .application-bento__scene::after { background:linear-gradient(180deg,rgba(32,32,32,0.0) 20%,rgba(32,32,32,0.35) 52%,rgba(32,32,32,0.9) 100%); }
 .bond-home .application-bento__card .application-bento__copy { width:100%; padding:28px 80px 28px 28px; min-height:320px; }
 .bond-home .application-bento__card .application-bento__copy h3 { color:#fff; font:600 clamp(22px,2.1vw,30px)/1.2 var(--font-body); letter-spacing:-.025em; max-width:none; margin:0 0 10px; text-wrap:initial; }
 .bond-home .application-bento__card p { color:#e7ecf0; font-size:13px; line-height:1.6; max-width:none; margin:0; }
