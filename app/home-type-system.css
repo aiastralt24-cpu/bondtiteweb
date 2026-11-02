@@ -9,7 +9,7 @@
 .footer.bond-footer--renewed .bond-footer__intro h2.home-title {
  font-family:var(--font-body); font-size:var(--home-heading-size);
  font-weight:600; line-height:var(--home-heading-leading);
- letter-spacing:var(--home-heading-tracking); color:var(--palette-blue);
+ letter-spacing:var(--home-heading-tracking); color:var(--palette-ink);
  margin:20px 0 24px; max-width:22ch; text-wrap:balance;
 }
 .bond-home .home-title.home-title .home-title__accent,
