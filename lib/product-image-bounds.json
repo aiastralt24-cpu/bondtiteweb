@@ -302,5 +302,13 @@
     "top": 170,
     "cropWidth": 904,
     "cropHeight": 681
+  },
+  "/assets/products/bondtite-total-gem-1-8kg-jar.png": {
+    "width": 2291,
+    "height": 2135,
+    "left": 45,
+    "top": 151,
+    "cropWidth": 2202,
+    "cropHeight": 1829
   }
 }

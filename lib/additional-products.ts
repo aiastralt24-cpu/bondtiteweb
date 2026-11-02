@@ -8,7 +8,7 @@ export const additionalProducts: ProductSeed[] = [
   "chemistry": "Epoxy",
   "sourceUrl": "#product-specs",
   "summary": "Two-component epoxy adhesive for imitation jewellery, stone setting, fashion accessories and decorative assembly. Cures at room temperature with high bond strength and good gap-filling properties.",
-  "image": "/assets/products/bondtite-total-gem-jar.png",
+  "image": "/assets/products/bondtite-total-gem-1-8kg-jar.png",
   "imageTone": "square",
   "substrates": [
     "Metal",
